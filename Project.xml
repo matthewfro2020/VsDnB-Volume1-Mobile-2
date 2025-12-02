@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+    <haxedef name="HXCPP_NO_NIL"/>
+    <haxedef name="HXCPP_NO_PCH"/>
+    <haxedef name="HXCPP_CPP11"/>
+    <haxedef name="HXCPP_CLANG" if="ios"/>
+
+    <app title="VS. Dave and Bambi"
+         file="VsDave"
+         packageName="dnbteam.daveandbambi"
+         package="dnbteam.daveandbambi"
+         main="Main"
+         version="1.0.7"
+         company="dnbteam"/>
+
+    <app preloader="flixel.system.FlxPreloader"/>
+    <set name="SWF_VERSION" value="11.8"/>
+
+    <window width="1280" height="720" fps="120" hardware="true" vsync="true"/>
+
+    <classpath name="source"/>
+
+    <assets path="assets/preload" rename="assets"/>
+    <assets path="assets/preload/videos" rename="assets/videos" embed="false" include="*.mp4"/>
+    <assets path="assets/songs"  library="songs"/>
+    <assets path="assets/shared" library="shared"/>
+    <assets path="assets/fonts" embed="true"/>
+    <assets path="art/icons" rename="icons" embed="true"/>
+
+    <haxelib name="lime"/>
+    <haxelib name="openfl"/>
+    <haxelib name="flixel"/>
+    <haxelib name="flixel-ui"/>
+    <haxelib name="flixel-addons"/>
+    <haxelib name="flxanimate"/>
+    <haxelib name="json2object"/>
+    <haxelib name="hscript"/>
+    <haxelib name="polymod"/> <!-- patched version -->
+    <haxelib name="hxvlc" if="desktop || android"/>
+    <haxelib name="hxdiscord_rpc" if="desktop"/>
+
+    <haxedef name="HXCPP_STACK_TRACE"/>
+    <haxedef name="HXCPP_STACK_LINE"/>
+    <haxedef name="HXCPP_CHECK_POINTER"/>
+    <haxedef name="HXCPP_GC_BIG_BLOCKS"/>
+    <haxeflag name="-dce no"/>
+
+    <section if="ios">
+        <define name="objc"/>
+        <ios linker-flags="-ObjC -lc++"/>
+        <ios extra-compiler-flags="-std=c++11 -stdlib=libc++"/>
+    </section>
+
+    <icon path="art/icons/dave16.png" size="16"/>
+    <icon path="art/icons/dave32.png" size="32"/>
+    <icon path="art/icons/dave64.png" size="64"/>
+    <icon path="art/icons/dave.png"/>
+
+</project>
