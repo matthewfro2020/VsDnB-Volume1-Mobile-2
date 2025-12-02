@@ -46,22 +46,19 @@ jobs:
           haxelib install hmm
           haxelib run hmm install
 
-      - name: Install Polymod
-        run: haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
-
       - name: Fix thx.core crash on iOS
         run: |
           haxelib remove thx.error || true
           haxelib remove thx.languages || true
 
       # --------------------------------------------------
-      # Build Haxe C++ code (generates thx headers)
+      # Build Haxe code FIRST (generates hxcpp C++ files)
       # --------------------------------------------------
-      - name: Build iOS (nosign) - Generate C++ Code
+      - name: Build iOS (nosign) - Generate C++ code
         run: haxelib run lime build ios -nosign -D officialBuild -DMOBILE_BUILD -D HXCPP_CPP11 || true
 
       # --------------------------------------------------
-      # Patch thx.Nil clash AFTER hxcpp generates headers
+      # Patch thx.Nil clash AFTER C++ is generated
       # --------------------------------------------------
       - name: Patch thx.Nil for iOS ObjC Macro Clash
         shell: bash
@@ -69,14 +66,14 @@ jobs:
           echo "=== Running universal thx.Nil patcher ==="
 
           cat > fix_thx_nil_all_targets.py << 'EOF'
-import os
+          import os
 
-PATCH_LINES = [
-    "#ifdef Nil",
-    "#undef Nil",
-    "#endif",
-    ""
-]
+          PATCH_LINES = [
+              "#ifdef Nil",
+              "#undef Nil",
+              "#endif",
+              ""
+          ]
 
 def patch_file(path):
     try:
@@ -120,7 +117,7 @@ EOF
           python3 fix_thx_nil_all_targets.py || true
 
       # --------------------------------------------------
-      # Package the resulting IPA
+      # Package IPA
       # --------------------------------------------------
       - name: Package IPA
         run: |
@@ -129,7 +126,7 @@ EOF
           mv *.app Payload/
           zip -r ~/ios-${{ steps.ver.outputs.version }}.ipa Payload
 
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
           path: ~/ios-*.ipa
