@@ -1,19 +1,23 @@
 package flixel.system;
 
-import flash.events.IEventDispatcher;
-import flash.events.Event;
-import flash.media.Sound;
-import flash.media.SoundChannel;
-import flash.media.SoundTransform;
-import flash.net.URLRequest;
+import openfl.events.IEventDispatcher;
+import openfl.events.Event;
+import openfl.media.Sound;
+import openfl.media.SoundChannel;
+import openfl.media.SoundTransform;
+import openfl.net.URLRequest;
+
 import flixel.FlxBasic;
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxSoundAsset;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxStringUtil;
+
 import openfl.Assets;
+
 #if flash11
 import flash.utils.ByteArray;
 #end
