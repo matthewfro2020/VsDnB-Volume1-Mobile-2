@@ -28,24 +28,32 @@ class PlayerRegistry extends BaseRegistry<PlayableCharacter, PlayerData>
         super('PlayerRegistry', 'players', VERSION_RULE);
     }
 
-    public function parseEntryData(id:String):PlayerData
-    {
-        var parser:JsonParser<PlayerData> = new JsonParser<PlayerData>();
-        parser.ignoreUnknownVariables = true;
+public function parseEntryData(id:String):PlayerData
+{
+    var parser:JsonParser<PlayerData> = new JsonParser<PlayerData>();
 
-        switch (loadEntryFile(id))
-        {
-            case {fileName: fileName, contents: contents}:
-                parser.fromJson(contents, fileName);
-            default:
-                return null;
-        }
-        if (parser.errors.length > 0)
-        {
-            printErrors(parser.errors);
-        }
-        return parser.value; 
+    // Safe ignoreUnknownVariables patch for all json2object versions
+    try {
+        Reflect.setField(parser, "ignoreUnknownVariables", true);
+    } catch (e) {
+        // Field doesn't exist on older json2object versions – ignore
     }
+
+    switch (loadEntryFile(id))
+    {
+        case {fileName: fileName, contents: contents}:
+            parser.fromJson(contents, fileName);
+        default:
+            return null;
+    }
+
+    if (parser.errors.length > 0)
+    {
+        printErrors(parser.errors);
+    }
+
+    return parser.value;
+}
 
     function createScriptedEntry(clsName:String):PlayableCharacter
     {
