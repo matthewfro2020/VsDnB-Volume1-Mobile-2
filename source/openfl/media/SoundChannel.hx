@@ -2,7 +2,6 @@ package openfl.media;
 
 #if !flash
 import haxe.Int64;
-
 import openfl.events.Event;
 import openfl.events.EventDispatcher;
 
@@ -46,13 +45,19 @@ import lime.media.AudioSource;
 
     #if lime
     @:noCompletion private var __source:AudioSource;
+
+    // Required for OpenFL SoundMixer
+    @:noCompletion private var __audioSource(get, never):AudioSource;
+    @:noCompletion private function get___audioSource():AudioSource {
+        return __source;
+    }
     #end
 
     @:noCompletion private var __isValid:Bool = false;
     @:noCompletion private var __leftPeak:Float = 0;
     @:noCompletion private var __rightPeak:Float = 0;
 
-    // manual loop timing
+    // manual loop time storage
     @:noCompletion private var __loopTime:Int = -1;
 
     // -------------------------------------------------------
@@ -62,9 +67,7 @@ import lime.media.AudioSource;
                                        transform:SoundTransform = null)
     {
         super(this);
-
         __soundTransform = (transform != null) ? transform : new SoundTransform();
-
         __initAudioSource(src);
         SoundMixer.__registerSoundChannel(this);
     }
@@ -111,8 +114,8 @@ import lime.media.AudioSource;
     }
 
     // -------------------------------------------------------
-    // POSITION (uses offset instead of removed time field)
-    // offset = seconds, OpenFL uses ms
+    // POSITION — replaced AudioSource.time with offset (seconds)
+    // OpenFL uses milliseconds, so convert appropriately.
     // -------------------------------------------------------
     @:noCompletion private function get_position():Float {
         #if lime
@@ -175,7 +178,7 @@ import lime.media.AudioSource;
     }
 
     // -------------------------------------------------------
-    // LOOP TIME (manual storage)
+    // LOOP TIME
     // -------------------------------------------------------
     @:noCompletion private function get_loopTime():Int {
         return __loopTime;
@@ -187,7 +190,7 @@ import lime.media.AudioSource;
     }
 
     // -------------------------------------------------------
-    // END TIME (seconds → ms)
+    // END TIME (seconds <-> ms)
     // -------------------------------------------------------
     @:noCompletion private function get_endTime():Null<Int> {
         #if lime
@@ -226,7 +229,7 @@ import lime.media.AudioSource;
     }
 
     // -------------------------------------------------------
-    // PEAKS (approx using gain)
+    // PEAKS (approximation using gain)
     // -------------------------------------------------------
     @:noCompletion private function get_leftPeak():Float {
         #if lime
@@ -247,7 +250,7 @@ import lime.media.AudioSource;
     }
 
     // -------------------------------------------------------
-    // COMPLETE
+    // COMPLETE CALLBACK
     // -------------------------------------------------------
     @:noCompletion private function source_onComplete():Void {
         SoundMixer.__unregisterSoundChannel(this);
