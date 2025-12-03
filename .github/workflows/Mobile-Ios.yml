@@ -10,7 +10,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -35,98 +35,52 @@ jobs:
           haxelib install lime
           haxelib install openfl
           haxelib install flixel
-          haxelib install flixel-ui
-          haxelib install flixel-addons
-          haxelib install flxanimate
-          haxelib install json2object
-          haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
-          haxelib git hscript https://github.com/T5mpler/hscript-dnb
-          haxelib install hxvlc
-          haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib install hmm
-          haxelib run hmm install
 
-      - name: Fix thx.core crash on iOS
+      # ────────────── BUILD TO GENERATE C++ (this always fails before Xcode) ──────────────
+      - name: Generate iOS C++
         run: |
-          haxelib remove thx.error || true
-          haxelib remove thx.languages || true
+          # Force HXCPP C++ generation even if it fails
+          haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11 || true
 
-      # --------------------------------------------------
-      # Build Haxe code FIRST (generates hxcpp C++ files)
-      # --------------------------------------------------
-      - name: Build iOS (nosign) - Generate C++ code
-        run: haxelib run lime build ios -nosign -D officialBuild -DMOBILE_BUILD -D HXCPP_CPP11 || true
-
-      # --------------------------------------------------
-      # Patch thx.Nil clash AFTER C++ is generated
-      # --------------------------------------------------
-      - name: Patch thx.Nil for iOS ObjC Macro Clash
-        shell: bash
+      # ────────────── AUTO-PATCH thx.Nil ON THE GENERATED FILES ──────────────
+      - name: Patch thx.Nil automatically
         run: |
-          echo "=== Running universal thx.Nil patcher ==="
+          echo "=== Running UNIVERSAL thx.Nil PATCHER ==="
+          python3 << 'EOF'
+import os, re
 
-          cat > fix_thx_nil_all_targets.py << 'EOF'
-          import os
+ROOTS = [
+    "./export/ios/obj",
+    "./bin/ios/VsDave/haxe/build",
+    "./bin/ios/VsDave/haxe/build/Release-iphoneos-64"
+]
 
-          PATCH_LINES = [
-              "#ifdef Nil",
-              "#undef Nil",
-              "#endif",
-              ""
-          ]
+PATCHES = {
+    r"\bNil\b": "ThxNil",
+    r"thx::Nil": "thx::ThxNil",
+}
 
-          def patch_file(path):
-              try:
-                  text = open(path, "r", errors="ignore").read()
-                  if "#undef Nil" in text:
-            print("[SKIP] Already patched:", path)
-            return
-                  with open(path, "w", errors="ignore") as f:
-            f.write("\n".join(PATCH_LINES) + text)
-                  print("[PATCHED]", path)
-              except Exception as e:
-                  print("[ERROR]", path, e)
+patched = 0
+for root in ROOTS:
+    if not os.path.exists(root):
+        continue
+    for subdir, dirs, files in os.walk(root):
+        for f in files:
+            if f.endswith((".h", ".hpp", ".cpp", ".mm")):
+                path = os.path.join(subdir, f)
+                txt = open(path, "r").read()
+                new = txt
+                for a, b in PATCHES.items():
+                    new = re.sub(a, b, new)
+                if new != txt:
+                    open(path, "w").write(new)
+                    patched += 1
 
-          print("=== AUTO-DETECTING ALL thx FOLDERS ===")
+print(f"Patched {patched} file(s).")
+EOF
+          echo "=== Patch Completed ==="
 
-          patch_count = 0
-          thx_dirs = []
-
-          for root, dirs, files in os.walk(".", topdown=True):
-              for d in dirs:
-                  if d == "thx":
-            full = os.path.join(root, d)
-            thx_dirs.append(full)
-
-          print("\nDetected thx directories:")
-          for t in thx_dirs:
-              print("  -", t)
-
-          print("\nPatching...\n")
-
-          for folder in thx_dirs:
-              for root, dirs, files in os.walk(folder):
-                  for f in files:
-                      if f.endswith((".h", ".hpp", ".cpp", ".mm")):
-                patch_file(os.path.join(root, f))
-                patch_count += 1
-
-          print("\n=== Done. Patched", patch_count, "files across ALL platforms ===")
-          EOF
-
-          python3 fix_thx_nil_all_targets.py || true
-
-      # --------------------------------------------------
-      # Package IPA
-      # --------------------------------------------------
-      - name: Package IPA
+      # ────────────── RUN FULL BUILD NOW THAT THE PATCH IS DONE ──────────────
+      - name: Build iOS (Final)
         run: |
-          cd export/release/ios/build/*-iphoneos
-          mkdir Payload
-          mv *.app Payload/
-          zip -r ~/ios-${{ steps.ver.outputs.version }}.ipa Payload
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ios-ipa
-          path: ~/ios-*.ipa
+          haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11
