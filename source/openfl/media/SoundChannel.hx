@@ -261,22 +261,21 @@ import lime.media.openal.AL;
 			__soundTransform.pan = value.pan;
 			__soundTransform.volume = value.volume;
 
-			var pan = SoundMixer.__soundTransform.pan + __soundTransform.pan;
+var pan = SoundMixer.__soundTransform.pan + __soundTransform.pan;
 
-			if (pan < -1) pan = -1;
-			if (pan > 1) pan = 1;
+if (pan < -1) pan = -1;
+if (pan > 1) pan = 1;
 
-			var volume = SoundMixer.__soundTransform.volume * __soundTransform.volume;
+var volume = SoundMixer.__soundTransform.volume * __soundTransform.volume;
 
-			if (__isValid)
-			{
-				#if lime
-				// TODO: implement SoundTransform.leftToRight, etc. with Native setAngles?
-				__source.gain = volume;
-				__source.pan = pan;
-				return value;
-				#end
-			}
+if (__isValid)
+{
+    #if lime
+    __source.gain = volume;
+    __source.pan = pan;
+    return value;
+    #end
+}
 		}
 
 		return value;
