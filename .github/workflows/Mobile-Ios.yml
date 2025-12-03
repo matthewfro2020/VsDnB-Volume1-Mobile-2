@@ -59,9 +59,10 @@ jobs:
           }
 
           patched = 0
-for root in ROOTS:
-    if not os.path.exists(root):
-        continue
+          
+          for root in ROOTS:
+              if not os.path.exists(root):
+                  continue
               for subdir, dirs, files in os.walk(root):
                   for f in files:
                       if f.endswith((".h", ".hpp", ".cpp", ".mm")):
@@ -79,8 +80,8 @@ for root in ROOTS:
                 except Exception as e:
                     print(f"Warning: Could not process {path}: {e}")
 
-print(f"Patched {patched} file(s).")
-EOF
+          print(f"Patched {patched} file(s).")
+          EOF
           echo "=== Patch Completed ==="
 
       - name: Build iOS (Final)
