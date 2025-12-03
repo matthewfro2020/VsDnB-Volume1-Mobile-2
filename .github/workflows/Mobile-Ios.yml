@@ -52,43 +52,50 @@ jobs:
       - name: Patch thx.Nil automatically
         run: |
           echo "=== Running UNIVERSAL thx.Nil PATCHER ==="
+
           python3 << 'EOF'
-          import os
-          import re
+import os, re
 
-          ROOTS = [
-              "./export/ios/obj",
-              "./bin/ios/VsDave/haxe/build",
-              "./bin/ios/VsDave/haxe/build/Release-iphoneos-64"
-          ]
+ROOTS = [
+    "./export/ios/obj",
+    "./bin/ios/VsDave/haxe/build",
+    "./bin/ios/VsDave/haxe/build/Release-iphoneos-64"
+]
 
-          PATCHES = {
-              r"\bNil\b": "ThxNil",
-              r"thx::Nil": "thx::ThxNil",
-          }
+PATCHES = {
+    r"\bNil\b": "ThxNil",
+    r"thx::Nil": "thx::ThxNil",
+}
 
-          patched = 0
-          
-          for root in ROOTS:
-              if not os.path.exists(root):
-                  continue
-              for subdir, dirs, files in os.walk(root):
-                  for f in files:
-                    if f.endswith((".h", ".hpp", ".cpp", ".mm")):
-                        try:
-                            with open(path, "r", encoding="utf-8") as file:
-                            txt = file.read()
+patched = 0
+
+for root in ROOTS:
+    if not os.path.exists(root):
+        continue
+
+    for subdir, dirs, files in os.walk(root):
+        for f in files:
+            if f.endswith((".h", ".hpp", ".cpp", ".mm")):
+                path = os.path.join(subdir, f)
+                try:
+                    with open(path, "r", encoding="utf-8") as file:
+                        txt = file.read()
+
+                    new = txt
                     for a, b in PATCHES.items():
                         new = re.sub(a, b, new)
+
                     if new != txt:
                         with open(path, "w", encoding="utf-8") as file:
                             file.write(new)
                         patched += 1
+
                 except Exception as e:
                     print(f"Warning: Could not process {path}: {e}")
 
-          print(f"Patched {patched} file(s).")
-          EOF
+print(f"Patched {patched} file(s).")
+EOF
+
           echo "=== Patch Completed ==="
 
       - name: Build iOS (Final)
@@ -102,7 +109,7 @@ jobs:
           mv *.app Payload/
           zip -r ~/ios-${{ steps.ver.outputs.version }}.ipa Payload
 
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
           path: ~/ios-*.ipa
