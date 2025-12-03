@@ -39,24 +39,20 @@ jobs:
       - name: Install Haxelib Dependencies
         run: |
           haxelib install hxcpp
+          haxelib install thx.core
+          haxelib install thx.semver
           haxelib install lime
           haxelib install openfl
-
-          # Exact Flixel stack (D&B compatible)
-          haxelib install flixel 4.11.0
-          haxelib install flixel-ui 2.6.2
-          haxelib install flixel-addons 3.3.0
-          haxelib install flixel-tools 1.5.1
-
-          # Extra Dependencies
+          haxelib install flixel    # <-- UPDATED (was 4.11) now latest 5.x
+          haxelib install flixel-ui
+          haxelib install flixel-addons
           haxelib install flxanimate
           haxelib install json2object
-          haxelib install hxvlc
-
-          # Git dependencies
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+          haxelib install hmm
+          haxelib run hmm install
 
       # -----------------------------------------------------
       # PREBUILD to generate ObjC++ before patching thx.Nil
