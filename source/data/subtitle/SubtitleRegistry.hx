@@ -26,24 +26,32 @@ class SubtitleRegistry extends BaseRegistry<SubtitleManager, SongSubtitleData>
         super('SubtitleRegistry', 'subtitles', VERSION_RULE);
     }
 
-    public function parseEntryData(id:String):SongSubtitleData
-    {
-        var parser:JsonParser<SongSubtitleData> = new JsonParser<SongSubtitleData>();
-        parser.ignoreUnknownVariables = true;
+public function parseEntryData(id:String):SongSubtitleData
+{
+    var parser:JsonParser<SongSubtitleData> = new JsonParser<SongSubtitleData>();
 
-        switch (loadEntryFile(id))
-        {
-            case {fileName: fileName, contents: contents}:
-                parser.fromJson(contents, fileName);
-            default:
-                return null;
-        }
-        if (parser.errors.length > 0)
-        {
-            printErrors(parser.errors);
-        }
-        return parser.value;
+    // Safe ignoreUnknownVariables (works on all json2object versions)
+    try {
+        Reflect.setField(parser, "ignoreUnknownVariables", true);
+    } catch (e) {
+        // Older json2object: ignoreUnknownVariables is not supported
     }
+
+    switch (loadEntryFile(id))
+    {
+        case {fileName: fileName, contents: contents}:
+            parser.fromJson(contents, fileName);
+        default:
+            return null;
+    }
+
+    if (parser.errors.length > 0)
+    {
+        printErrors(parser.errors);
+    }
+
+    return parser.value;
+}
 
     function createScriptedEntry(clsName:String):SubtitleManager
     {
