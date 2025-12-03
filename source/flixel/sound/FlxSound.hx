@@ -236,7 +236,7 @@ class FlxSound extends FlxBasic
 		else if (Std.isOfType(Snd, String))
 			_sound = openfl.utils.Assets.getSound(Snd);
 
-		return init(Looped, AutoDestroy, OnComplete);
+		return init(Looped, AutoDestroy, OnComplete != null ? OnComplete : OnLoad);
 	}
 
 	public function loadStream(URL:String, Looped:Bool=false, AutoDestroy:Bool=false, ?OnComplete:Void->Void, ?OnLoad:Void->Void):FlxSound
@@ -246,7 +246,7 @@ class FlxSound extends FlxBasic
 		_sound = new Sound();
 		_sound.load(new openfl.net.URLRequest(URL));
 
-		return init(Looped, AutoDestroy, OnComplete);
+		return init(Looped, AutoDestroy, OnComplete != null ? OnComplete : OnLoad);
 	}
 
 	function init(loop:Bool, auto:Bool, ?cb:Void->Void):FlxSound
