@@ -3,9 +3,9 @@ name: Desktop Builds
 on:
   push:
     tags:
-      - "v*.*.*"     # ← Release builds only when a version tag is pushed
+      - "v*.*.*"       # Release builds only when a version tag is pushed
     branches:
-      - main          # allow dev builds on main
+      - main           # Dev builds on main
   workflow_dispatch:
 
 jobs:
@@ -16,35 +16,47 @@ jobs:
         os: [windows-latest, ubuntu-latest, macos-latest]
 
     steps:
+      # ------------------------------------------
+      # Checkout repository
+      # ------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0     # Required for Git tags
+          fetch-depth: 0
 
+      # ------------------------------------------
+      # Detect version (tag or dev timestamp)
+      # ------------------------------------------
       - name: Determine Version
         id: ver
         shell: bash
         run: |
           if git describe --tags --exact-match >/dev/null 2>&1; then
-            TAG=$(git describe --tags --exact-match)
-            echo "version=$TAG" >> $GITHUB_OUTPUT
+            echo "version=$(git describe --tags --exact-match)" >> $GITHUB_OUTPUT
           else
-            VERSION=dev-$(date +'%Y%m%d-%H%M')
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "version=dev-$(date +'%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
           fi
 
+      # ------------------------------------------
+      # Install Haxe 4.3.6
+      # ------------------------------------------
       - name: Install Haxe
         uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.6
 
-      # Linux VLC (required for hxvlc)
+      # ------------------------------------------
+      # Linux VLC (hxvlc requires libvlc)
+      # ------------------------------------------
       - name: Install VLC (Linux)
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           sudo apt update
           sudo apt install -y libvlc-dev libvlccore-dev
 
+      # ------------------------------------------
+      # Install Required Haxelibs
+      # ------------------------------------------
       - name: Install Haxelib Dependencies
         run: |
           haxelib install hxcpp
@@ -52,24 +64,28 @@ jobs:
           haxelib install thx.semver
           haxelib install lime
           haxelib install openfl
+
+          # Base flixel stack
           haxelib install flixel
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flxanimate
+
           haxelib install json2object
+          haxelib install hxvlc
+
+          # Git dependencies
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
-          haxelib install hxvlc
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+
+          # HMM Dependency Manager
           haxelib install hmm
           haxelib run hmm install
 
-      - name: Install Polymod
-        run: haxelib git polymod https://github.com/larsiusprime/polymod.git hscript-rewrite
-
-      # ------------------------ #
-      #        BUILD JOBS        #
-      # ------------------------ #
+      # -----------------------------------------------------
+      # WINDOWS / LINUX / MACOS BUILDS
+      # -----------------------------------------------------
 
       - name: Build Windows
         if: startsWith(matrix.os, 'windows')
@@ -83,14 +99,19 @@ jobs:
         if: startsWith(matrix.os, 'macos')
         run: haxelib run lime build mac -D officialBuild
 
-      # ------------------------ #
-      #     ZIP OUTPUT BUILDS    #
-      # ------------------------ #
-
+      # -----------------------------------------------------
+      # ZIP PACKAGING
+      # -----------------------------------------------------
       - name: Zip Desktop Build
+        shell: bash
         run: |
           mkdir -p build
-          zip -r build/desktop-${{ steps.ver.outputs.version }}-${{ matrix.os }}.zip export/release/*/*
+          if [ -d export/release ]; then
+            zip -r build/desktop-${{ steps.ver.outputs.version }}-${{ matrix.os }}.zip export/release/*/*
+          else
+            echo "ERROR: export/release not found!"
+            exit 1
+          fi
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -99,10 +120,9 @@ jobs:
           path: build/*.zip
 
   # -------------------------------------------------------------
-  #                   AUTOMATIC RELEASE JOB
+  # Automatic Release Job
   # -------------------------------------------------------------
   Release:
-    # Only run when a tag push triggers the workflow
     if: startsWith(github.ref, 'refs/tags/')
     needs: Build-Desktop
     runs-on: ubuntu-latest
