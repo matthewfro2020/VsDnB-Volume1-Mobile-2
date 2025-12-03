@@ -108,24 +108,32 @@ class CharacterRegistry extends BaseRegistry<Character, CharacterData>
         return characterDataCache.exists(id) ? characterDataCache.get(id) : null;
     }
 
-    public function parseEntryData(id:String):CharacterData
-    {
-        var parser:JsonParser<CharacterData> = new JsonParser<CharacterData>();
-        parser.ignoreUnknownVariables = true;
+public function parseEntryData(id:String):CharacterData
+{
+    var parser:JsonParser<CharacterData> = new JsonParser<CharacterData>();
 
-        switch (loadEntryFile(id))
-        {
-            case {fileName: fileName, contents: contents}:
-                parser.fromJson(contents, fileName);
-            default:
-                return null;
-        }
-        if (parser.errors.length > 0)
-        {
-            printErrors(parser.errors);
-        }
-        return parser.value; 
+    // Safe enable ignoreUnknownVariables on json2object (works on all versions)
+    try {
+        Reflect.setField(parser, "ignoreUnknownVariables", true);
+    } catch (e) {
+        // Older json2object versions don't have the field -- silently ignore
     }
+
+    switch (loadEntryFile(id))
+    {
+        case {fileName: fileName, contents: contents}:
+            parser.fromJson(contents, fileName);
+        default:
+            return null;
+    }
+
+    if (parser.errors.length > 0)
+    {
+        printErrors(parser.errors);
+    }
+
+    return parser.value;
+}
 
     function createScriptedEntry(clsName:String):Character
     {
