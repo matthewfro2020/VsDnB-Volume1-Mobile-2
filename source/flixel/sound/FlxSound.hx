@@ -225,7 +225,7 @@ class FlxSound extends FlxBasic
 	// API
 	// ----------------------------------------------------------
 
-	public function loadEmbedded(Snd:Dynamic, Looped:Bool=false, AutoDestroy:Bool=false, ?OnComplete:Void->Void):FlxSound
+	public function loadEmbedded(Snd:Dynamic, Looped:Bool=false, AutoDestroy:Bool=false, ?OnComplete:Void->Void, ?OnLoad:Void->Void):FlxSound
 	{
 		cleanup(true);
 
@@ -236,10 +236,10 @@ class FlxSound extends FlxBasic
 		else if (Std.isOfType(Snd, String))
 			_sound = openfl.utils.Assets.getSound(Snd);
 
-		return init(Looped, AutoDestroy, OnComplete != null);
+		return init(Looped, AutoDestroy, OnComplete != null ? OnComplete : OnLoad);
 	}
 
-	public function loadStream(URL:String, Looped:Bool=false, AutoDestroy:Bool=false, ?OnComplete:Void->Void, ?OnLoad:Void->Void):FlxSound
+	public function loadStream(URL:String, Looped:Bool = false, AutoDestroy:Bool = false, ?OnComplete:Void->Void, ?OnLoad:Void->Void):FlxSound
 	{
 		cleanup(true);
 
