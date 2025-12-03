@@ -21,7 +21,8 @@ jobs:
             echo "version=dev-$(date +'%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
           fi
 
-      - uses: krdlab/setup-haxe@master
+      - name: Install Haxe
+        uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.6
 
@@ -29,7 +30,7 @@ jobs:
         uses: android-actions/setup-android@v3
         with:
           api-level: 33
-          ndk: 21.4.7075529
+          ndk: 25.1.8937393
           cmake: 3.22.1
 
       - name: Install Haxelib Dependencies
@@ -47,11 +48,9 @@ jobs:
           haxelib install json2object
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
-          haxelib install hxvlc
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-
-      - name: Install Polymod
-        run: haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
+          haxelib install hmm
+          haxelib run hmm install
 
       - name: Configure Android
         run: |
@@ -60,16 +59,21 @@ jobs:
           haxelib run lime config JAVA_HOME $JAVA_HOME_17_X64
           haxelib run lime config ANDROID_SETUP true
 
-      - name: Fix hxcpp flags
+      - name: Patch hxcpp flags
         run: |
-          echo '<?xml version="1.0" encoding="utf-8"?><xml><section id="vars"><set name="HXCPP_CPP11" value="1"/><set name="HXCPP_NO_RTTI" value="1"/><set name="HXCPP_CLANG" value="1"/></section></xml>' > ~/.hxcpp_config.xml
+          echo '<?xml version="1.0" encoding="utf-8"?>
+          <xml>
+            <section id="vars">
+              <set name="HXCPP_CPP11" value="1"/>
+            </section>
+          </xml>' > ~/.hxcpp_config.xml
 
       - name: Build APK
         run: |
-          haxelib run lime build android -D officialBuild -DANDROID_ARM7
+          haxelib run lime build android -D officialBuild -DONLY_ARMV7
 
-      - name: Upload
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: android-apk
-          path: export/release/android/bin/**/*.apk
+          path: export/release/android/bin/app/build/outputs/apk/release/*.apk
