@@ -36,31 +36,29 @@ jobs:
           haxelib install openfl
           haxelib install flixel
 
-      # ────────────── BUILD TO GENERATE C++ (this always fails before Xcode) ──────────────
       - name: Generate iOS C++
         run: |
-          # Force HXCPP C++ generation even if it fails
           haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11 || true
 
-      # ────────────── AUTO-PATCH thx.Nil ON THE GENERATED FILES ──────────────
       - name: Patch thx.Nil automatically
         run: |
           echo "=== Running UNIVERSAL thx.Nil PATCHER ==="
           python3 << 'EOF'
-import os, re
+          import os
+          import re
 
-ROOTS = [
-    "./export/ios/obj",
-    "./bin/ios/VsDave/haxe/build",
-    "./bin/ios/VsDave/haxe/build/Release-iphoneos-64"
-]
+          ROOTS = [
+              "./export/ios/obj",
+              "./bin/ios/VsDave/haxe/build",
+              "./bin/ios/VsDave/haxe/build/Release-iphoneos-64"
+          ]
 
-PATCHES = {
-    r"\bNil\b": "ThxNil",
-    r"thx::Nil": "thx::ThxNil",
-}
+          PATCHES = {
+              r"\bNil\b": "ThxNil",
+              r"thx::Nil": "thx::ThxNil",
+          }
 
-patched = 0
+          patched = 0
 for root in ROOTS:
     if not os.path.exists(root):
         continue
@@ -68,19 +66,23 @@ for root in ROOTS:
         for f in files:
             if f.endswith((".h", ".hpp", ".cpp", ".mm")):
                 path = os.path.join(subdir, f)
-                txt = open(path, "r").read()
-                new = txt
-                for a, b in PATCHES.items():
-                    new = re.sub(a, b, new)
-                if new != txt:
-                    open(path, "w").write(new)
-                    patched += 1
+                try:
+                    with open(path, "r", encoding="utf-8") as file:
+                        txt = file.read()
+                    new = txt
+                    for a, b in PATCHES.items():
+                        new = re.sub(a, b, new)
+                    if new != txt:
+                        with open(path, "w", encoding="utf-8") as file:
+                            file.write(new)
+                        patched += 1
+                except Exception as e:
+                    print(f"Warning: Could not process {path}: {e}")
 
 print(f"Patched {patched} file(s).")
 EOF
           echo "=== Patch Completed ==="
 
-      # ────────────── RUN FULL BUILD NOW THAT THE PATCH IS DONE ──────────────
       - name: Build iOS (Final)
         run: |
           haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11
