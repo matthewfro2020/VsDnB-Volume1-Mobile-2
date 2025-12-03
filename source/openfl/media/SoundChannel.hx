@@ -272,8 +272,9 @@ if (__isValid)
 {
     #if lime
     __source.gain = volume;
-    __source.pan = pan;
-    return value;
+    // panning removed in newer Lime versions
+    // __source.pan = pan;  <-- removed
+	return value;
     #end
 }
 		}
