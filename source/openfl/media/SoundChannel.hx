@@ -204,7 +204,7 @@ import lime.media.AudioSource;
     @:noCompletion private function set_endTime(v:Null<Int>):Null<Int> {
         #if lime
         if (__isValid && v != null) {
-            __source.length = v / 1000.0;
+            __source.length = Std.int(v / 1000.0);
         }
         #end
         return v;
@@ -223,7 +223,7 @@ import lime.media.AudioSource;
 
     @:noCompletion private function set_loops(v:Int):Int {
         #if lime
-        if (__isValid) __source.loops = v;
+        if (__isValid) __source.loops = Std.int(v);
         #end
         return v;
     }
