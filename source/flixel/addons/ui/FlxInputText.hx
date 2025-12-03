@@ -756,6 +756,11 @@ class FlxInputText extends FlxText
 					caret.pixels.fillRect(r, caretC); // draw caret
 					// we need to offset caret's drawing position since the caret is now larger than normal
 					caret.offset.x = caret.offset.y = absSize;
+				// Disable unsupported SHADOW_XY border style in this Flixel version.
+				#if false
+				case SHADOW_XY(shadowX, shadowY):
+				#end
+
 			}
 			// Update width/height so caret's dimensions match its pixels
 			caret.width = cw;
