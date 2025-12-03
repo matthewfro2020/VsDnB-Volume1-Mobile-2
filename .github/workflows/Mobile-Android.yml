@@ -40,10 +40,9 @@ jobs:
           haxelib install thx.semver
           haxelib install lime
           haxelib install openfl
-          haxelib install flixel 4.11
-          haxelib install flixel-tools 1.5.1
-          haxelib install flixel-ui 2.6.2
-          haxelib install flixel-addons 3.3.0
+          haxelib install flixel    # <-- UPDATED (was 4.11) now latest 5.x
+          haxelib install flixel-ui
+          haxelib install flixel-addons
           haxelib install flxanimate
           haxelib install json2object
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
