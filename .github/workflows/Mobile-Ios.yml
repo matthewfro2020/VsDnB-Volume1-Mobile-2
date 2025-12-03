@@ -1,4 +1,4 @@
-name: Mobile-Ios
+name: Mobile-iOS
 
 on:
   push:
@@ -14,6 +14,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      # -----------------------------------------------------
+      # Determine version number (tag or dev-YYYYMMDD-HHMM)
+      # -----------------------------------------------------
       - name: Determine Version
         id: ver
         run: |
@@ -23,33 +26,50 @@ jobs:
             echo "version=dev-$(date +'%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
           fi
 
+      # -----------------------------------------------------
+      # Install Haxe 4.3.6
+      # -----------------------------------------------------
       - uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.6
 
+      # -----------------------------------------------------
+      # Install Required Haxelibs
+      # -----------------------------------------------------
       - name: Install Haxelib Dependencies
         run: |
           haxelib install hxcpp
-          haxelib install thx.core
-          haxelib install thx.semver
           haxelib install lime
           haxelib install openfl
-          haxelib install flixel 4.11
-          haxelib install flixel-tools 1.5.1
+
+          # Exact Flixel stack (D&B compatible)
+          haxelib install flixel 4.11.0
           haxelib install flixel-ui 2.6.2
           haxelib install flixel-addons 3.3.0
+          haxelib install flixel-tools 1.5.1
+
+          # Extra Dependencies
           haxelib install flxanimate
           haxelib install json2object
+          haxelib install hxvlc
+
+          # Git dependencies
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
-          haxelib install hxvlc
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 
-      - name: Generate iOS C++
+      # -----------------------------------------------------
+      # PREBUILD to generate ObjC++ before patching thx.Nil
+      # -----------------------------------------------------
+      - name: Generate iOS C++ (Prebuild + ObjC++)
         run: |
           haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11 || true
 
+      # -----------------------------------------------------
+      # PATCH thx.Nil → ThxNil (fixes Objective-C++ conflict)
+      # -----------------------------------------------------
       - name: Patch thx.Nil automatically
+        shell: bash
         run: |
           echo "=== Running UNIVERSAL thx.Nil PATCHER ==="
 
@@ -66,26 +86,38 @@ jobs:
               continue
             fi
 
-            # Find all C/C++/ObjC++ files and patch Nil → ThxNil
+            echo "Scanning $root"
+
             while IFS= read -r -d '' file; do
               perl -pi -e 's/\bNil\b/ThxNil/g; s/thx::Nil/thx::ThxNil/g' "$file" && patched=$((patched+1))
             done < <(find "$root" -type f \( -name "*.h" -o -name "*.hpp" -o -name "*.cpp" -o -name "*.mm" \) -print0)
           done
 
-          echo "Patched ${patched} file(s)."
+          echo "Patched ${patched} Objective-C++ files."
           echo "=== Patch Completed ==="
 
+      # -----------------------------------------------------
+      # FINAL iOS BUILD (REAL BUILD)
+      # -----------------------------------------------------
       - name: Build iOS (Final)
         run: |
           haxelib run lime build ios -nosign -DofficialBuild -DMOBILE_BUILD -D HXCPP_CPP11
 
+      # -----------------------------------------------------
+      # Package to IPA
+      # -----------------------------------------------------
       - name: Package IPA
         run: |
           cd export/release/ios/build/*-iphoneos
           mkdir Payload
           mv *.app Payload/
-          zip -r ~/ios-${{ steps.ver.outputs.version }}.ipa Payload
+          cd Payload
+          zip -r ios-${{ steps.ver.outputs.version }}.ipa Payload
+          mv ios-${{ steps.ver.outputs.version }}.ipa $HOME/
 
+      # -----------------------------------------------------
+      # Upload IPA
+      # -----------------------------------------------------
       - uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
