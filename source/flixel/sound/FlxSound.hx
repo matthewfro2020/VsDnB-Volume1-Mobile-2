@@ -24,6 +24,8 @@ import lime.media.AudioSource;
  */
 class FlxSound extends FlxBasic
 {
+    public var playing(get, never):Bool;
+
 	/**
 	 * The X/Y world-space location of the sound
 	 */
