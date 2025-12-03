@@ -2,7 +2,7 @@ package flixel.system.frontEnds;
 
 #if FLX_SOUND_SYSTEM
 import flixel.FlxG;
-import flixel.group.FlxGroup;
+import flixel.group.FlxTypedGroup;
 import flixel.input.keyboard.FlxKey;
 import flixel.math.FlxMath;
 import flixel.sound.FlxSound;
@@ -10,504 +10,196 @@ import flixel.sound.FlxSoundGroup;
 import flixel.system.FlxAssets;
 import flixel.system.ui.FlxSoundTray;
 import flixel.text.FlxInputText;
-import flixel.util.FlxSignal;
+import flixel.util.FlxTypedSignal;
 import openfl.media.Sound;
 
 /**
- * Accessed via `FlxG.sound`.
+ * Accessed via FlxG.sound
  */
 @:allow(flixel.FlxG)
 class SoundFrontEnd
 {
-	/**
-	 * A handy container for a background music object.
-	 */
-	public var music:FlxSound;
+    public var music:FlxSound;
+    public var muted:Bool = false;
 
-	/**
-	 * Whether or not the game sounds are muted.
-	 */
-	public var muted:Bool = false;
+    @:deprecated("Use onVolumeChange instead")
+    public var volumeHandler:Float->Void;
 
-	/**
-	 * Set this hook to get a callback whenever the volume changes.
-	 * Function should take the form myVolumeHandler(volume:Float).
-	 */
-	@:deprecated("volumeHandler is deprecated, use onVolumeChange, instead")
-	public var volumeHandler:Float->Void;
+    public var onVolumeChange(default, null):FlxTypedSignal<Float->Void> =
+        new FlxTypedSignal<Float->Void>();
 
-	/**
-	 * A signal that gets dispatched whenever the volume changes.
-	 */
-	public var onVolumeChange(default, null):FlxTypedSignal<Float->Void> = new FlxTypedSignal<Float->Void>();
+    #if FLX_KEYBOARD
+    public var volumeUpKeys:Array<FlxKey> = [PLUS, NUMPADPLUS];
+    public var volumeDownKeys:Array<FlxKey> = [MINUS, NUMPADMINUS];
+    public var muteKeys:Array<FlxKey> = [ZERO, NUMPADZERO];
+    #end
 
-	#if FLX_KEYBOARD
-	/**
-	 * The key codes used to increase volume (see FlxG.keys for the keys available).
-	 * Default keys: + (and numpad +). Set to null to deactivate.
-	 */
-	public var volumeUpKeys:Array<FlxKey> = [PLUS, NUMPADPLUS];
+    public var soundTrayEnabled:Bool = true;
 
-	/**
-	 * The keys to decrease volume (see FlxG.keys for the keys available).
-	 * Default keys: - (and numpad -). Set to null to deactivate.
-	 */
-	public var volumeDownKeys:Array<FlxKey> = [MINUS, NUMPADMINUS];
+    #if FLX_SOUND_TRAY
+    public var soundTray(get, never):FlxSoundTray;
+    inline function get_soundTray() return FlxG.game.soundTray;
+    #end
 
-	/**
-	 * The keys used to mute / unmute the game (see FlxG.keys for the keys available).
-	 * Default keys: 0 (and numpad 0). Set to null to deactivate.
-	 */
-	public var muteKeys:Array<FlxKey> = [ZERO, NUMPADZERO];
-	#end
+    public var defaultMusicGroup:FlxSoundGroup = new FlxSoundGroup();
+    public var defaultSoundGroup:FlxSoundGroup = new FlxSoundGroup();
 
-	/**
-	 * Whether or not the soundTray should be shown when any of the
-	 * volumeUp-, volumeDown- or muteKeys is pressed.
-	 */
-	public var soundTrayEnabled:Bool = true;
-	
-	#if FLX_SOUND_TRAY
-	/**
-	 * The sound tray display container.
-	 * A getter for `FlxG.game.soundTray`.
-	 */
-	public var soundTray(get, never):FlxSoundTray;
-	
-	inline function get_soundTray()
-	{
-		return FlxG.game.soundTray;
-	}
-	#end
+    public var list(default, null):FlxTypedGroup<FlxSound> =
+        new FlxTypedGroup<FlxSound>();
 
-	/**
-	 * The group sounds played via playMusic() are added to unless specified otherwise.
-	 */
-	public var defaultMusicGroup:FlxSoundGroup = new FlxSoundGroup();
+    public var volume(default, set):Float = 1;
 
-	/**
-	 * The group sounds in load() / play() / stream() are added to unless specified otherwise.
-	 */
-	public var defaultSoundGroup:FlxSoundGroup = new FlxSoundGroup();
+    // -------------------------------------------------------
+    // MUSIC
+    // -------------------------------------------------------
 
-	/**
-	 * A list of all the sounds being played in the game.
-	 */
-	public var list(default, null):FlxTypedGroup<FlxSound> = new FlxTypedGroup<FlxSound>();
+    public function playMusic(asset:Dynamic, vol:Float = 1, loop = true, ?group:FlxSoundGroup):Void
+    {
+        if (group == null) group = defaultMusicGroup;
 
-	/**
-	 * Set this to a number between 0 and 1 to change the global volume.
-	 */
-	public var volume(default, set):Float = 1;
+        if (music == null)
+            music = new FlxSound();
+        else if (music.playing)
+            music.stop();
 
-	/**
-	 * Set up and play a looping background soundtrack.
-	 *
-	 * **Note:** If the `FLX_DEFAULT_SOUND_EXT` flag is enabled, you may omit the file extension
-	 *
-	 * @param   embeddedMusic  The sound file you want to loop in the background.
-	 * @param   volume         How loud the sound should be, from 0 to 1.
-	 * @param   looped         Whether to loop this music.
-	 * @param   group          The group to add this sound to.
-	 */
-	public function playMusic(embeddedMusic:FlxSoundAsset, volume = 1.0, looped = true, ?group:FlxSoundGroup):Void
-	{
-		if (group == null)
-			group = defaultMusicGroup;
-		
-		if (music == null)
-		{
-			music = new FlxSound();
-		}
-		else if (music.active)
-		{
-			music.stop();
-		}
-		
-		music.loadEmbedded(embeddedMusic, looped);
-		music.volume = volume;
-		music.persist = true;
-		group.add(music);
-		music.play();
-	}
+        music.loadEmbedded(asset, loop);
+        music.volume = vol;
+        music.persist = true;
+        group.add(music);
+        music.play();
+    }
 
-	/**
-	 * Creates a new FlxSound object.
-	 *
-	 * **Note:** If the `FLX_DEFAULT_SOUND_EXT` flag is enabled, you may omit the file extension
-	 *
-	 * @param   embeddedSound   The embedded sound resource you want to play.  To stream, use the optional URL parameter instead.
-	 * @param   volume          How loud to play it (0 to 1).
-	 * @param   looped          Whether to loop this sound.
-	 * @param   group           The group to add this sound to.
-	 * @param   autoDestroy     Whether to destroy this sound when it finishes playing.
-	 *                          Leave this value set to "false" if you want to re-use this FlxSound instance.
-	 * @param   autoPlay        Whether to play the sound.
-	 * @param   url             Load a sound from an external web resource instead.  Only used if EmbeddedSound = null.
-	 * @param   onComplete      Called when the sound finished playing.
-	 * @param   onLoad          Called when the sound finished loading.  Called immediately for succesfully loaded embedded sounds.
-	 * @return  A FlxSound object.
-	 */
-	public function load(?embeddedSound:FlxSoundAsset, volume = 1.0, looped = false, ?group:FlxSoundGroup, autoDestroy = false, autoPlay = false, ?url:String,
-			?onComplete:Void->Void, ?onLoad:Void->Void):FlxSound
-	{
-		if ((embeddedSound == null) && (url == null))
-		{
-			FlxG.log.warn("FlxG.sound.load() requires either\nan embedded sound or a URL to work.");
-			return null;
-		}
+    // -------------------------------------------------------
+    // SOUND PLAYBACK
+    // -------------------------------------------------------
 
-		var sound:FlxSound = list.recycle(FlxSound);
+    public function load(?asset:Dynamic, vol:Float = 1, loop = false, ?group:FlxSoundGroup,
+        autoDestroy = false, autoPlay = false, ?url:String,
+        ?onComplete:Void->Void, ?onLoad:Void->Void):FlxSound
+    {
+        var s:FlxSound = list.recycle(FlxSound);
 
-		if (embeddedSound != null)
-		{
-			sound.loadEmbedded(embeddedSound, looped, autoDestroy);
-			loadHelper(sound, volume, group, autoPlay);
-			// Call OnlLoad() because the sound already loaded
-			if (onLoad != null)
-				onLoad();
-		}
-		else
-		{
-			var loadCallback = onLoad;
-			if (autoPlay)
-			{
-				// Auto play the sound when it's done loading
-				loadCallback = function()
-				{
-					sound.play();
+        if (asset != null)
+        {
+            s.loadEmbedded(asset, loop, autoDestroy, onComplete);
+            loadHelper(s, vol, group, autoPlay);
+            if (onLoad != null) onLoad();
+        }
+        else if (url != null)
+        {
+            s.loadStream(url, loop, autoDestroy, onComplete);
+            loadHelper(s, vol, group);
+        }
 
-					if (onLoad != null)
-						onLoad();
-				}
-			}
+        return s;
+    }
 
-			sound.loadStream(url, looped, autoDestroy, onComplete, loadCallback);
-			loadHelper(sound, volume, group);
-		}
+    function loadHelper(s:FlxSound, vol:Float, group:FlxSoundGroup, autoPlay = false):FlxSound
+    {
+        if (group == null) group = defaultSoundGroup;
 
-		return sound;
-	}
+        s.volume = vol;
+        group.add(s);
 
-	function loadHelper(sound:FlxSound, volume:Float, group:FlxSoundGroup, autoPlay = false):FlxSound
-	{
-		if (group == null)
-			group = defaultSoundGroup;
-		
-		sound.volume = volume;
-		group.add(sound);
-		
-		if (autoPlay)
-			sound.play();
-		
-		return sound;
-	}
+        if (autoPlay) s.play();
+        return s;
+    }
 
-	/**
-	 * Method for sound caching (especially useful on mobile targets). The game may freeze
-	 * for some time the first time you try to play a sound if you don't use this method.
-	 *
-	 * @param   embeddedSound  Name of sound assets specified in your .xml project file
-	 * @return  Cached Sound object
-	 */
-	public inline function cache(embeddedSound:String):Sound
-	{
-		// load the sound into the OpenFL assets cache
-		if (FlxG.assets.exists(embeddedSound, SOUND))
-			return FlxG.assets.getSoundUnsafe(embeddedSound, true);
-		FlxG.log.error('Could not find a Sound asset with an ID of \'$embeddedSound\'.');
-		return null;
-	}
+    public inline function play(asset:Dynamic, vol = 1.0, loop = false,
+        ?group:FlxSoundGroup, autoDestroy = true, ?onComplete:Void->Void):FlxSound
+    {
+        var s = list.recycle(FlxSound).loadEmbedded(asset, loop, autoDestroy, onComplete);
+        return loadHelper(s, vol, group, true);
+    }
 
-	/**
-	 * Calls FlxG.sound.cache() on all sounds that are embedded.
-	 * WARNING: can lead to high memory usage.
-	 */
-	public function cacheAll():Void
-	{
-		for (id in FlxG.assets.list(SOUND))
-		{
-			cache(id);
-		}
-	}
+    // -------------------------------------------------------
+    // PAUSE / RESUME
+    // -------------------------------------------------------
 
-	/**
-	 * Plays a sound from an embedded sound. Tries to recycle a cached sound first.
-	 *
-	 * **Note:** If the `FLX_DEFAULT_SOUND_EXT` flag is enabled, you may omit the file extension
-	 *
-	 * @param   embeddedSound  The embedded sound resource you want to play.
-	 * @param   volume         How loud to play it (0 to 1).
-	 * @param   looped         Whether to loop this sound.
-	 * @param   group          The group to add this sound to.
-	 * @param   autoDestroy    Whether to destroy this sound when it finishes playing.
-	 *                         Leave this value set to "false" if you want to re-use this FlxSound instance.
-	 * @param   onComplete     Called when the sound finished playing
-	 * @return  A FlxSound object.
-	 */
-	public function play(embeddedSound:FlxSoundAsset, volume = 1.0, looped = false, ?group:FlxSoundGroup, autoDestroy = true, ?onComplete:Void->Void):FlxSound
-	{
-		if ((embeddedSound is String))
-		{
-			embeddedSound = cache(embeddedSound);
-		}
-		var sound = list.recycle(FlxSound).loadEmbedded(embeddedSound, looped, autoDestroy);
-		return loadHelper(sound, volume, group, true);
-	}
+    public function pause():Void
+    {
+        if (music != null && music.playing) music.pause();
 
-	/**
-	 * Plays a sound from a URL. Tries to recycle a cached sound first.
-	 * NOTE: Just calls FlxG.sound.load() with AutoPlay == true.
-	 *
-	 * @param   url          Load a sound from an external web resource instead.
-	 * @param   volume       How loud to play it (0 to 1).
-	 * @param   looped       Whether to loop this sound.
-	 * @param   group        The group to add this sound to.
-	 * @param   autoDestroy  Whether to destroy this sound when it finishes playing.
-	 *                       Leave this value set to "false" if you want to re-use this FlxSound instance.
-	 * @param   onComplete   Called when the sound finished playing
-	 * @param   onLoad       Called when the sound finished loading.
-	 * @return  A FlxSound object.
-	 */
-	public function stream(url:String, volume = 1.0, looped = false, ?group:FlxSoundGroup, autoDestroy = true, ?onComplete:Void->Void,
-			?onLoad:Void->Void):FlxSound
-	{
-		return load(null, volume, looped, group, autoDestroy, true, url, onComplete, onLoad);
-	}
+        for (s in list.members)
+            if (s != null && s.playing)
+                s.pause();
+    }
 
-	/**
-	 * Pause all sounds currently playing.
-	 */
-	public function pause():Void
-	{
-		if (music != null && music.exists && music.active)
-		{
-			music.pause();
-		}
+    public function resume():Void
+    {
+        if (music != null) music.resume();
 
-		for (sound in list.members)
-		{
-			if (sound != null && sound.exists && sound.active)
-			{
-				sound.pause();
-			}
-		}
-	}
+        for (s in list.members)
+            if (s != null)
+                s.resume();
+    }
 
-	/**
-	 * Resume playing existing sounds.
-	 */
-	public function resume():Void
-	{
-		if (music != null && music.exists)
-		{
-			music.resume();
-		}
+    // -------------------------------------------------------
+    // FOCUS EVENTS
+    // -------------------------------------------------------
 
-		for (sound in list.members)
-		{
-			if (sound != null && sound.exists)
-			{
-				sound.resume();
-			}
-		}
-	}
+    @:allow(flixel.FlxGame)
+    function onFocusLost():Void
+    {
+        if (music != null) music.onFocusLost();
 
-	/**
-	 * Called by FlxGame on state changes to stop and destroy sounds.
-	 *
-	 * @param   forceDestroy  Kill sounds even if persist is true.
-	 */
-	public function destroy(forceDestroy = false):Void
-	{
-		if (music != null && (forceDestroy || !music.persist))
-		{
-			music.destroy();
-			music = null;
-		}
+        for (s in list.members)
+            if (s != null) s.onFocusLost();
+    }
 
-		for (sound in list.members)
-		{
-			if (sound != null && (forceDestroy || !sound.persist))
-			{
-				sound.destroy();
-			}
-		}
-	}
+    @:allow(flixel.FlxGame)
+    function onFocus():Void
+    {
+        if (music != null) music.onFocus();
 
-	/**
-	 * Toggles muted, also activating the sound tray.
-	 */
-	@:haxe.warning("-WDeprecated")
-	public function toggleMuted():Void
-	{
-		muted = !muted;
+        for (s in list.members)
+            if (s != null) s.onFocus();
+    }
 
-		if (volumeHandler != null)
-		{
-			volumeHandler(muted ? 0 : volume);
-		}
+    // -------------------------------------------------------
+    // VOLUME
+    // -------------------------------------------------------
 
-		onVolumeChange.dispatch(muted ? 0 : volume);
+    public function changeVolume(a:Float):Void
+    {
+        muted = false;
+        volume += a;
+        showSoundTray(a > 0);
+    }
 
-		showSoundTray(true);
-	}
+    public function toggleMuted():Void
+    {
+        muted = !muted;
 
-	/**
-	 * Changes the volume by a certain amount, also activating the sound tray.
-	 */
-	public function changeVolume(Amount:Float):Void
-	{
-		muted = false;
-		volume += Amount;
-		showSoundTray(Amount > 0);
-	}
+        if (volumeHandler != null)
+            volumeHandler(muted ? 0 : volume);
 
-	/**
-	 * Shows the sound tray if it is enabled.
-	 * @param up Whether or not the volume is increasing.
-	 */
-	public function showSoundTray(up:Bool = false):Void
-	{
-		#if FLX_SOUND_TRAY
-		if (FlxG.game.soundTray != null && soundTrayEnabled)
-		{
-			if (up)
-				FlxG.game.soundTray.showIncrement();
-			else
-				FlxG.game.soundTray.showDecrement();
-		}
-		#end
-	}
-	
-	/**
-	 * Takes the volume scale used by Flixel fields and gives the final transformed volume that is
-	 * actually used to play the sound. To reverse this operation, use `reverseSoundCurve`. This
-	 * field is `dynamic` and can be overwritten. 
-	 */
-	public dynamic function applySoundCurve(volume:Float)
-	{
-		return volume;
-		
-		// Example of linear to logarithmic sound curve:
-		// final clampedVolume = Math.max(0, Math.min(1, volume));
-		// return Math.exp(Math.log(0.001) * (1 - clampedVolume));
-	}
-	
-	/**
-	 * Takes a transformed volume and returns the corresponding volume scale used by Flixel fields.
-	 * Used to reverse the operation of `applySoundCurve`. This field is `dynamic` and can be
-	 * set to a custom function.
-	 */
-	public dynamic function reverseSoundCurve(curvedVolume:Float)
-	{
-		return curvedVolume;
-		
-		// Example of logarithmic to linear sound curve:
-		// final clampedVolume = Math.max(minValue, Math.min(1, x));
-		// return 1 - (Math.log(clampedVolume) / Math.log(0.001));
-	}
-	
-	function new()
-	{
-		#if FLX_SAVE
-		loadSavedPrefs();
-		#end
-	}
+        onVolumeChange.dispatch(muted ? 0 : volume);
 
-	/**
-	 * Called by the game loop to make sure the sounds get updated each frame.
-	 */
-	@:allow(flixel.FlxGame)
-	function update(elapsed:Float):Void
-	{
-		if (music != null && music.active)
-			music.update(elapsed);
+        showSoundTray(true);
+    }
 
-		if (list != null && list.active)
-			list.update(elapsed);
+    public function showSoundTray(up:Bool = false):Void
+    {
+        #if FLX_SOUND_TRAY
+        if (soundTrayEnabled && FlxG.game.soundTray != null)
+        {
+            if (up) soundTray.showIncrement();
+            else soundTray.showDecrement();
+        }
+        #end
+    }
 
-		#if FLX_KEYBOARD
-		if (!FlxInputText.globalManager.isTyping)
-		{
-			if (FlxG.keys.anyJustReleased(muteKeys))
-				toggleMuted();
-			else if (FlxG.keys.anyJustReleased(volumeUpKeys))
-				changeVolume(0.1);
-			else if (FlxG.keys.anyJustReleased(volumeDownKeys))
-				changeVolume(-0.1);
-		}
-		#end
-	}
+    function set_volume(v:Float):Float
+    {
+        volume = FlxMath.bound(v, 0, 1);
 
-	@:allow(flixel.FlxGame)
-	function onFocusLost():Void
-	{
-		if (music != null)
-		{
-			music.onFocusLost();
-		}
+        if (volumeHandler != null)
+            volumeHandler(muted ? 0 : volume);
 
-		for (sound in list.members)
-		{
-			if (sound != null)
-			{
-				sound.onFocusLost();
-			}
-		}
-	}
+        onVolumeChange.dispatch(muted ? 0 : volume);
 
-	@:allow(flixel.FlxGame)
-	function onFocus():Void
-	{
-		if (music != null)
-		{
-			music.onFocus();
-		}
-
-		for (sound in list.members)
-		{
-			if (sound != null)
-			{
-				sound.onFocus();
-			}
-		}
-	}
-
-	#if FLX_SAVE
-	/**
-	 * Loads saved sound preferences if they exist.
-	 */
-	function loadSavedPrefs():Void
-	{
-		if (!FlxG.save.isBound)
-			return;
-
-		if (FlxG.save.data.volume != null)
-		{
-			volume = FlxG.save.data.volume;
-		}
-
-		if (FlxG.save.data.mute != null)
-		{
-			muted = FlxG.save.data.mute;
-		}
-	}
-	#end
-
-	@:haxe.warning("-WDeprecated")
-	function set_volume(Volume:Float):Float
-	{
-		volume = FlxMath.bound(Volume, 0, 1);
-
-		if (volumeHandler != null)
-		{
-			volumeHandler(muted ? 0 : volume);
-		}
-
-		onVolumeChange.dispatch(muted ? 0 : volume);
-
-		return volume;
-	}
+        return volume;
+    }
 }
 #end
