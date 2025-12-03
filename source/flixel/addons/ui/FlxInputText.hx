@@ -758,7 +758,7 @@ class FlxInputText extends FlxText
 					caret.offset.x = caret.offset.y = absSize;
 				// Disable unsupported SHADOW_XY border style in this Flixel version.
 				#if false
-				case SHADOW_XY(shadowX, shadowY):
+				case SHADOW_XY, SHADOW_NONE:
 				#end
 
 			}
