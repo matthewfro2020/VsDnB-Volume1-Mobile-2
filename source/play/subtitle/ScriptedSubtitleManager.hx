@@ -1,2 +1,6 @@
-package play.subtitle; @:hscriptClass
-class ScriptedSubtitleManager extends play.subtitle.SubtitleManager {}
+package
+; play.subtitle
+; @:hscriptClass
+class ScriptedSubtitleManager extends play.subtitle.SubtitleManager
+{
+}

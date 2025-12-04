@@ -1,2 +1,6 @@
-package graphics; @:hscriptClass
-class ScriptedFlxAtlasSprite extends graphics.FlxAtlasSprite {}
+package
+; graphics
+; @:hscriptClass
+class ScriptedFlxAtlasSprite extends graphics.FlxAtlasSprite
+{
+}

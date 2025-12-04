@@ -1,2 +1,6 @@
-package play.dialogue; @:hscriptClass
-class ScriptedDialogue extends play.dialogue.Dialogue {}
+package
+; play.dialogue
+; @:hscriptClass
+class ScriptedDialogue extends play.dialogue.Dialogue
+{
+}

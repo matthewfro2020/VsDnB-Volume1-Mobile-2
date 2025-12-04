@@ -1,2 +1,6 @@
-package play.character; @:hscriptClass
-class ScriptedCharacter extends play.character.Character {}
+package
+; play.character
+; @:hscriptClass
+class ScriptedCharacter extends play.character.Character
+{
+}

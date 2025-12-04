@@ -1,2 +1,6 @@
-package modding.base; @:hscriptClass
-class ScriptedFlxSubState extends flixel.FlxSubState {}
+package
+; modding.base
+; @:hscriptClass
+class ScriptedFlxSubState extends flixel.FlxSubState
+{
+}

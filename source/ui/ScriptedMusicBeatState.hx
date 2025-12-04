@@ -1,2 +1,6 @@
-package ui; @:hscriptClass
-class ScriptedMusicBeatState extends ui.MusicBeatState {}
+package
+; ui
+; @:hscriptClass
+class ScriptedMusicBeatState extends ui.MusicBeatState
+{
+}
