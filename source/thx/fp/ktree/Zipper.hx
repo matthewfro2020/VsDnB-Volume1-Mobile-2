@@ -1,14 +1,25 @@
 package
+;
 ; thx.fp.ktree
 ; using thx.Iterables;
 ;
+;
+;
 ; using thx.Tuple;
+;
+;
 ;
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import thx.fp.List;
 ;
+;
+;
 ; import thx.fp.KTree;
+;
+;
 ;
 ; /** Holds a path from the root to allow Tree navigation and immutable editing. of the form [root,[down,down],current]
 */ @:forward abstract Zipper<T>(List<KTree<T>>) from List<KTree<T>>

@@ -1,16 +1,29 @@
 package
+;
 ; play.song
 ; import scripting.IScriptedClass.IDialogueScriptedClass;
 ;
+;
+;
 ; import flixel.FlxBasic;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import play.song.SongModuleHandler;
+;
+;
 ;
 ; import scripting.events.ScriptEvent;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
+;
+;
 ;
 ; /** * A module that can be attached to a song that runs the given scripted functions if the player's on a specific song/variation. * * Exists to help keep scripted functions, events, and logic separate with songs with multiple variations. * This can also be used in-case you want your scripted functions to be ran inside a module instead of the song script itself. * * Extend `SongModule`, and provide the given song and variation id in the constructor to run this module.
 */ class SongModule implements IPlayStateScriptedClass implements IDialogueScriptedClass implements IDialogueScriptedClass

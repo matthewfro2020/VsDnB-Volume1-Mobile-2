@@ -1,15 +1,26 @@
 package
+;
 ; hxvlc.openfl.textures
 ; import lime.utils.UInt8Array;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; import openfl.display3D.Context3D;
 ;
+;
+;
 ; import openfl.display3D.textures.TextureBase;
+;
+;
 ;
 ; #if HXVLC_ENABLE_EXPERIMENTAL_PBO
 import lime.graphics.opengl.GLBuffer;
+;
+;
 ;
 ; #end
 /** * This

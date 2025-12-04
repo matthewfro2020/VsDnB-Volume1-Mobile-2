@@ -1,18 +1,33 @@
 package
+;
 ; thx
 ; import haxe.ds.IntMap;
 ;
+;
+;
 ; import haxe.ds.StringMap;
+;
+;
 ;
 ; import haxe.ds.EnumValueMap;
 ;
+;
+;
 ; import haxe.ds.ObjectMap;
+;
+;
 ;
 ; using thx.Arrays;
 ;
+;
+;
 ; import thx.Objects;
 ;
+;
+;
 ; import thx.Tuple;
+;
+;
 ;
 ; /** `Dynamics` provides additional extension methods on any type.
 *
@@ -87,7 +102,8 @@ class var fields = Type.getInstanceFields(Type.getClass(a))
 ; } /** Clone the object. Null values, strings, dates, numbers, enums and functions are immutable so will be returned as is. Anonymous objects will be created and each field cloned recursively. Arrays will be recreated and each object cloned recursively. Class instances will either be cloned, or the reference copied, depending on the value of `cloneInstances`. @param v The object which will be cloned. @param cloneInstances If true,
 class instances will be cloned
 using `Type.createEmptyInstance` and `Reflect.setField`. If false,;
-class instances will be re-used, not cloned. Default is false. *
+;
+; class instances will be re-used, not cloned. Default is false. *
 */ public static function clone(v:Dynamic, ?cloneInstances = false):Dynamic
 ; { switch (Type.typeof(v))
 { case TNull: return null

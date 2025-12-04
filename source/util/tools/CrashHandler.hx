@@ -1,18 +1,33 @@
 package
+;
 ; util.tools
 ; import sys.io.File;
 ;
+;
+;
 ; import lime.app.Application;
+;
+;
 ;
 ; import haxe.Exception;
 ;
+;
+;
 ; import haxe.CallStack;
+;
+;
 ;
 ; import openfl.Lib;
 ;
+;
+;
 ; import openfl.events.UncaughtErrorEvent;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; /** * A core handler that's used whenever the program crashes. * This overrides the default crasher to give more debugging information related to the crash.
 */ class CrashHandler
@@ -35,6 +50,8 @@ package
 ; var errorMessage:String = e.error
 ; var callStackInfo:Array<String> = generateCallstackInfo()
 ; messageToDisplay += "A Fatal Error has occured causing the game to crash.\n\n";
+;
+;
 ;
 ; messageToDisplay += 'Error Message: $
 { errorMessage

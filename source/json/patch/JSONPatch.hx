@@ -1,14 +1,25 @@
 package
+;
 ; json.patch
 ; import json.pointer.JSONPointer;
 ;
+;
+;
 ; import json.JSONData;
+;
+;
 ;
 ; import json.util.TypeUtil;
 ;
+;
+;
 ; import json.path.JSONPath;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; class JSONPatch
 { /** * For the given JSON data, apply all the provided JSONPatch operations. * @param data A JSON data object. You can pass `Dynamic` or `Array<Dynamic>` here. * @param patch An array of JSONPatch operations to perform. * @see https:

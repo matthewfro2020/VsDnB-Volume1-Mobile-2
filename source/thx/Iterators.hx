@@ -1,13 +1,22 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import thx.Functions.Functions in F;
+;
+;
 ;
 ; import thx.Tuple;
 ;
+;
+;
 ; #if macro
 import haxe.macro.Expr;
+;
+;
 ;
 ; #end
 /** Helper

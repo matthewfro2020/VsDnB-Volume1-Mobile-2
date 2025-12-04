@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; import haxe.PosInfos;
 ;
+;
+;
 ; import haxe.io.Bytes;
+;
+;
 ;
 ; /** This
 class contains only static members used to perform assertions. Its use is straight forward: ```haxe Assert.equals(1, 0)

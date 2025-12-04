@@ -1,20 +1,37 @@
 package
+;
 ; play.ui
 ; import play.save.Preferences;
 ;
+;
+;
 ; import backend.Conductor;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.util.typeLimit.OneOfTwo;
 ;
+;
+;
 ; import util.tools.Preloader;
+;
+;
 ;
 ; typedef RatingsType =
 { /** * The asset directory this type is in.

@@ -1,28 +1,53 @@
 package
+;
 ; import audio.GameSoundTray;
+;
+;
 ;
 ; import backend.debug.FPSDisplay;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxGame;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import openfl.Lib;
 ;
+;
+;
 ; import openfl.events.Event;
+;
+;
 ;
 ; import openfl.display.Sprite;
 ;
+;
+;
 ; import openfl.text.TextFormat;
+;
+;
 ;
 ; import modding.PolymodManager;
 ;
+;
+;
 ; import ui.intro.InitState;
+;
+;
 ;
 ; #if desktop
 import api.ALSoftConfig;
+;
+;
 ;
 ; // Longest yeah boi ever
 #end

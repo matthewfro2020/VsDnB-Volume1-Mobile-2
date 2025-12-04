@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import haxe.PosInfos;
+;
+;
 ;
 ; class Effects
 { public static var logger:Dynamic->PosInfos->Void = haxe.Log.trace

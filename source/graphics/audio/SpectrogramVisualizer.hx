@@ -1,16 +1,29 @@
 package
+;
 ; graphics.audio
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.sound.FlxSound;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import flixel.util.FlxGradient;
 ;
+;
+;
 ; import openfl.display.BlendMode;
+;
+;
 ;
 ; class SpectralAnalyzerLite
 { public var minFreq:Float = 0

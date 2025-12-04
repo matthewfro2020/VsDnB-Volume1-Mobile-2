@@ -1,14 +1,25 @@
 package
+;
 ; thx.macro
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; import haxe.macro.Type;
 ;
+;
+;
 ; import haxe.macro.TypeTools;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; class Objects
 { static function overwriteFieldsInType(fields:Array<Field>, type:Array<Field>) fields.each(function(field)

@@ -1,4 +1,5 @@
 package
+;
 ; scripting.events
 ; enum abstract ScriptEventType(String) from String to String
 { // GLOBAL

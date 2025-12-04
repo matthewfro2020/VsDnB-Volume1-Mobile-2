@@ -1,8 +1,13 @@
 package
+;
 ; graphics.video
 ; import flixel.FlxG;
 ;
+;
+;
 ; import hxvlc.flixel.FlxVideo;
+;
+;
 ;
 ; /** * Handler for managing loading, and playing videos.
 */ class VideoManager

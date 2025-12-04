@@ -1,30 +1,57 @@
 package
+;
 ; thx.fp
 ; import Map;
 ;
+;
+;
 ; import thx.fp.ktree.Zipper;
+;
+;
 ;
 ; using thx.Options;
 ;
+;
+;
 ; using thx.Eithers;
+;
+;
 ;
 ; import thx.Either;
 ;
+;
+;
 ; import thx.Assert;
+;
+;
 ;
 ; import haxe.ds.Option;
 ;
+;
+;
 ; using thx.Tuple;
+;
+;
 ;
 ; using thx.Iterables;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; import thx.fp.List;
 ;
+;
+;
 ; import thx.Arrays;
 ;
+;
+;
 ; using Lambda;
+;
+;
 ;
 ; private
 typedef GeneratorResult<T> = Tuple2<Option<T>, Generator<T>>

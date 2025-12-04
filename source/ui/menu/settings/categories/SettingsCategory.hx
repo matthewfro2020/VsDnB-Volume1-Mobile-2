@@ -1,10 +1,17 @@
 package
+;
 ; ui.menu.settings.categories
 ; import controls.PlayerSettings;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import ui.menu.settings.SettingsMenu.SettingsOption;
+;
+;
 ;
 ; /** * A list containers for the available options in the settings menu.
 */ class SettingsCategory extends FlxSpriteGroup

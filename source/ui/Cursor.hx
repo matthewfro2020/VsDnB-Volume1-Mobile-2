@@ -1,14 +1,25 @@
 package
+;
 ; ui
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.graphics.FlxGraphic;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; typedef CursorParams =
 { var graphic:FlxGraphicAsset

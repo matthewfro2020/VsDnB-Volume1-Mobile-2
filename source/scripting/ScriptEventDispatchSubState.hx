@@ -1,12 +1,21 @@
 package
+;
 ; scripting
 ; import flixel.FlxSubState;
 ;
+;
+;
 ; import flixel.addons.ui.FlxUISubState;
+;
+;
 ;
 ; import scripting.IScriptedClass.IEventDispatcher;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; /** * An `FlxUISubState` state that's able to dispatch script events to script classes. * * Extend this to be able to be able to dispatch events to scripts via states.
 */ class ScriptEventDispatchSubState extends FlxUISubState implements IEventDispatcher

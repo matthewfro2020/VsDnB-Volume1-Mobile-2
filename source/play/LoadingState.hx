@@ -1,30 +1,57 @@
 package
+;
 ; play
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.util.FlxTimer;
+;
+;
 ;
 ; import flixel.util.typeLimit.NextState;
 ;
+;
+;
 ; import lime.app.Promise;
+;
+;
 ;
 ; import lime.app.Future;
 ;
+;
+;
 ; import lime.utils.Assets as LimeAssets;
+;
+;
 ;
 ; import lime.utils.AssetLibrary;
 ;
+;
+;
 ; import lime.utils.AssetManifest;
+;
+;
 ;
 ; import haxe.io.Path;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import ui.MusicBeatState;
 ;
+;
+;
 ; import play.PlayState.PlayStateParams;
 ;
+;
+;
 ; import play.song.Song;
+;
+;
 ;
 ; class LoadingState extends MusicBeatState
 { static var playStateParams:PlayStateParams

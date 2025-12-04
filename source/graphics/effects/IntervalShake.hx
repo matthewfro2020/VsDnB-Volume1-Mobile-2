@@ -1,24 +1,45 @@
 package
+;
 ; graphics.effects
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxObject;
+;
+;
 ;
 ; import flixel.util.FlxAxes;
 ;
+;
+;
 ; import flixel.util.FlxPool;
+;
+;
 ;
 ; import flixel.util.FlxTimer;
 ;
+;
+;
 ; import flixel.util.FlxDestroyUtil.IFlxDestroyable;
+;
+;
 ;
 ; import flixel.math.FlxMath;
 ;
+;
+;
 ; import flixel.math.FlxPoint;
+;
+;
 ;
 ; import flixel.tweens.FlxEase;
 ;
+;
+;
 ; import flixel.tweens.FlxEase.EaseFunction;
+;
+;
 ;
 ; /** * Copy of the 'FlxFlicker' and 'FlxCamera' where instead of Flickering objects on a given interval and time, they shake (similar to Base FNF).
 */ class IntervalShake implements IFlxDestroyable

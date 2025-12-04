@@ -1,20 +1,37 @@
 package
+;
 ; ui.menu.ost.components
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.FlxSubState;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxSignal;
+;
+;
 ;
 ; enum ManualState
 { START

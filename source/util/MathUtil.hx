@@ -1,6 +1,9 @@
 package
+;
 ; util
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; class MathUtil
 { /** * Perform a framerate-independent linear interpolation between the base value and the target. * @param current The current value. * @param target The target value. * @param elapsed The time elapsed since the last frame. * @param duration The total duration of the interpolation. Nominal duration until remaining distance is less than `precision`. * @param precision The target precision of the interpolation. Defaults to 1% of distance remaining. * @see https:

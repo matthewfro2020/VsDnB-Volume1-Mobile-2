@@ -1,30 +1,57 @@
 package
+;
 ; ui.menu
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import flixel.text.FlxText;
+;
+;
 ;
 ; import flixel.text.FlxText.FlxTextAlign;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxGradient;
+;
+;
 ;
 ; import play.camera.FollowCamera;
 ;
+;
+;
 ; import ui.MusicBeatState;
 ;
+;
+;
 ; import ui.menu.MainMenuState;
+;
+;
 ;
 ; typedef CreditsPersonParams =
 { var name:String

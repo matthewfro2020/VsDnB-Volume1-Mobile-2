@@ -1,12 +1,21 @@
 package
+;
 ; util
 ; import flixel.tweens.FlxEase;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.tweens.FlxTween.FlxTweenManager;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; class TweenUtil
 { /** * Returns an ease function that eases the specified ease function via steps. * * @param steps How many steps to ease over. * @param ease The ease function to use.

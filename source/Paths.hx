@@ -1,25 +1,48 @@
 package
+;
 ; import play.song.Song;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.graphics.FlxGraphic;
+;
+;
 ;
 ; import flixel.graphics.frames.FlxAtlasFrames;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxSoundAsset;
+;
+;
 ;
 ; import haxe.io.Path;
 ;
+;
+;
 ; import openfl.media.Sound;
+;
+;
 ;
 ; import openfl.utils.AssetType;
 ;
+;
+;
 ; import openfl.utils.Assets as OpenFlAssets;
+;
+;
 ;
 ; import util.tools.Preloader;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; /** * A core classed used for accessing the paths, and file locations for image, sounds, etc.
 */ class Paths
@@ -27,8 +50,10 @@ package
 */ public static inline var SOUND_EXT = 'ogg'
 ; /** * Is this game
 using a language other than English? * @return Whether the game's;
-using a non-english language.;
-*/ public static function isLocale():Bool
+;
+; using a non-english language.;
+;
+; */ public static function isLocale():Bool
 ; { return Preferences.language !='en-US'
 ; } /** * Retrieves the file path for the language file used to parse languages. * @return The path for the language file.
 */ public static function langaugeFile():String

@@ -1,8 +1,13 @@
 package
+;
 ; data.character
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import json2object.JsonWriter;
+;
+;
 ;
 ; /** * A data structure that represents the normal data for a character.
 */ class CharacterData

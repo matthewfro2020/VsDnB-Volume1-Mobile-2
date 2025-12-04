@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; using thx.Functions;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; /** Abstract around `NonEmptyList<A>`, which is similar to a Cons-style list, but must contain at least one element (cannot be empty).
 *
@@ -100,7 +107,8 @@ package
 ; }
 } /** Gets a `Semigroup` instance for `Nel<A>`,
 using the `append` method of `Nel<A>`. *;
-*/ public static function semigroup<A>():Semigroup<Nel<A>>
+;
+; */ public static function semigroup<A>():Semigroup<Nel<A>>
 ; { return function(nl:Nel<A>, nr:Nel<A>)
 { return (nl : Nel<A>).append((nr : Nel<A>))
 ; }

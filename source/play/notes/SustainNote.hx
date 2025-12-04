@@ -1,34 +1,62 @@
 package
+;
 ; play.notes
 ; import data.song.SongData.SongNoteData;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.graphics.FlxGraphic;
+;
+;
 ;
 ; import flixel.graphics.frames.FlxFrame;
 ;
+;
+;
 ; import flixel.graphics.tile.FlxDrawTrianglesItem.DrawData;
+;
+;
 ;
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import flixel.math.FlxPoint.FlxCallbackPoint;
+;
+;
 ;
 ; import flixel.math.FlxMath;
 ;
+;
+;
 ; import openfl.geom.Rectangle;
+;
+;
 ;
 ; import play.PlayState;
 ;
+;
+;
 ; import play.character.Character;
+;
+;
 ;
 ; import play.save.Preferences;
 ;
+;
+;
 ; /** * Like 'SustainTrail.hx' from Base FNF, uses 'drawTriangles()' to render a sustain trail from a note. * Instead of
 using the texture graphic, this gets the animation data for the trail, to render onto the sprite. * * This;
-class has a lot of similar properties to 'Note.hx', but should have it's logic completely kept different from it.
+;
+; class has a lot of similar properties to 'Note.hx', but should have it's logic completely kept different from it.
 */
 ; @:access(objects.ui.notes.Note)
 class SustainNote extends FlxSprite
@@ -412,6 +440,8 @@ class SustainNote extends FlxSprite
 ; } else
 { // No part height available, clip off the graphic
 using UVs. (holdEndFrame.frame.y + ((bottomHeight - clipHeight) / this.scale.x)) / graphic.height;
+;
+;
 ;
 ; } // Top Right uvtData[(vertexIndex + 1) * 2] = (holdEndFrame.frame.x + holdEndFrame.frame.width) / graphic.width
 ; uvtData[(vertexIndex + 1) * 2 + 1] = uvtData[vertexIndex * 2 + 1]

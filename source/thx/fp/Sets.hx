@@ -1,6 +1,9 @@
 package
+;
 ; thx.fp
 ; using thx.Ord;
+;
+;
 ;
 ; class StringSet
 { inline static public function exists(set:Set<String>, value:String):Bool return set.member(value, Strings.compare.fromIntComparison())

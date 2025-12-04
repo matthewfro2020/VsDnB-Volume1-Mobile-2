@@ -1,6 +1,9 @@
 package
+;
 ; thx.error
 ; import haxe.PosInfos;
+;
+;
 ;
 ; /** `AbstractMethod` extends `Error` and it is intended to be used inside those methods that are considered abstract. Abstract methods are methods that needs to be implemented in a sub-
 class . The error message brings the

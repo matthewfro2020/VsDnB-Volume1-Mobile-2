@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** Represents one Utf8 character stored as an integer value.
 */ abstract Char(Int)

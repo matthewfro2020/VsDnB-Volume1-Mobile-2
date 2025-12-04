@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; enum TimePeriod
 { Second

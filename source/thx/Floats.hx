@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** `Floats` contains helper methods to work with `Float` values.
 *
@@ -59,7 +60,8 @@ package
 */ inline public static function min<T:Float>(a:T, b:T):T return a < b ? a : b
 ; /** Float numbers can sometime introduce tiny errors even for simple operations. `nearEquals` compares two floats
 using a tiny tollerance (last optional argument). By default it is defined as `EPSILON`. *;
-*/ public static function nearEquals(a:Float, b:Float, ?tollerance = EPSILON)
+;
+; */ public static function nearEquals(a:Float, b:Float, ?tollerance = EPSILON)
 ; { if (Math.isFinite(a))
 { #if (php || java) if (!Math.isFinite(b)) return false
 ; #end return Math.abs(a - b) <= tollerance
@@ -69,7 +71,8 @@ using a tiny tollerance (last optional argument). By default it is defined as `E
 ; // a is Infinity and b is finite return false
 ; } /** Float numbers can sometime introduce tiny errors even for simple operations. `nearEqualAngles` compares two angles (default is 360deg)
 using a tiny tollerance (last optional argument). By default the tollerance is defined as `EPSILON`. *;
-*/ inline public static function nearEqualAngles(a:Float, b:Float, ?turn = 360.0, ?tollerance = EPSILON) return Math.abs(angleDifference(a, b, turn)) <= tollerance
+;
+; */ inline public static function nearEqualAngles(a:Float, b:Float, ?turn = 360.0, ?tollerance = EPSILON) return Math.abs(angleDifference(a, b, turn)) <= tollerance
 ;
 ; /** `nearZero` finds if the passed number is zero or very close to it. By default `EPSILON` is used as the tollerance value. *
 */ inline public static function nearZero(n:Float, ?tollerance = EPSILON) return Math.abs(n) <= tollerance
@@ -90,7 +93,8 @@ using a tiny tollerance (last optional argument). By default the tollerance is d
 ; inline public static function toString(v:Float):String return '$v'
 ; /** Alias for parse, mainly for disambiguation with other parses
 using mega Thx. *;
-*/ inline public static function toFloat(s:String):Float return Floats.parse(s)
+;
+; */ inline public static function toFloat(s:String):Float return Floats.parse(s)
 ;
 ; inline public static function trunc(value:Float):Int return value < 0.0 ? Math.ceil(value) : Math.floor(value)
 ; inline public static function ftrunc(value:Float):Float return value < 0.0 ? Math.fceil(value) : Math.ffloor(value)

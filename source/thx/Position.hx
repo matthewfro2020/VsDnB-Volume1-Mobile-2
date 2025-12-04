@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; using thx.Arrays;
 ;
+;
+;
 ; import haxe.PosInfos;
+;
+;
 ;
 ; @:forward abstract Position(PosInfos) from PosInfos to PosInfos
 { @:noUsing static public function here(?pos:PosInfos):Position

@@ -1,7 +1,10 @@
 package
+;
 ; thx
 ; /** A set is a list of unique values. Value equality is determined
 using `==`. See thx.HashSet for an alternative set implementation that uses a hash code to determine item equality.;
+;
+;
 ; *
 */ abstract Set<T>(Map<T, Bool>)
 { /** Creates a Set of Strings with optional initial values. *

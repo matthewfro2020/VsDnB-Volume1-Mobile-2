@@ -1,14 +1,25 @@
 package
+;
 ; ui.terminal
 ; import flixel.FlxG;
 ;
+;
+;
 ; import ui.terminal.TerminalScreen;
+;
+;
 ;
 ; import openfl.display.BitmapData;
 ;
+;
+;
 ; import openfl.geom.Rectangle;
 ;
+;
+;
 ; import openfl.utils.ByteArray;
+;
+;
 ;
 ; class TerminalClearer extends TerminalDisplay
 { public function update(elapsed:Float):Void

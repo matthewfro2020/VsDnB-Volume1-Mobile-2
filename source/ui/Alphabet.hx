@@ -1,22 +1,41 @@
 package
+;
 ; ui
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.math.FlxMath;
 ;
+;
+;
 ; import flixel.math.FlxPoint;
+;
+;
 ;
 ; import flixel.text.FlxText.FlxTextAlign;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.tweens.FlxEase;
 ;
+;
+;
 ; import flixel.graphics.frames.FlxAtlasFrames;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; class ColumnData
 { public var text:String = ''

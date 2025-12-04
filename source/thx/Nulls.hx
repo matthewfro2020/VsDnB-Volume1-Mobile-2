@@ -1,17 +1,30 @@
 package
+;
 ; thx
 ; #if macro
 import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.ExprTools;
+;
+;
 ;
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.TypedExprTools;
+;
+;
 ;
 ; import thx.Arrays;
 ;
+;
+;
 ; import thx.Ints;
+;
+;
 ;
 ; #end
 /** `Nulls` provides extension methods that help to deal with nullable values. Note that the parenthesis wrap the entire chain of identifiers. That means that a null check will be performed for each identifier in the chain. Identifiers can also be getters and methods (both are invoked only once and only if the check reaches them). `Python` seems to struggle with some native methods like methods on strings.
@@ -32,6 +45,8 @@ import haxe.macro.Expr;
 } != null)
 ; /** Executes `expr` only if `value` is a non-null value. Inside `expr` the `value` can be referenced
 using the special var `_`. It is also possible to provide an alternative value `alt` in case a non null value is desired. ```haxe myvalue.with(_.myMethod());
+;
+;
 ;
 ; ``` *
 */ macro public static function with<TValue, TOut>(value:ExprOf<TValue>, expr:ExprOf<TOut>, ?alt:ExprOf<TOut>):ExprOf<TOut> return macro(function(_)

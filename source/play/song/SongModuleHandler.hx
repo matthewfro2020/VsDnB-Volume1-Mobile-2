@@ -1,12 +1,21 @@
 package
+;
 ; play.song
 ; import flixel.FlxG;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import scripting.events.ScriptEventDispatcher;
 ;
+;
+;
 ; import util.SortUtil;
+;
+;
 ;
 ; /** * Handler for adding, loading, and retrieving song modules. * Shares a lot of the same functionaility as `ModuleHandler`
 */ class SongModuleHandler

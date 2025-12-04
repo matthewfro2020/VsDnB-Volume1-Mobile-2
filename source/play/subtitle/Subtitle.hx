@@ -1,30 +1,57 @@
 package
+;
 ; play.subtitle
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import audio.GameSound;
 ;
+;
+;
 ; import data.subtitle.SubtitleData;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxTimer;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.addons.text.FlxTypeText;
 ;
+;
+;
 ; import play.subtitle.SubtitleManager;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
+;
+;
 ;
 ; /** * A UI element used to display text in-case a player is speaking. * * Users can extend this
 class and pass a scripted

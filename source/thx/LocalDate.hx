@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import thx.Either;
 ;
+;
+;
 ; using thx.Ints;
 ;
+;
+;
 ; import thx.DateConst.*;
+;
+;
 ;
 ; /** `Date` represents a date (without time) between 5879611-07-12 and -5879611-07-13 (the actual boundary values are platform specific and depend on the precision of the `Int` type). `Date` represents a moment in time with no time-offset information.
 */ abstract LocalDate(Int)
@@ -126,7 +133,8 @@ package
 ; public function max(other:LocalDate):LocalDate return compareTo(other) >= 0 ? self() : other
 ; /** Get a date relative to the current date, shifting by a set period of time. Please note this works by constructing a new date object, rather than
 using `DateTools.delta()`. The key difference is that this allows us to jump over a period that may not be a set number of seconds. For example, jumping between months (which have different numbers of days), leap years, leap seconds, daylight savings time changes etc. @param period The TimePeriod you wish to jump by, Second, Minute, Hour, Day, Week, Month or Year. @param amount The multiple of `period` that you wish to jump by. A positive amount moves forward in time, a negative amount moves backward. *;
-*/ public function jump(period:TimePeriod, amount:Int)
+;
+; */ public function jump(period:TimePeriod, amount:Int)
 ; { var sec = 0, min = 0, hr = 0, day = day, mon = month, yr = year
 ; switch period
 { case Second: sec += amount

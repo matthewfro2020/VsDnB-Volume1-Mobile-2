@@ -1,33 +1,62 @@
 package
+;
 ; ui
 ; import backend.Conductor;
 ;
+;
+;
 ; import controls.Controls;
+;
+;
 ;
 ; import controls.PlayerSettings;
 ;
+;
+;
 ; import data.song.SongData.SongTimeChange;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import scripting.ScriptEventDispatchSubState;
+;
+;
 ;
 ; import scripting.events.ScriptEvent;
 ;
+;
+;
 ; import scripting.module.ModuleHandler;
 ;
+;
+;
 ; import util.SortUtil;
+;
+;
 ;
 ; #if mobileC
 import mobile.controls.flixel.FlxVirtualPad;
 ;
+;
+;
 ; import flixel.FlxCamera;
+;
+;
 ;
 ; import graphics.GameCamera;
 ;
+;
+;
 ; import flixel.input.actions.FlxActionInput;
 ;
+;
+;
 ; import flixel.util.FlxDestroyUtil;
+;
+;
 ;
 ; #end
 /** * An `FlxSubState` linked to the Conductor to allow for bpm synced events such as step, beat, and measure hit events, and more.

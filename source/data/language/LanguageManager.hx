@@ -1,16 +1,29 @@
 package
+;
 ; data.language
 ; import haxe.Exception;
 ;
+;
+;
 ; import data.language.Language;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import play.save.Preferences;
 ;
+;
+;
 ; import util.FileUtil;
+;
+;
 ;
 ; typedef LanguageList = Map<String, String>
 ; /** * A core handler for managing languages, and the current language the user has selected.

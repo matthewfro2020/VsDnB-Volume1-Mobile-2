@@ -1,9 +1,14 @@
 package
+;
 ; hxvlc.flixel
 ; #if flixel
 import flixel.FlxG;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
+;
+;
 ;
 ; /** * This
 class extends `FlxInternalVideo` to display video files in HaxeFlixel. * * ```haxe * final video:FlxVideo = new FlxVideo()

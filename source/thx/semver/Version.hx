@@ -1,6 +1,9 @@
 package
+;
 ; thx.semver
 ; using StringTools;
+;
+;
 ;
 ; abstract Version(SemVer) from SemVer to SemVer
 { static var VERSION = ~/^(\d+)\.(\d+)\.(\d+)(?:[-]([a-z0-9.-]+))?(?:[+]([a-z0-9.-]+))?$/i

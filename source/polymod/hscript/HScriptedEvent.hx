@@ -1,4 +1,5 @@
 package
+;
 ; polymod.hscript
 ; /** * Stub for event handling.
 */ class HScriptedEvent

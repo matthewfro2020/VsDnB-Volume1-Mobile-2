@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; #if ios
 // Avoid Objective-C `Nil` macro conflict by renaming the

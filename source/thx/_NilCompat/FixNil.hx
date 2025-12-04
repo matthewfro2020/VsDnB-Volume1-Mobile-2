@@ -1,4 +1,5 @@
 package
+;
 ; thx._NilCompat
 ; class FixNil
 { public static function run()

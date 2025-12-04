@@ -1,16 +1,29 @@
 package
+;
 ; play.stage
 ; import data.animation.Animation;
 ;
+;
+;
 ; import data.animation.Animation.AnimationData;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.group.FlxGroup.FlxTypedGroup;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; /** * A visual prop used in the background for a stage.
 */ class BGSprite extends FlxSprite

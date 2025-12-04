@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import haxe.PosInfos;
 ;
+;
+;
 ; import haxe.CallStack;
 ;
+;
+;
 ; import thx.error.ErrorWrapper;
+;
+;
 ;
 ; /** Defines a generic Error type. When the target platform is JS, `Error` extends the native `js.lib.Error` type.
 *

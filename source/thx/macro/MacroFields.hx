@@ -1,11 +1,18 @@
 package
+;
 ; thx.macro
 ; #if (neko || macro)
 import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.ExprTools;
 ;
+;
+;
 ; import thx.Arrays;
+;
+;
 ;
 ; /** Extension methods to work with
 class fields at macro time.

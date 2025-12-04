@@ -1,12 +1,21 @@
 package
+;
 ; ui.menu.settings.categories
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; import ui.menu.settings.SettingsMenu.CallbackOption;
 ;
+;
+;
 ; import ui.menu.settings.SettingsMenu.CheckboxOption;
+;
+;
 ;
 ; class Options_General extends SettingsCategory
 { public override function init()

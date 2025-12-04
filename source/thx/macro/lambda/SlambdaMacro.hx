@@ -1,16 +1,29 @@
 package
+;
 ; thx.macro.lambda
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; import haxe.macro.ExprTools;
 ;
+;
+;
 ; using haxe.macro.ExprTools;
+;
+;
 ;
 ; using thx.Strings;
 ;
+;
+;
 ; using thx.Ints;
+;
+;
 ;
 ; /** Lambda expressions. Standalone version: https:
 // github.com/ciscoheat/slambda

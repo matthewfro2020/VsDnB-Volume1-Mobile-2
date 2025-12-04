@@ -1,18 +1,33 @@
 package
+;
 ; thx.macro
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; import haxe.macro.Type;
 ;
+;
+;
 ; using haxe.macro.ExprTools;
+;
+;
 ;
 ; using thx.Objects;
 ;
+;
+;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Strings;
+;
+;
 ;
 ; class BuildResource
 { macro public static function buildStatic():Array<Field>
@@ -139,6 +154,8 @@ package
 ; return o
 ; } // TODO: add XML? Is anyone
 using that anymore? static function getFromFile(file:String, module:String, prefix:String, ?format:String, ?allowText:Bool = false):Dynamic;
+;
+;
 ; { if (null == format) format = file.split(".").pop()
 ; var content:String = sys.io.File.getContent(file)
 ; Context.registerModuleDependency(module, file)

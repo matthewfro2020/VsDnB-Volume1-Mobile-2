@@ -1,6 +1,9 @@
 package
+;
 ; data.song
 ; import flixel.FlxG;
+;
+;
 ;
 ; /** * Data handler for keeping track of the user's scores.
 */ class Highscore

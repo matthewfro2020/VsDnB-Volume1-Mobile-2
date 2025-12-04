@@ -1,6 +1,9 @@
 package
+;
 ; data
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; class DataAssets
 { /** * Retrieves a list of data files from a data folder. * @param path The name of the data folder to retrieve the assets from. * @param suffix The suffix, or the file extension of the data. * @return A list of all of the data files from the given folder.

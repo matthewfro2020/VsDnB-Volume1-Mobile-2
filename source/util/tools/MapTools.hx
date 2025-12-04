@@ -1,4 +1,5 @@
 package
+;
 ; util.tools
 ; /** * A utility extension to help provide functions relating to `Map`
 */ class MapTools

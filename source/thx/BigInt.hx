@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import thx.bigint.*;
+;
+;
 ;
 ; /** Heavily based on code realized by Peter Olson: https:
 // github.com/peterolson/BigInteger.js

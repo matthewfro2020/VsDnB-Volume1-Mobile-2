@@ -1,12 +1,21 @@
 package
+;
 ; thx
 ; import thx.Functions;
 ;
+;
+;
 ; import thx.Functions.*;
+;
+;
 ;
 ; import thx.Tuple;
 ;
+;
+;
 ; import haxe.ds.Option;
+;
+;
 ;
 ; abstract Maybe<T>(Null<T>) from Null<T>
 { inline public static function of<T>(value:Null<T>):Maybe<T> return value
@@ -20,7 +29,8 @@ package
 ; inline public function ofOption(opt:Option<T>):Maybe<T> return Options.get(opt)
 ; /** Equality function to campare this `Maybe` value with another of the same type. An optional equality function can be provided if values inside `Maybe` should be compared
 using something different than strict equality. *;
-*/ public function equals(b:Maybe<T>, ?eq:T->T->Bool) return switch [get(), b.get()]
+;
+; */ public function equals(b:Maybe<T>, ?eq:T->T->Bool) return switch [get(), b.get()]
 ; { case [null, null]: true
 ; case [null, _] | [_, null]: false
 ; case [a, b]: if (null == eq) eq = function(a, b) return a == b
@@ -29,11 +39,13 @@ using something different than strict equality. *;
 ; @:op(A == B) inline function _equals(b:Maybe<T>):Bool return equals(b)
 ; /** `map` transforms a value contained in `Maybe<T>` to `Maybe<TOut>`
 using a `callback`. `callback` is used only if `Maybe` has a value that is not `null`. *;
-*/ public function map<TOut>(callback:T->TOut):Maybe<TOut> return if (null == this) null else callback(this)
+;
+; */ public function map<TOut>(callback:T->TOut):Maybe<TOut> return if (null == this) null else callback(this)
 ;
 ; /** `ap` transforms a value contained in `Maybe<T>` to `Maybe<TOut>`
 using a `callback` wrapped in another Maybe. *;
-*/ public function ap<U>(fopt:Maybe<T->U>):Maybe<U> return if (null == this) null else fopt.map(function(f) return f(this))
+;
+; */ public function ap<U>(fopt:Maybe<T->U>):Maybe<U> return if (null == this) null else fopt.map(function(f) return f(this))
 ;
 ; /** `flatMap` is shortcut for `map(cb).join()` *
 */ public function flatMap<TOut>(callback:T->Maybe<TOut>):Maybe<TOut> return if (null == this) null else callback(this)
@@ -45,7 +57,8 @@ using a `callback` wrapped in another Maybe. *;
 */ public function cataf<B>(ifNone:Void->B, f:T->B):B return if (null == this) ifNone() else f(this)
 ; /** `foldLeft` reduce
 using an accumulating function and an initial value. *;
-*/ public function foldLeft<B>(b:B, f:B->T->B):B return if (null == this) b else f(b, this)
+;
+; */ public function foldLeft<B>(b:B, f:B->T->B):B return if (null == this) b else f(b, this)
 ;
 ; /** Lazy version of `thx.Options.foldLeft` *
 */ public function foldLeftf<B>(b:Void->B, f:B->T->B):B return if (null == this) b() else f(b(), this)

@@ -1,18 +1,33 @@
 package
+;
 ; scripting.events
 ; import scripting.IScriptedClass.IConductorSyncedScriptedClass;
 ;
+;
+;
 ; import scripting.IScriptedClass.IDialogueScriptedClass;
+;
+;
 ;
 ; import scripting.IScriptedClass.INoteScriptedClass;
 ;
+;
+;
 ; import scripting.IScriptedClass.IStageScriptedClass;
+;
+;
 ;
 ; import scripting.IScriptedClass.IStateChangeScriptedClass;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; /** * Handles the dispatching of script events, and for scripts to receive events.
 */ class ScriptEventDispatcher

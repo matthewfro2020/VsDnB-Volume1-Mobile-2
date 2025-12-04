@@ -1,4 +1,5 @@
 package
+;
 ; cpp
 ; @:nativeArrayAccess
 @:native('void *const *')

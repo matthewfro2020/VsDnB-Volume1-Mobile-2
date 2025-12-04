@@ -1,16 +1,29 @@
 package
+;
 ; data.player
 ; import play.player.ScriptedPlayableCharacter;
 ;
+;
+;
 ; import play.player.PlayableCharacter;
+;
+;
 ;
 ; import openfl.utils.Assets;
 ;
+;
+;
 ; import json2object.JsonParser;
+;
+;
 ;
 ; import play.stage.ScriptedStage;
 ;
+;
+;
 ; import play.stage.Stage;
+;
+;
 ;
 ; class PlayerRegistry extends BaseRegistry<PlayableCharacter, PlayerData>
 { public static var VERSION:thx.semver.Version = '1.0.0'

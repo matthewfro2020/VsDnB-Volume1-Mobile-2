@@ -1,12 +1,21 @@
 package
+;
 ; data.character
 ; import json2object.JsonParser;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import play.character.Character;
 ;
+;
+;
 ; import play.character.ScriptedCharacter;
+;
+;
 ;
 ; class CharacterRegistry extends BaseRegistry<Character, CharacterData>
 { public static var VERSION:thx.semver.Version = '1.0.0'

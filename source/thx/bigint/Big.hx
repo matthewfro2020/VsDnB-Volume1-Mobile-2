@@ -1,8 +1,13 @@
 package
+;
 ; thx.bigint
 ; import thx.bigint.Bigs;
 ;
+;
+;
 ; using thx.Strings;
+;
+;
 ;
 ; class Big implements BigIntImpl
 { public var value(default, null):Array<Int>

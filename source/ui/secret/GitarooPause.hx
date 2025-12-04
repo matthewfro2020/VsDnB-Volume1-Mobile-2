@@ -1,20 +1,37 @@
 package
+;
 ; ui.secret
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.text.FlxText;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import play.PlayState;
+;
+;
 ;
 ; import ui.MusicBeatState;
 ;
+;
+;
 ; import ui.menu.MainMenuState;
+;
+;
 ;
 ; /** * A secret menu that's displayed in a 1/1000 chance whenever the user pauses.
 */ class GitarooPause extends MusicBeatState

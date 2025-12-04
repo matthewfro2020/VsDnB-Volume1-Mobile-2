@@ -1,22 +1,41 @@
 package
+;
 ; thx
 ; import thx.Validation;
 ;
+;
+;
 ; import thx.Validation.*;
+;
+;
 ;
 ; import thx.Validation.VNel;
 ;
+;
+;
 ; import thx.Validation.VNel.*;
+;
+;
 ;
 ; using haxe.Int64;
 ;
+;
+;
 ; using thx.Ints;
+;
+;
 ;
 ; using thx.Int64s;
 ;
+;
+;
 ; using thx.Strings;
 ;
+;
+;
 ; import thx.DateTimeUtc.*;
+;
+;
 ;
 ; /** `DateTime` represents an instant in time since about year 29228 B.C.E. up to 29228 C.E. (A.D.). `DateTime` supports a resolution up to 1e7th of second (a tick) and has no precision issues since it is mapped internally to a `Int64`. `DateTime` is an abstract and support some operator overloadings. Most notably subtractions (to get a `Time` value), and addition/subtraction of a `Time` value. `DateTime` also supports a time offset to describe time zone values.
 */ @:access(thx.DateTimeUtc)
@@ -117,7 +136,8 @@ abstract DateTime(Array<Int64>)
 ; inline public function max(other:DateTime):DateTime return utc.compareTo(other.utc) >= 0 ? self() : other
 ; /** Get a date relative to the current date, shifting by a set period of time. Please note this works by constructing a new date object, rather than
 using `DateTools.delta()`. The key difference is that this allows us to jump over a period that may not be a set number of seconds. For example, jumping between months (which have different numbers of days), leap years, leap seconds, daylight savings time changes etc. @param period The TimePeriod you wish to jump by, Second, Minute, Hour, Day, Week, Month or Year. @param amount The multiple of `period` that you wish to jump by. A positive amount moves forward in time, a negative amount moves backward. *;
-*/ public function jump(period:TimePeriod, amount:Int)
+;
+; */ public function jump(period:TimePeriod, amount:Int)
 ; { var sec = second, min = minute, hr = hour, day = day, mon:Int = month, yr = year
 ; switch period
 { case Second: sec += amount

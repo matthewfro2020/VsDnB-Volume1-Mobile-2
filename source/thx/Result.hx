@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
+;
+;
 ;
 ; /** `Result` is a wrapper type (abstract) around the `Either` type to semantically represent the state of an operation.
 */ abstract Result<TSuccess, TFailure>(Either<TFailure, TSuccess>) from Either<TFailure, TSuccess> to Either<TFailure, TSuccess>

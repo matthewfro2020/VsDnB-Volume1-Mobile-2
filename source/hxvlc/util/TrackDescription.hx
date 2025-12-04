@@ -1,8 +1,13 @@
 package
+;
 ; hxvlc.util
 ; import cpp.Struct;
 ;
+;
+;
 ; import hxvlc.externs.Types;
+;
+;
 ;
 ; /** * Represents a description for video, audio tracks, and subtitles.
 */ class TrackDescription

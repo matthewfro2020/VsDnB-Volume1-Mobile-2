@@ -1,4 +1,5 @@
 package
+;
 ; cpp
 ; #if windows
 @:buildXml('<include name="$

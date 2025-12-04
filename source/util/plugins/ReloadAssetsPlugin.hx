@@ -1,12 +1,21 @@
 package
+;
 ; util.plugins
 ; import scripting.ScriptEventDispatchState;
 ;
+;
+;
 ; import flixel.FlxBasic;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import modding.PolymodManager;
+;
+;
 ;
 ; /** * A plugin that binds a set of keybinds to allow the user to re-load assets.
 */ class ReloadAssetsPlugin extends FlxBasic

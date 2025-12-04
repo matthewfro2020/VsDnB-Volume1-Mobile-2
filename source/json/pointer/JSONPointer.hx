@@ -1,4 +1,5 @@
 package
+;
 ; json.pointer
 ; class JSONPointer
 { static final SLASH:Int = 0x2F

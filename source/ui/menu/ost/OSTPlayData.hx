@@ -1,22 +1,41 @@
 package
+;
 ; ui.menu.ost
 ; import data.character.CharacterRegistry;
 ;
+;
+;
 ; import data.song.SongRegistry;
+;
+;
 ;
 ; import data.song.SongData.SongMusicData;
 ;
+;
+;
 ; import data.song.SongData.SongTimeChange;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import play.song.Song;
 ;
+;
+;
 ; import play.song.Song.SongPlayChart;
 ;
+;
+;
 ; import ui.menu.freeplay.category.Category.CategorySong;
+;
+;
 ;
 ; class OSTPlayData
 { /** * The readable name of the song.

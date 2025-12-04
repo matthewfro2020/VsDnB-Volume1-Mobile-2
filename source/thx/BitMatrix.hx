@@ -1,14 +1,25 @@
 package
+;
 ; thx
 ; import thx.BitSet;
 ;
+;
+;
 ; import thx.Error;
+;
+;
 ;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Functions;
 ;
+;
+;
 ; using thx.Ints;
+;
+;
 ;
 ; abstract BitMatrix(Array<BitSet>) from Array<BitSet> to Array<BitSet>
 { public var bitSetCount(get, never):Int

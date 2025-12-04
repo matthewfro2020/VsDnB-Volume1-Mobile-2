@@ -1,12 +1,21 @@
 package
+;
 ; play.notes
 ; import backend.Conductor;
 ;
+;
+;
 ; import data.animation.Animation.AnimationData;
+;
+;
 ;
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; /** * A structure that represents the data for the style of a note.
 */ @:access(Note)

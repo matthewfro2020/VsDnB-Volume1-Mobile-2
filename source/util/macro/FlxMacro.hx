@@ -1,9 +1,14 @@
 package
+;
 ; util.macro
 ; #if macro
 import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr.Field;
+;
+;
 ;
 ; /** * Class for handling macro of various flixel classes.
 */ class FlxMacro

@@ -1,15 +1,26 @@
 package
+;
 ; thx.macro.lambda
 ; import thx.macro.Macros;
+;
+;
 ;
 ; #if (neko || macro)
 import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; using StringTools;
 ;
+;
+;
 ; using haxe.macro.ExprTools;
+;
+;
 ;
 ; #end
 class MacroHelper

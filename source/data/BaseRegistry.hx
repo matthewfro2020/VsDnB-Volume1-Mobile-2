@@ -1,18 +1,33 @@
 package
+;
 ; data
 ; import data.IRegistryEntry;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import haxe.Constraints.Constructible;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import util.VersionUtil;
 ;
+;
+;
 ; import thx.semver.Version;
 ;
+;
+;
 ; import thx.semver.VersionRule;
+;
+;
 ;
 ; typedef EntryConstructor = String->Void
 ; @:generic

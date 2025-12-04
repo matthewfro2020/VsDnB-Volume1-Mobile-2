@@ -1,32 +1,56 @@
 package
+;
 ; hxvlc.flixel
 ; #if flixel
 import flixel.FlxG;
 ;
+;
+;
 ; import haxe.io.Bytes;
+;
+;
 ;
 ; import haxe.io.Path;
 ;
+;
+;
 ; import hxvlc.externs.Types;
+;
+;
 ;
 ; import hxvlc.openfl.Video;
 ;
+;
+;
 ; import hxvlc.util.Location;
+;
+;
 ;
 ; import hxvlc.util.Util;
 ;
+;
+;
 ; import hxvlc.util.macros.DefineMacro;
+;
+;
 ;
 ; import openfl.utils.Assets;
 ;
+;
+;
 ; import sys.FileSystem;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; /** * A wrapper
 class for displaying video files in HaxeFlixel
 using the `Video`;
-class .
+;
+; class .
 */
 ; class FlxInternalVideo extends Video
 { /** The volume adjustment.

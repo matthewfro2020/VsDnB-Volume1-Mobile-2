@@ -1,13 +1,22 @@
 package
+;
 ; thx.macro
 ; #if (neko || macro)
 import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; using StringTools;
 ;
+;
+;
 ; using haxe.macro.ExprTools;
+;
+;
 ;
 ; /** Helper methods to use inside macro context.
 *
@@ -46,6 +55,7 @@ class paths. *
 ; } return results
 ; } /** Given a `pack`age path, it returns all the modules contained in there. The returned values have a fully qualified identifier for the module (it includes the
 package
+;
 ; and the module name). The search is made by default in `Context.getClassPath`, but can be restricted to a certain list of `paths`.
 */ public static function getPackageModules(pack:String, ?paths:Array<String>):Array<String>
 { var dirs = getPackageDirectories(pack, paths), results = []

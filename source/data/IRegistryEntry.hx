@@ -1,4 +1,5 @@
 package
+;
 ; data
 ; /** * An interfere used to define the necessary functions and properties for a registry entry.
 */ interface IRegistryEntry<T>

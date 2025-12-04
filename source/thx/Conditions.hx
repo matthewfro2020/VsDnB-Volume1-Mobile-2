@@ -1,11 +1,18 @@
 package
+;
 ; thx
 ; #if macro
 import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.ExprTools;
 ;
+;
+;
 ; using haxe.macro.ExprTools;
+;
+;
 ;
 ; #end
 /** Helper methods to generate conditional statements in a more declarative way.

@@ -1,22 +1,41 @@
 package
+;
 ; data.song
 ; import util.VersionUtil;
 ;
+;
+;
 ; import data.song.SongData.SongChartData;
+;
+;
 ;
 ; import data.song.SongData.SongMetadata;
 ;
+;
+;
 ; import data.song.SongData.SongMusicData;
+;
+;
 ;
 ; import json2object.JsonParser;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import play.song.ScriptedSong;
 ;
+;
+;
 ; import play.song.Song;
 ;
+;
+;
 ; import thx.semver.Version;
+;
+;
 ;
 ; class SongRegistry extends BaseRegistry<Song, SongMetadata>
 { public static var METADATA_VERSION:thx.semver.Version = '2.0.0'

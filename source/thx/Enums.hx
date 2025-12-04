@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** Helper
 class for enums.
@@ -14,7 +15,8 @@ enum value into a `String` representation. *
 ; } /** Compares two
 enum values. Comparison is based on the constructor definition index. If `a` and `b` are the same constructor and have parameters, parameters are compared
 using the same rules applied for `thx.Arrays.compare`. *;
-*/ public static function compare<T:EnumValue>(a:T, b:T):Int
+;
+; */ public static function compare<T:EnumValue>(a:T, b:T):Int
 ; { var v = Ints.compare(Type.enumIndex(a), Type.enumIndex(b))
 ; if (v != 0) return v
 ; return Arrays.compare(Type.enumParameters(a), Type.enumParameters(b))

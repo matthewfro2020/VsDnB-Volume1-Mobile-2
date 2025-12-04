@@ -1,10 +1,17 @@
 package
+;
 ; modding
 ; import polymod.Polymod.PolymodErrorType;
 ;
+;
+;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import polymod.Polymod.PolymodError;
+;
+;
 ;
 ; class PolymodErrorHandler
 { public static function printError(error:PolymodError):Void

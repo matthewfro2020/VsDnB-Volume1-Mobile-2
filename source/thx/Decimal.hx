@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import thx.bigint.*;
+;
+;
 ;
 ; @:forward(scale)
 abstract Decimal(DecimalImpl) from DecimalImpl to DecimalImpl

@@ -1,12 +1,21 @@
 package
+;
 ; ui.menu.settings.categories
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import audio.GameSound;
+;
+;
 ;
 ; import play.save.Preferences;
 ;
+;
+;
 ; import ui.menu.settings.SettingsMenu.SliderOption;
+;
+;
 ;
 ; class Options_Audio extends SettingsCategory
 { var voiceTest:GameSound

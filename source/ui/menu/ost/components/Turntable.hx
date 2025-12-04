@@ -1,37 +1,70 @@
 package
+;
 ; ui.menu.ost.components
 ; import audio.GameSound;
 ;
+;
+;
 ; import backend.Conductor;
+;
+;
 ;
 ; import data.song.SongData.SongTimeChange;
 ;
+;
+;
 ; import data.language.LanguageManager;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxStringUtil;
+;
+;
 ;
 ; import graphics.audio.SpectrogramVisualizer;
 ;
+;
+;
 ; import ui.menu.ost.OSTMenuState;
+;
+;
 ;
 ; import util.tools.Preloader;
 ;
+;
+;
 ; #if desktop
 import api.Discord.DiscordClient;
+;
+;
 ;
 ; #end
 enum RemixModeType
@@ -68,7 +101,8 @@ enum RemixModeType
 ; } /** * The type of time that's being displayed by the time monitor
 ; */ var timeDisplay:String = 'timeLeft'
 ; /** * A tween meant to help simulate the turntable pausing and resuming.;
-*/ public var speedTween:FlxTween
+;
+; */ public var speedTween:FlxTween
 ;
 ; /** * The looping noise sound that plays while the turntable has a loaded song in.
 */ public var grainLoop:GameSound

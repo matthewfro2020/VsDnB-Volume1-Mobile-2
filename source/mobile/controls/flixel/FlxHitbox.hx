@@ -1,18 +1,33 @@
 package
+;
 ; mobile.controls.flixel
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxDestroyUtil;
+;
+;
 ;
 ; import openfl.display.BitmapData;
 ;
+;
+;
 ; import openfl.display.Shape;
 ;
+;
+;
 ; import mobile.controls.flixel.FlxButton;
+;
+;
 ;
 ; /** * A zone with 4 hint's (A hitbox). * It's really easy to customize the layout. * * @author Mihai Alexandru (M.A. Jigsaw)
 */ class FlxHitbox extends FlxSpriteGroup

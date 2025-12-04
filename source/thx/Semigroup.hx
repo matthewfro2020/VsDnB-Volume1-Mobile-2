@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; // Semigroups instances should obey the associative law.
 abstract Semigroup<A>(A->A->A) from A->A->A to A->A->A

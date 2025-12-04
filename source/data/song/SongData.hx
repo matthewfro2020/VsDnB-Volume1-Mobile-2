@@ -1,8 +1,13 @@
 package
+;
 ; data.song
 ; import haxe.Json;
 ;
+;
+;
 ; import json2object.JsonWriter;
+;
+;
 ;
 ; /** * A data object containing all of the data information for a song.
 */ class SongMetadata

@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; using thx.Functions;
+;
+;
 ;
 ; /** Extension methods for the `thx.Either` type.
 *
@@ -49,7 +54,8 @@ package
 ; }
 ; /** * `ap` transforms a value contained in `Either<E, RIn>` to `Either<E, ROut>`
 using a `callback` * wrapped in the right side of another Either.;
-*/ public static function ap<L, RIn, ROut>(either:Either<L, RIn>, fa:Either<L, RIn->ROut>):Either<L, ROut> return switch either
+;
+; */ public static function ap<L, RIn, ROut>(either:Either<L, RIn>, fa:Either<L, RIn->ROut>):Either<L, ROut> return switch either
 ; { case Left(l): Left(l)
 ; case Right(v): map(fa, function(f) return f(v))
 ; }

@@ -1,17 +1,30 @@
 package
+;
 ; api
 ; #if desktop
 import Sys;
 ;
+;
+;
 ; import flixel.util.FlxStringUtil;
+;
+;
 ;
 ; import hxdiscord_rpc.Discord;
 ;
+;
+;
 ; import hxdiscord_rpc.Types;
+;
+;
 ;
 ; import lime.app.Application;
 ;
+;
+;
 ; import sys.thread.Thread;
+;
+;
 ;
 ; /** * The type of RPC the Discord RPC should use.
 */ enum RPCType

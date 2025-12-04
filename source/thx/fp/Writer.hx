@@ -1,14 +1,25 @@
 package
+;
 ; thx.fp
 ; import thx.Tuple;
 ;
+;
+;
 ; import thx.Monoid;
+;
+;
 ;
 ; import thx.Unit;
 ;
+;
+;
 ; using thx.Functions;
 ;
+;
+;
 ; import thx.fp.Functions.const;
+;
+;
 ;
 ; @:callable
 abstract Writer<W, A>(Tuple3<Monoid<W>, W, A>)

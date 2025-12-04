@@ -1,10 +1,17 @@
 package
+;
 ; util.macro
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.Type;
+;
+;
 ;
 ; /** * A collection of utility functions for Haxe macros.
 */ @:nullSafety
@@ -42,14 +49,17 @@ class MacroUtil
 { // Expression is a
 class name with no
 package
+;
 ; s case EConst(c): switch (c)
 { case CIdent(cn): if (cn != "null") parts.unshift(cn)
 ; default:
 } // Expression is a fully qualified
 package
+;
 ; name.
 // We need to traverse the expression tree to get the full
 package
+;
 ; name. case EField(exp, field): nextSection = exp.expr
 ; parts.unshift(field)
 ; // We've reached the end of the expression tree. default:

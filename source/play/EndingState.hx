@@ -1,20 +1,37 @@
 package
+;
 ; play
 ; import data.animation.Animation;
 ;
+;
+;
 ; import data.language.LanguageManager;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import ui.MusicBeatState;
 ;
+;
+;
 ; import ui.menu.story.StoryMenuState;
+;
+;
 ;
 ; typedef EndingStateParams =
 { /** * The week the player was on.

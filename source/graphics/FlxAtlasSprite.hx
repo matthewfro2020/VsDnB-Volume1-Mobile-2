@@ -1,14 +1,25 @@
 package
+;
 ; graphics
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.animation.FlxAnimationController;
 ;
+;
+;
 ; import flixel.graphics.frames.FlxAtlasFrames;
 ;
+;
+;
 ; import flixel.util.FlxSignal.FlxTypedSignal;
+;
+;
 ;
 ; /** * Replacement for flxanimate-based FlxAtlasSprite. * Uses FlxSprite + FlxAtlasFrames ONLY.
 */ class FlxAtlasSprite extends FlxSprite

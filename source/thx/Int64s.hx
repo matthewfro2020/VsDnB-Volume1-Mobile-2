@@ -3,10 +3,15 @@
 // github.com/HaxeFoundation/haxe/pull/4179) waiting for it to merge and make into an official release.
 *
 */ package
+;
 ; thx
 ; using haxe.Int64;
 ;
+;
+;
 ; import StringTools;
+;
+;
 ;
 ; /** `Int64` helper methods.
 */ class Int64s
@@ -39,7 +44,8 @@
 ; } return current
 ; } /** Alias for parse, mainly for disambiguation with other parses
 using mega Thx. *;
-*/ inline public static function toInt64(s:String):Int64 return Int64s.parse(s)
+;
+; */ inline public static function toInt64(s:String):Int64 return Int64s.parse(s)
 ;
 ; public static function divRound(num:Int64, div:Int64):Int64
 { if (num.isZero()) return zero

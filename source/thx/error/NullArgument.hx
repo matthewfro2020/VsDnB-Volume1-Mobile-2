@@ -1,9 +1,14 @@
 package
+;
 ; thx.error
 ; import haxe.PosInfos;
 ;
+;
+;
 ; /** `NullArgument` is used to detect if arguments of methods are `null` or empty values. It should not be used with its contructor but
 using the static extensions: ```haxe public function capitalize(text : String);
+;
+;
 ; { NullArgument.throwIfNull(text)
 ; // ...
 } ```

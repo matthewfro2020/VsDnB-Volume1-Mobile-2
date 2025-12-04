@@ -1,14 +1,25 @@
 package
+;
 ; thx
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Strings;
+;
+;
 ;
 ; import thx.Ord;
 ;
+;
+;
 ; import thx.Monoid;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; /** Extension methods for integer values.
 *
@@ -60,7 +71,8 @@ package
 */ inline public static function min(a:Int, b:Int):Int return a < b ? a : b
 ; /** Parses a string into an Int value
 using the provided base. Default base is 16 for strings that begin with 0x (after optional sign) or 10 otherwise. *;
-*/ public static function parse(s:String, ?base:Int):Null<Int>
+;
+; */ public static function parse(s:String, ?base:Int):Null<Int>
 ; { #if js if (null == base)
 { if (s.substring(0, 2) == "0x") base = 16
 ; else base = 10
@@ -87,6 +99,8 @@ using the provided base. Default base is 16 for strings that begin with 0x (afte
 { if (null != base && 16 != base) return null
 ; // attempting at converting a hex
 using a different base base = 16;
+;
+;
 ;
 ; s = s.substring(2)
 ; } else if (null == base)
@@ -119,7 +133,8 @@ using a different base base = 16;
 ; } // Base used for toString/parseInt conversions. Supporting base 2 to 36 for now as common standard. static var BASE = "0123456789abcdefghijklmnopqrstuvwxyz"
 ; /** Transform an `Int` value to a `String`
 using the specified `base` *;
-*/ #if (js || flash) inline #end public static function toString(value:Int, base:Int):String
+;
+; */ #if (js || flash) inline #end public static function toString(value:Int, base:Int):String
 ; { #if (js || flash) return untyped value.toString(base)
 ; #else if (base < 2 || base > BASE.length) return throw 'invalid base $base, it must be between 2 and $
 { BASE.length
@@ -133,13 +148,15 @@ using the specified `base` *;
 ; #end
 } /** Alias for toString, mainly for disambig. with standard toString
 using mega Thx. Should toString just be renamed to this? At least with this, existing code doesn't break. *;
-*/ inline public static function toBase(value:Int, base:Int):String return Ints.toString(value, base)
+;
+; */ inline public static function toBase(value:Int, base:Int):String return Ints.toString(value, base)
 ;
 ; /** Converts an integer value into a boolean. Any value different from `0` will evaluate to `true`. *
 */ public static inline function toBool(v:Int) return v != 0
 ; /** Alias for parse, mainly for disambiguation with other parses
 using mega Thx. *;
-*/ inline public static function toInt(s:String, ?base:Int):Int return Ints.parse(s, base)
+;
+; */ inline public static function toInt(s:String, ?base:Int):Int return Ints.parse(s, base)
 ;
 ; /** `sign` returns `-1` if `value` is a negative number, `1` otherwise.
 */ inline public static function sign(value:Int):Int return value < 0 ? -1 : 1

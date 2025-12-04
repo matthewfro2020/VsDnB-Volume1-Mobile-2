@@ -1,14 +1,25 @@
 package
+;
 ; data.dialogue
 ; import play.dialogue.ScriptedSpeaker;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; import json2object.JsonParser;
 ;
+;
+;
 ; import play.dialogue.Speaker;
 ;
+;
+;
 ; import play.dialogue.ScriptedDialogue;
+;
+;
 ;
 ; class SpeakerRegistry extends BaseRegistry<Speaker, SpeakerData>
 { public static var VERSION:thx.semver.Version = '1.0.0'

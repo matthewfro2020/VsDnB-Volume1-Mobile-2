@@ -1,8 +1,13 @@
 package
+;
 ; hxvlc.util
 ; import cpp.Struct;
 ;
+;
+;
 ; import hxvlc.externs.Types;
+;
+;
 ;
 ; /** * Represents various statistics related to media processing.
 */ class Stats

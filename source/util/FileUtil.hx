@@ -1,23 +1,40 @@
 package
+;
 ; util
 ; import flixel.FlxCamera;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.graphics.FlxGraphic;
 ;
+;
+;
 ; import haxe.io.Path;
 ;
-; import openfl.utils.Assets;
+;
 ;
 ; import openfl.utils.Assets;
+;
+;
+;
+; import openfl.utils.Assets;
+;
+;
 ;
 ; #if sys
 import sys.FileSystem;
 ;
+;
+;
 ; #end
 #if mobile
 import util.SUtil;
+;
+;
 ;
 ; #end
 /** * A utility to help provide functions relating to the file explorer, and general file manipulation.

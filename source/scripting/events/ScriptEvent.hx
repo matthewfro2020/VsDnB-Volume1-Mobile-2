@@ -1,24 +1,45 @@
 package
+;
 ; scripting.events
 ; import play.dialogue.Dialogue;
 ;
+;
+;
 ; import audio.GameSound;
+;
+;
 ;
 ; import data.song.SongData.SongTimeChange;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import play.character.Character;
+;
+;
 ;
 ; import play.notes.Note;
 ;
+;
+;
 ; import play.notes.SustainNote;
+;
+;
 ;
 ; import play.ui.Countdown.CountdownStep;
 ;
+;
+;
 ; import play.subtitle.Subtitle;
+;
+;
 ;
 ; /** * A base
 class that represents for all script events that are dispatched to scripted classes.

@@ -1,10 +1,17 @@
 package
+;
 ; util.macro
 ; import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.Type.ClassType;
+;
+;
 ;
 ; /** * Macros to generate lists of classes at compile time. * * This code is a bitch glad Jason figured it out. * Based on code from CompileTime: https:
 // github.com/jasononeil/compiletime
@@ -12,13 +19,17 @@ package
 class ClassMacro
 { /** * Gets a list of `Class<T>` for all classes in a specified
 package
+;
 ; . * * Example: `var list:Array<Class<Dynamic>> = listClassesInPackage("funkin", true)
 ; ` * * @param targetPackage A String containing the
 package
+;
 ; name to query. * @param includeSubPackages Whether to include classes located in sub-
 package
+;
 ; s of the target
 package
+;
 ; . * @return A list of classes matching the specified criteria.
 */ public static macro function listClassesInPackage(targetPackage:String, includeSubPackages:Bool = true):ExprOf<Iterable<Class<Dynamic>>>
 { if (!onGenerateCallbackRegistered)
@@ -26,6 +37,7 @@ package
 ; Context.onGenerate(onGenerate)
 ; } var request:String = '
 package
+;
 ; ~$
 { targetPackage
 } ~$
@@ -103,6 +115,7 @@ class ."
 ; switch (requestType)
 { case '
 package
+;
 ; ': var targetPackage:String = splitRequest[1]
 ; var recursive:Bool = splitRequest[2] == 'recursive'
 ; var classPackage:String = classType.pack.join('.')

@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** `ERegs` provides helper methods to use together with `EReg`.
 *

@@ -1,12 +1,21 @@
 package
+;
 ; data.dialogue
 ; import openfl.utils.Assets;
 ;
+;
+;
 ; import json2object.JsonParser;
+;
+;
 ;
 ; import play.dialogue.Dialogue;
 ;
+;
+;
 ; import play.dialogue.ScriptedDialogue;
+;
+;
 ;
 ; class DialogueRegistry extends BaseRegistry<Dialogue, DialogueData>
 { public static var VERSION:thx.semver.Version = '1.0.0'

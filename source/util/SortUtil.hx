@@ -1,12 +1,21 @@
 package
+;
 ; util
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.FlxBasic;
+;
+;
 ;
 ; import flixel.util.FlxSort;
 ;
+;
+;
 ; import data.song.SongData.SongTimeChange;
+;
+;
 ;
 ; class SortUtil
 { /** * Sorts a list of time changes by `ASCENDING` * @param a The first time change to being compared. * @param b The second time change to being compared. * @return Int telling if the values being compared should be swapped, or not.

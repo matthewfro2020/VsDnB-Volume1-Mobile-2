@@ -1,20 +1,37 @@
 package
+;
 ; play.camera
 ; import flixel.FlxObject;
 ;
+;
+;
 ; import flixel.FlxCamera.FlxCameraFollowStyle;
+;
+;
 ;
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; import flixel.tweens.FlxTween.TweenOptions;
 ;
+;
+;
 ; import flixel.util.FlxTimer;
+;
+;
 ;
 ; import graphics.GameCamera;
 ;
+;
+;
 ; import util.TweenUtil;
+;
+;
 ;
 ; /** * A world camera used for following to a specific position.
 */ class FollowCamera extends GameCamera
@@ -22,7 +39,8 @@ package
 */ public var camFollow(default, null):FlxObject = new FlxObject(0, 0, 1, 1)
 ; /** * The current system the camera is
 using to follow. This can be either:;
-*/ public var followType(default, set):FollowType = FollowType.LERP
+;
+; */ public var followType(default, set):FollowType = FollowType.LERP
 ;
 ; public function set_followType(value:FollowType):FollowType
 { this.followType = value

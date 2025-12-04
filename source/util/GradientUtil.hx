@@ -1,12 +1,21 @@
 package
+;
 ; util
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.util.FlxGradient;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; class GradientUtil
 { public static function applyGradientToBitmapData(target:BitmapData, colors:Array<FlxColor>, chunkSize:Int = 1, rotation:Int = 90, interpolate:Bool = true)

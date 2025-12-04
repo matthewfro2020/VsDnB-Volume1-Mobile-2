@@ -1,14 +1,25 @@
 package
+;
 ; ui.menu.ost.components
 ; import audio.SoundController;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import data.animation.Animation;
 ;
+;
+;
 ; import data.animation.Animation.AnimationData;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; typedef OSTButtonParams =
 { /** * The id of this button.
@@ -43,7 +54,8 @@ package
 */ var togglePressed:AnimationData
 ; /** * The type of press that this button is
 using .;
-*/ var pressType:ButtonPressType
+;
+; */ var pressType:ButtonPressType
 ; /** * Called when the user presses this button.
 */ public var onPress:Void->Void
 ; /** * Called when the user presses this button.

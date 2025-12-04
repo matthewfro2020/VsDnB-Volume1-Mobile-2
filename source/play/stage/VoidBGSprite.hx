@@ -1,12 +1,21 @@
 package
+;
 ; play.stage
 ; import data.animation.Animation;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import graphics.shaders.RuntimeShader;
+;
+;
 ;
 ; /** * Parameters for initalizing VoidSprite shader.
 */ typedef VoidParams =

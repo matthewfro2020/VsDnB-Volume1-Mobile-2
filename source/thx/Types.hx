@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** Helper methods to use on values, types and classes.
 *

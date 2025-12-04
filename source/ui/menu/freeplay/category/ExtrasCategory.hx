@@ -1,12 +1,21 @@
 package
+;
 ; ui.menu.freeplay.category
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import ui.menu.freeplay.category.Category.CategorySong;
+;
+;
 ;
 ; class ExtrasCategory extends Category
 { public function new()

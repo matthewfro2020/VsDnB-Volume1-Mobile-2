@@ -1,25 +1,46 @@
 package
+;
 ; play.subtitle
 ; // Has to be imported or else a compile error will happen.
 import play.subtitle.ScriptedSubtitle;
 ;
+;
+;
 ; import backend.Conductor;
+;
+;
 ;
 ; import data.IRegistryEntry;
 ;
+;
+;
 ; import data.subtitle.SubtitleData;
+;
+;
 ;
 ; import data.subtitle.SubtitleRegistry;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import play.subtitle.Subtitle;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import scripting.events.ScriptEventDispatcher;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
+;
+;
 ;
 ; /** * A container that stores a list of subtitles for it's specific entry. * * Users can further extend this
 class to customize the way this subtitle container looks in-game.

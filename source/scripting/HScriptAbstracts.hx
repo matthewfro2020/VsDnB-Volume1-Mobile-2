@@ -1,8 +1,13 @@
 package
+;
 ; scripting
 ; import openfl.display.BlendMode;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
+;
+;
 ;
 ; /** * Class for putting Abstract enums into Classes
 */ class HScriptAbstracts

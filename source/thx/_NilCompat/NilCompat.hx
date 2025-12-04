@@ -1,4 +1,5 @@
 package
+;
 ; thx._NilCompat
 ; @:final
 class NilCompat

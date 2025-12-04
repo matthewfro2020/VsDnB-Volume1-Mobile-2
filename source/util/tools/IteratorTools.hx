@@ -1,4 +1,5 @@
 package
+;
 ; util.tools
 ; /** * A static utility for providing functions relating to `Iterator`
 */ @:nullSafety

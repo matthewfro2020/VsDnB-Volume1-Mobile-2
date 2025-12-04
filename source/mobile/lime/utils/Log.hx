@@ -1,24 +1,41 @@
 package
+;
 ; lime.utils
 ; import openfl.Lib;
+;
+;
 ;
 ; #if android
 import android.widget.Toast;
 ;
+;
+;
 ; #end
 import haxe.PosInfos;
 ;
+;
+;
 ; import lime.app.Application;
 ;
+;
+;
 ; import lime.system.System;
+;
+;
 ;
 ; #if sys
 import sys.io.File;
 ;
+;
+;
 ; import sys.FileSystem;
+;
+;
 ;
 ; #end
 using StringTools;
+;
+;
 ;
 ; #if !lime_debug
 @:fileXml('tags="haxe,release"')

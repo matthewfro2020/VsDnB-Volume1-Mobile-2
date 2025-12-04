@@ -1,17 +1,27 @@
 package
+;
 ; thx.fp
 ; import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.Context;
 ;
+;
+;
 ; using Lambda;
+;
+;
 ;
 ; class Monad
 { /** Simple "do notation" macro for chaining a series of monadic operations for a type that has a `flatMap` function. The `flatMap` function can be a non-static member of the type or an extension method for the type. For extension methods, you must be `
 using ` the;
-class that has the extension method in the scope where `Do` is used. Inspired by: https:
+;
+; class that has the extension method in the scope where `Do` is used. Inspired by: https:
 // github.com/m22spencer/Mdo Example: ```
 import thx.fp.Monad.Do;
+;
+;
 ;
 ; var x : Int = 0
 ; var result : Either<String, Int> = Do( a <= Right(1),

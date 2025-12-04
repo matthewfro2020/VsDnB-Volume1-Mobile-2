@@ -1,8 +1,13 @@
 package
+;
 ; thx.bigint
 ; using thx.Strings;
 ;
+;
+;
 ; import thx.Error;
+;
+;
 ;
 ; class DecimalImpl
 { public static var zero(default, null) = Decimals.fromInt(0)

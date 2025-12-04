@@ -1,10 +1,17 @@
 package
+;
 ; audio
 ; import flixel.sound.FlxSound;
 ;
+;
+;
 ; import flixel.sound.FlxSoundGroup;
 ;
+;
+;
 ; import flixel.tweens.FlxTween;
+;
+;
 ;
 ; /** * A group that holds a list of sounds. * Until `FlxSoundGroup`, this allows to change the time, and pitch of sounds. * Each sound in group will be synced
 */ class SoundGroup extends FlxSoundGroup

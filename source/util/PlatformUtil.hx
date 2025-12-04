@@ -1,7 +1,10 @@
 package
+;
 ; util
 ; /* VS DAVE WINDOWS/LINUX/MACOS UTIL You can use this code while you give credit to it. 65% of the code written by chromasen 35% of the code written by Erizur (cross-platform and extra windows utils) Windows: You need the Windows SDK (any version) to compile. Linux: TODO macOS: TODO
 */ import flixel.FlxG;
+;
+;
 ;
 ; #if windows
 @:cppFileCode('#include <stdlib.h>

@@ -1,12 +1,21 @@
 package
+;
 ; scripting.module
 ; import scripting.IScriptedClass.IDialogueScriptedClass;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import scripting.IScriptedClass.IStateChangeScriptedClass;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
+;
+;
 ;
 ; /** * A global script
 class that doesn't require a specific context. * * Essentially, this is a global script that consistently is dispatched as long as the current state is one that dispatches events.

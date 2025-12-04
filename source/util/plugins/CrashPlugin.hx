@@ -1,8 +1,13 @@
 package
+;
 ; util.plugins
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxBasic;
+;
+;
 ;
 ; /** * A plugin that crashes the game pressing 'CTRL + SHIFT + C' for debugging purposes.
 */ class CrashPlugin extends FlxBasic

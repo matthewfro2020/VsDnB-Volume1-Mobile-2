@@ -1,13 +1,22 @@
 package
+;
 ; thx
 ; using StringTools;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; import thx.Monoid;
 ;
+;
+;
 ; /** Alias of `StringTools`, included so mixins work with `
 using thx.Strings;
+;
+;
 ;
 ; ` *
 */ typedef HaxeStringTools = StringTools
@@ -185,7 +194,8 @@ using thx.Strings;
 */ public static function iterator(s:String):Iterator<String> return toArray(s).iterator()
 ; /** It maps a string character by character
 using `callback`. *;
-*/ public static function map<T>(value:String, callback:String->T):Array<T> return toArray(value).map(callback)
+;
+; */ public static function map<T>(value:String, callback:String->T):Array<T> return toArray(value).map(callback)
 ;
 ; /** If present, it removes all the occurrences of `toremove` from `value`. *
 */ inline public static function remove(value:String, toremove:String):String return StringTools.replace(value, toremove, "")
@@ -246,7 +256,8 @@ using `callback`. *;
 // function(s : String) return new UnicodeString(s).charCodeAt(0) function(s:String) return s.charCodeAt(0))
 ; /** Returns an array of `String` whose elements are equally long (
 using `len`). If the string `s` is not exactly divisible by `len` the last element of the array will be shorter. *;
-*/ public static function toChunks(s:String, len:Int):Array<String>
+;
+; */ public static function toChunks(s:String, len:Int):Array<String>
 ; { var chunks = []
 ; // s = new UnicodeString(s)
 ; while (s.length > 0)

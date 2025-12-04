@@ -1,24 +1,45 @@
 package
+;
 ; play.ui
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import flixel.util.FlxStringUtil;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import play.PlayState;
+;
+;
 ;
 ; import play.ui.IHudItem;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; typedef HudDisplayParams =
 { /** * The name of the HUD display. * This is used to get the asset.

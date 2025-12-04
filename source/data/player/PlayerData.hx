@@ -1,8 +1,13 @@
 package
+;
 ; data.player
 ; import json2object.JsonWriter;
 ;
+;
+;
 ; import data.animation.Animation.AnimationData;
+;
+;
 ;
 ; class PlayerData
 { /** * The semantic version number for this data object.

@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import thx.Semigroup;
+;
+;
 ;
 ; typedef MonoidImpl<A> =
 { zero:A, append:A->A->A

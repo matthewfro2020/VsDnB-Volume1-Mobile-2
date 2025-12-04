@@ -1,6 +1,9 @@
 package
+;
 ; scripting
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; /** * An
 interface defining a list of functions for a

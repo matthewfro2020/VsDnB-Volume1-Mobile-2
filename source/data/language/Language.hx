@@ -1,6 +1,9 @@
 package
+;
 ; data.language
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; /** * A type definition that defines the properties for a language.
 */ typedef Language =

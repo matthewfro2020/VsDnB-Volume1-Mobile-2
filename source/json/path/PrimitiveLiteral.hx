@@ -1,6 +1,9 @@
 package
+;
 ; json.path
 ; import json.util.TypeUtil;
+;
+;
 ;
 ; enum PrimitiveLiteral
 { StringLiteral(value:String)
@@ -141,7 +144,8 @@ package
 ; } case NothingLiteral:
 // A comparison
 using the operator < yields false.;
-// TODO: Does this mean that > yields true?
+;
+; // TODO: Does this mean that > yields true?
 // return true
 ;
 ; return false
@@ -175,6 +179,8 @@ using the operator < yields false.;
 ; } case NothingLiteral:
 // A comparison
 using the operator < yields false. return false;
+;
+;
 ;
 ; case BooleanLiteral(_) | NullLiteral | UndefinedLiteral:
 // Unsupported operation return false

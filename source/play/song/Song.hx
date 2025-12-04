@@ -1,24 +1,45 @@
 package
+;
 ; play.song
 ; import data.song.SongRegistry;
 ;
+;
+;
 ; import data.IRegistryEntry;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import data.song.SongData.SongSection;
+;
+;
 ;
 ; import data.song.SongData.SongTimeChange;
 ;
+;
+;
 ; import data.song.SongData.SongMetadata;
+;
+;
 ;
 ; import data.song.SongData.SongChartData;
 ;
+;
+;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
+;
+;
 ;
 ; import scripting.events.ScriptEvent;
 ;
+;
+;
 ; import util.tools.Preloader;
+;
+;
 ;
 ; /** * An object that holds all of the data, and playable information for a song.
 */ class Song implements IRegistryEntry<SongMetadata> implements IPlayStateScriptedClass

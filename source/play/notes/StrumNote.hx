@@ -1,8 +1,13 @@
 package
+;
 ; play.notes
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; /** * A visual receptor used to help calculate note positions, and give visual feedback while playing.
 */ class StrumNote extends FlxSprite

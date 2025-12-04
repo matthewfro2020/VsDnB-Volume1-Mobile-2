@@ -1,8 +1,13 @@
 package
+;
 ; graphics.shaders
 ; import flixel.addons.display.FlxRuntimeShader;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; /** * A shader that's generated at runtime instead of being complied.
 */ class RuntimeShader extends FlxRuntimeShader

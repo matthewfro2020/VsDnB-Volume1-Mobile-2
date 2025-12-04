@@ -1,8 +1,11 @@
 package
+;
 ; util
 ; // crazy system shit!!!!!
 // lordryan wrote this :) (erizur added cross platform env vars)
 import sys.io.File;
+;
+;
 ;
 ; class SystemUtil
 { /** * Gets the user's windows platform username. * @return The platform username.

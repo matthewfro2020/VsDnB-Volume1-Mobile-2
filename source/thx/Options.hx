@@ -1,12 +1,21 @@
 package
+;
 ; thx
 ; import thx.Functions;
 ;
+;
+;
 ; import thx.Functions.*;
+;
+;
 ;
 ; import thx.Tuple;
 ;
+;
+;
 ; import haxe.ds.Option;
+;
+;
 ;
 ; /** Extension methods for the `haxe.ds.Option` type.
 *
@@ -15,7 +24,8 @@ package
 ; inline public static function maybe<T>(value:Null<T>):Option<T> return null == value ? None : Some(value)
 ; /** Equality function to campare two `Option` values of the same type. An optional equality function can be provided if values inside `Some` should be compared
 using something different than strict equality. *;
-*/ public static function equals<T>(a:Option<T>, b:Option<T>, ?eq:T->T->Bool) return switch [a, b]
+;
+; */ public static function equals<T>(a:Option<T>, b:Option<T>, ?eq:T->T->Bool) return switch [a, b]
 ; { case [None, None]: true
 ; case [Some(a), Some(b)]: if (null == eq) eq = function(a, b) return a == b
 ; eq(a, b)
@@ -25,13 +35,15 @@ using something different than strict equality. *;
 */ public static function equalsValue<T>(a:Option<T>, b:Null<T>, ?eq:T->T->Bool) return equals(a, toOption(b), eq)
 ; /** `map` transforms a value contained in `Option<T>` to `Option<TOut>`
 using a `callback`. `callback` is used only if `Option` is `Some(value)`. *;
-*/ public static function map<T, TOut>(option:Option<T>, callback:T->TOut):Option<TOut> return switch option
+;
+; */ public static function map<T, TOut>(option:Option<T>, callback:T->TOut):Option<TOut> return switch option
 ; { case None: None
 ; case Some(v): Some(callback(v))
 ; }
 ; /** `ap` transforms a value contained in `Option<T>` to `Option<TOut>`
 using a `callback` wrapped in another Option. *;
-*/ public static function ap<T, U>(option:Option<T>, fopt:Option<T->U>):Option<U> return switch option
+;
+; */ public static function ap<T, U>(option:Option<T>, fopt:Option<T->U>):Option<U> return switch option
 ; { case None: None
 ; case Some(v): map(fopt, function(f) return f(v))
 ; }
@@ -57,7 +69,8 @@ using a `callback` wrapped in another Option. *;
 ; }
 ; /** `foldLeft` reduce
 using an accumulating function and an initial value. *;
-*/ public static function foldLeft<T, B>(option:Option<T>, b:B, f:B->T->B):B return switch option
+;
+; */ public static function foldLeft<T, B>(option:Option<T>, b:B, f:B->T->B):B return switch option
 ; { case None: b
 ; case Some(v): f(b, v)
 ; }

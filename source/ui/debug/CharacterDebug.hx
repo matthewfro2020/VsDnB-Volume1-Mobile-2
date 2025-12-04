@@ -1,22 +1,41 @@
 package
+;
 ; ui.debug
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxObject;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.addons.display.FlxGridOverlay;
+;
+;
 ;
 ; import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import ui.menu.MainMenuState;
 ;
+;
+;
 ; import ui.MusicBeatState;
 ;
+;
+;
 ; import play.character.Character;
+;
+;
 ;
 ; /** *DEBUG MODE
 */ class CharacterDebug extends MusicBeatState

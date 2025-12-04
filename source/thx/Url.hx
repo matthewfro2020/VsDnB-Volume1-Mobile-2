@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; import thx.Error;
 ;
+;
+;
 ; using thx.Strings;
+;
+;
 ;
 ; /** It's a type that represents a URL.
 */ abstract Url(UrlType) from UrlType to UrlType

@@ -1,18 +1,33 @@
 package
+;
 ; backend
 ; import data.song.SongData.SongMusicData;
 ;
+;
+;
 ; import data.song.SongData.SongTimeChange;
+;
+;
 ;
 ; import data.song.SongRegistry;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.util.FlxSignal;
 ;
+;
+;
 ; import util.SortUtil;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; /** * A core handled used to help calculate musical timings, and beats for a song. * This is an essential core in the game that's used in both playing, and in menus. * * While there is a 'main' Conductor instance that's used throughout the game. * You are able to create as many Conductor instances as you want for a multitude of purposes. * * 1 step = 16th note * 4/4 = 4 beats every measure, 1 beat = 1 quarter note / 4 16th notes / 4 steps * 4/2 = 4 beats every measure, 1 beat = 1 half note / 8 16th notes / 8 steps * 7/4 = 7 beats every measure, 1 beat = 1 quarter note / 4 16th notes / 4 steps
 */ class Conductor

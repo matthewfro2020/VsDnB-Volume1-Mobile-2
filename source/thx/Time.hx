@@ -1,12 +1,21 @@
 package
+;
 ; thx
 ; using haxe.Int64;
 ;
+;
+;
 ; using thx.Ints;
+;
+;
 ;
 ; using thx.Strings;
 ;
+;
+;
 ; import thx.DateTimeUtc.*;
+;
+;
 ;
 ; @:access(thx.DateTimeUtc)
 abstract Time(Int64)

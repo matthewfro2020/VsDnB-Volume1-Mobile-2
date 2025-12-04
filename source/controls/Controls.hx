@@ -1,29 +1,54 @@
 package
+;
 ; controls
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.input.FlxInput;
+;
+;
 ;
 ; import flixel.input.actions.FlxAction;
 ;
+;
+;
 ; import flixel.input.actions.FlxActionInput;
+;
+;
 ;
 ; import flixel.input.actions.FlxActionInputDigital.FlxActionInputDigitalIFlxInput;
 ;
+;
+;
 ; import flixel.input.actions.FlxActionManager;
+;
+;
 ;
 ; import flixel.input.actions.FlxActionSet;
 ;
+;
+;
 ; import flixel.input.gamepad.FlxGamepadInputID;
 ;
+;
+;
 ; import flixel.input.keyboard.FlxKey;
+;
+;
 ;
 ; #if mobileC
 import mobile.controls.flixel.FlxButton;
 ;
+;
+;
 ; import mobile.controls.flixel.FlxHitbox;
 ;
+;
+;
 ; import mobile.controls.flixel.FlxVirtualPad;
+;
+;
 ;
 ; #end
 enum abstract Action(String) to String from String

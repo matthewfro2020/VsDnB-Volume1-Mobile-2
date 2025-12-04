@@ -1,8 +1,13 @@
 package
+;
 ; data.subtitle
 ; import audio.GameSound;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
+;
+;
 ;
 ; typedef LegacySubtitleData =
 { /** * The x position of the subtitle.

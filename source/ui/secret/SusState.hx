@@ -1,12 +1,21 @@
 package
+;
 ; ui.secret
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.FlxState;
 ;
+;
+;
 ; import flixel.util.FlxTimer;
+;
+;
 ;
 ; class SusState extends FlxState
 { var sus:FlxSprite

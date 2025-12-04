@@ -1,15 +1,26 @@
 package
+;
 ; data.song
 ; import util.tools.converters.SongConverter;
 ;
+;
+;
 ; import data.song.SongData.SongSection;
+;
+;
 ;
 ; import haxe.Json;
 ;
+;
+;
 ; import lime.utils.Assets;
+;
+;
 ;
 ; #if sys
 import sys.io.File;
+;
+;
 ;
 ; #end
 typedef SwagSection =

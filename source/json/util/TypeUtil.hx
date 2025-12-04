@@ -1,4 +1,5 @@
 package
+;
 ; json.util
 ; class TypeUtil
 { public static function isArray(input:Dynamic):Bool

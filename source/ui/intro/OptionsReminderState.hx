@@ -1,12 +1,21 @@
 package
+;
 ; ui.intro
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.text.FlxText;
+;
+;
 ;
 ; class OptionsReminderState extends MusicBeatState
 { #if desktop var textString:String = LanguageManager.getTextString('intro_warning')

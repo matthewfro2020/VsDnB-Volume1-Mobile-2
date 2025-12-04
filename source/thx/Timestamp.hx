@@ -1,16 +1,22 @@
 package
+;
 ; thx
 ; import thx.Dates;
 ;
+;
+;
 ; /** `Timestamp` provides additional methods on top of the `Float` as well as automatic casting from and to Date/String. ```
 import thx.Timestamp;
+;
+;
 ;
 ; ``` @author Jason O'Neil @author Franco Ponticelli
 *
 */ abstract Timestamp(Float) from Float to Float
 { /** Creates a timestamp by
 using the passed year, month, day, hour, minute, second. Note that each argument can overflow its normal boundaries (e.g. a month value of `-33` is perfectly valid) and the method will normalize that value by offsetting the other arguments by the right amount. *;
-*/ inline public static function create(year:Int, ?month:Int, ?day:Int, ?hour:Int, ?minute:Int, ?second:Int):Timestamp return Dates.create(year, month, day, hour, minute, second).getTime()
+;
+; */ inline public static function create(year:Int, ?month:Int, ?day:Int, ?hour:Int, ?minute:Int, ?second:Int):Timestamp return Dates.create(year, month, day, hour, minute, second).getTime()
 ;
 ; inline public static function now() return fromDate(Date.now())
 ; @:from inline public static function fromDate(d:Date):Timestamp return d.getTime()

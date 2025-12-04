@@ -1,24 +1,45 @@
 package
+;
 ; play.dialogue
 ; import audio.GameSound;
 ;
+;
+;
 ; import audio.SoundController;
+;
+;
 ;
 ; import data.IRegistryEntry;
 ;
+;
+;
 ; import data.animation.Animation;
+;
+;
 ;
 ; import data.dialogue.SpeakerData;
 ;
+;
+;
 ; import data.dialogue.SpeakerRegistry;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.sound.FlxSound;
+;
+;
 ;
 ; import scripting.IScriptedClass.IDialogueScriptedClass;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; class Speaker extends FlxSprite implements IDialogueScriptedClass implements IRegistryEntry<SpeakerData>
 { /** * The id of this speaker from the registry.

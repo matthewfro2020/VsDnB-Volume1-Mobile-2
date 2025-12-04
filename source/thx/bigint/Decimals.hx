@@ -1,6 +1,9 @@
 package
+;
 ; thx.bigint
 ; using thx.Strings;
+;
+;
 ;
 ; class Decimals
 { public static var divisionExtraScale = 4

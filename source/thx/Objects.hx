@@ -1,21 +1,33 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import thx.Dynamics;
+;
+;
 ;
 ; import thx.Tuple;
 ;
+;
+;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Strings;
+;
+;
 ;
 ; /** Helper methods for generic objects.
 *
 */ class Objects
 { /** Compares two objects assuming that the object with less fields will come first. If both objects have the same number of fields, each field value is compared
 using `thx.Dynamics.compare`. *;
-*/ public static function compare(a:
+;
+; */ public static function compare(a:
 ; {
 } , b:
 {
@@ -161,7 +173,8 @@ using `thx.Dynamics.compare`. *;
 } return to
 ; } /** `copyTo` copies the fields from `src` to `dst`
 using `Reflect.setField()` and `Dynamics.clone()`. Anonymous objects are entered into and copied recursively. *;
-*/ public static function copyTo(src:
+;
+; */ public static function copyTo(src:
 ; {
 } , dst:
 {
@@ -178,7 +191,8 @@ using `Reflect.setField()` and `Dynamics.clone()`. Anonymous objects are entered
 } return dst
 ; } /** Clone the current object by creating a new object and
 using `copyTo` to clone each field. *;
-*/ public static function clone<T:
+;
+; */ public static function clone<T:
 ; {
 } >(src:T, cloneInstances = false):T
 { return Dynamics.clone(src, cloneInstances)
@@ -285,7 +299,8 @@ using `copyTo` to clone each field. *;
 } , path:String):Option<Dynamic> return Options.ofValue(getPath(o, path))
 ; /** Null-safe `getPath` that attempts to parse the result
 using the provided parse function. `thx.fp.Dynamics` has several functions that match this pattern. *;
-*/ public static function parsePath<T>(o:
+;
+; */ public static function parsePath<T>(o:
 ; {
 } , path:String, parse:Dynamic->Validation.VNel<String, T>):Validation.VNel<String, T> return Options.toSuccessNel(getPathOption(o, path), 'Object does not contain path $path').flatMapV(parse)
 ; /** Gets a value from an object by a string path. The path can contain object keys and array indices separated by ".". Returns `alt` for a path that does not exist. ``` E.g.

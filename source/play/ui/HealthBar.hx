@@ -1,20 +1,37 @@
 package
+;
 ; play.ui
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.ui.FlxBar;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import play.character.Character;
 ;
+;
+;
 ; import ui.select.playerSelect.PlayerSelect.SelectedPlayerType;
+;
+;
 ;
 ; /** * The parameters for initalizing a health bar.
 */ typedef HealthBarParams =

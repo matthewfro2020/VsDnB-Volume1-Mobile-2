@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import thx.Semigroup;
 ;
+;
+;
 ; import thx.fp.Comparable;
 ;
+;
+;
 ; import thx.fp.ComparableOrd;
+;
+;
 ;
 ; abstract Ordering(OrderingImpl) from OrderingImpl to OrderingImpl
 { public static function fromInt(value:Int):Ordering return value < 0 ? LT : (value > 0 ? GT : EQ)

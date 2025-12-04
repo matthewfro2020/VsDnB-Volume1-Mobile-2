@@ -1,8 +1,13 @@
 package
+;
 ; play.notes
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.util.FlxSignal.FlxTypedSignal;
+;
+;
 ;
 ; /** * A visual animation that's played while a hold note is being clipped.
 */ @:access(play.notes.Strumline)

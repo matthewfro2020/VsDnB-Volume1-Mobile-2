@@ -1,4 +1,5 @@
 package
+;
 ; json.path
 ; class FunctionExpression
 { static final VALID_FUNCTIONS:Array<String> = ["length", "count", "match", "search", "value"]

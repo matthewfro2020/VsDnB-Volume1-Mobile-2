@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; using thx.Ints;
 ;
+;
+;
 ; using thx.Strings;
 ;
+;
+;
 ; import thx.DateConst.*;
+;
+;
 ;
 ; /** `LocalYearMonth` represents a date (without day of the month) without time-offset information.
 */ abstract LocalYearMonth(Int)
@@ -83,7 +90,8 @@ package
 ; public function max(other:LocalYearMonth):LocalYearMonth return compareTo(other) >= 0 ? self() : other
 ; /** Get a date relative to the current date, shifting by a set period of time. Please note this works by constructing a new date object, rather than
 using `DateTools.delta()`. The key difference is that this allows us to jump over a period that may not be a set number of seconds. For example, jumping between months (which have different numbers of days), leap years, leap seconds, daylight savings time changes etc. @param period The TimePeriod you wish to jump by, Second, Minute, Hour, Day, Week, Month or Year. @param amount The multiple of `period` that you wish to jump by. A positive amount moves forward in time, a negative amount moves backward. *;
-*/ public function jump(period:TimePeriod, amount:Int)
+;
+; */ public function jump(period:TimePeriod, amount:Int)
 ; { return toLocalDate().jump(period, amount).toLocalYearMonth()
 ; } /** Tells how many days in the month of this date. @return Int, the number of days in the month. *
 */ public function daysInThisMonth() return DateTimeUtc.daysInMonth(year, month)

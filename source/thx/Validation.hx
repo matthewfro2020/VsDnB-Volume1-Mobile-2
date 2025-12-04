@@ -1,14 +1,25 @@
 package
+;
 ; thx
 ; import thx.Either;
 ;
+;
+;
 ; import thx.Tuple;
+;
+;
 ;
 ; import thx.Eithers;
 ;
+;
+;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Functions;
+;
+;
 ;
 ; typedef VNel<E, A> = Validation<Nel<E>, A>
 ; /** * A right-biased disjunctive type with applicative functor requiring a semigroup * on the left type. This is useful for composing validation functions.

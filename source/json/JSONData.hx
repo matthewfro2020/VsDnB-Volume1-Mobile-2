@@ -1,12 +1,21 @@
 package
+;
 ; json
 ; import json.path.JSONPath;
 ;
+;
+;
 ; import json.path.JSONPath.PathPart;
+;
+;
 ;
 ; import json.path.JSONPath.PathParts;
 ;
+;
+;
 ; import json.util.TypeUtil;
+;
+;
 ;
 ; /** * Wraps a JSON data structure in a `Map`-like
 interface , * with additional utilities for retrieving data from nested paths * and for handling array data.
@@ -52,7 +61,8 @@ abstract JSONData(Dynamic) from Dynamic to Dynamic
 ; }
 } /** * Get an element of the JSON data by a normalized JSONPath. * If you want to perform a query
 using an actual JSONPath, use `JSONPath.query()` instead.;
-*/ public function getByPath(path:String):Null<Dynamic>
+;
+; */ public function getByPath(path:String):Null<Dynamic>
 ; { var pathParts:PathParts = JSONPath.splitNormalizedPath(path)
 ; return getByPathParts(pathParts)
 ; } function getByPathParts(pathParts:PathParts):Null<Dynamic>

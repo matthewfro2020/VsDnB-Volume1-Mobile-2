@@ -1,26 +1,49 @@
 package
+;
 ; audio
 ; import audio.GameSound;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.sound.FlxSound;
 ;
+;
+;
 ; import flixel.sound.FlxSoundGroup;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxSoundAsset;
+;
+;
 ;
 ; import flixel.system.frontEnds.SoundFrontEnd;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxSoundAsset;
+;
+;
 ;
 ; import flixel.group.FlxGroup.FlxTypedGroup;
 ;
+;
+;
 ; import openfl.media.Sound;
+;
+;
 ;
 ; import util.tools.Preloader;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; /** * An extension of SoundFrontEnd that uses `GameSound` instead `FlxSound` * This
 class should be used for loading and playing sounds.

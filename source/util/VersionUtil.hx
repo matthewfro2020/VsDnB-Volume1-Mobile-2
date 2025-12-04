@@ -1,8 +1,13 @@
 package
+;
 ; util
 ; import thx.semver.Version.Identifier.StringId;
 ;
+;
+;
 ; import haxe.Json;
+;
+;
 ;
 ; /** * Utility functions for operating on semantic versions. * * Remember, increment the patch version (1.0.x) if you make a bugfix, * increment the minor version (1.x.0) if you make a new feature (but previous content is still compatible), * and increment the major version (x.0.0) if you make a breaking change (e.g. new API or reorganized file format). * * Taken from Base FNF.
 */ @:nullSafety

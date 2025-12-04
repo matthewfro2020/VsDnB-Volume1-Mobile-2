@@ -1,12 +1,21 @@
 package
+;
 ; scripting.module
 ; import flixel.FlxG;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import scripting.events.ScriptEventDispatcher;
 ;
+;
+;
 ; import util.SortUtil;
+;
+;
 ;
 ; /** * Handles the behavior of modules such as dispatching them, storing them, etc.
 */ class ModuleHandler

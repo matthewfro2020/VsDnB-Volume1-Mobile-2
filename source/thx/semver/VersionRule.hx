@@ -1,8 +1,13 @@
 package
+;
 ; thx.semver
 ; using thx.semver.Version;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; abstract VersionRule(VersionComparator) from VersionComparator to VersionComparator
 { static var VERSION = ~/^(>=|<=|[v=><~^])?(\d+|[x*])(?:\.(\d+|[x*]))?(?:\.(\d+|[x*]))?(?:[-]([a-z0-9.-]+))?(?:[+]([a-z0-9.-]+))?$/i

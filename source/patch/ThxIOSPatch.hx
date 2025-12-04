@@ -1,9 +1,14 @@
 package
+;
 ; patch
 ; #if (ios || mobile || MOBILE_BUILD)
 import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; class ThxIOSPatch
 { /** * Removes thx.Nil and thx.Tuple0 from compilation. * Avoids conflict with Apple system macro "Nil".

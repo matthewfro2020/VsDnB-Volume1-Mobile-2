@@ -1,8 +1,13 @@
 package
+;
 ; data.dialogue
 ; import json2object.JsonWriter;
 ;
+;
+;
 ; import data.animation.Animation.AnimationData;
+;
+;
 ;
 ; class SpeakerData
 { /** * The semantic version of this SpeakerData object.

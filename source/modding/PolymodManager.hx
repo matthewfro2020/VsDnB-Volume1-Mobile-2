@@ -1,26 +1,49 @@
 package
+;
 ; modding
 ; import thx.semver.Version;
 ;
+;
+;
 ; import polymod.Polymod;
+;
+;
 ;
 ; import polymod.backends.PolymodAssets.PolymodAssetType;
 ;
+;
+;
 ; import polymod.format.ParseRules.TextFileFormat;
 ;
-; import polymod.fs.SysFileSystem;
+;
 ;
 ; import polymod.fs.SysFileSystem;
+;
+;
+;
+; import polymod.fs.SysFileSystem;
+;
+;
 ;
 ; import play.song.SongModuleHandler;
 ;
+;
+;
 ; import scripting.module.ModuleHandler;
+;
+;
 ;
 ; import thx.semver.VersionRule;
 ;
+;
+;
 ; import util.FileUtil;
 ;
+;
+;
 ; import util.macro.ClassMacro;
+;
+;
 ;
 ; /** * A handler for the library `Polymod`. A backend used for modding, and helps with the scripting backend.
 */ @:keep

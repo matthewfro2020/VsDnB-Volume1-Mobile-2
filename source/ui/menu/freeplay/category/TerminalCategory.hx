@@ -1,14 +1,25 @@
 package
+;
 ; ui.menu.freeplay.category
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import ui.menu.freeplay.category.Category.CategorySong;
+;
+;
 ;
 ; class TerminalCategory extends Category
 { public function new()

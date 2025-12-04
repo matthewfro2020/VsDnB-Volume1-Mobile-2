@@ -1,10 +1,17 @@
 package
+;
 ; play.player
 ; import data.player.PlayerRegistry;
 ;
+;
+;
 ; import data.player.PlayerData;
 ;
+;
+;
 ; import data.IRegistryEntry;
+;
+;
 ;
 ; class PlayableCharacter implements IRegistryEntry<PlayerData>
 { /** * The id of this playable character.

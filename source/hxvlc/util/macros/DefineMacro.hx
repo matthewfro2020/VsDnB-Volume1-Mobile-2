@@ -1,9 +1,14 @@
 package
+;
 ; hxvlc.util.macros
 ; #if macro
 import haxe.macro.Context;
 ;
+;
+;
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; #end
 /** * Utility

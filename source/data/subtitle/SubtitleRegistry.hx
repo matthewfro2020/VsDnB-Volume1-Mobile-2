@@ -1,12 +1,21 @@
 package
+;
 ; data.subtitle
 ; import data.subtitle.SubtitleData.SongSubtitleData;
 ;
+;
+;
 ; import json2object.JsonParser;
+;
+;
 ;
 ; import play.subtitle.SubtitleManager;
 ;
+;
+;
 ; import play.subtitle.ScriptedSubtitleManager;
+;
+;
 ;
 ; class SubtitleRegistry extends BaseRegistry<SubtitleManager, SongSubtitleData>
 { public static var VERSION:thx.semver.Version = '2.0.0'

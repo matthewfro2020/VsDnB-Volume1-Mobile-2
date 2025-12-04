@@ -1,14 +1,25 @@
 package
+;
 ; graphics.shaders
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.math.FlxAngle;
+;
+;
 ;
 ; import flixel.graphics.frames.FlxFrame;
 ;
+;
+;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; /* A shader that aims to *mostly recreate how Adobe Animate/Flash handles drop shadows, but its main use here is for rim lighting. Has options for color, angle, distance, and a threshold to not cast the shadow on parts like outlines. Can also be supplied a secondary mask which can then have an alternate threshold, for when sprites have too many conflicting colors for the drop shadow to look right (e.g. the tankmen on GF's speakers). Also has an Adjust Color shader in here so they can work together when needed.
 */ class DropShadowShader extends RuntimeShader

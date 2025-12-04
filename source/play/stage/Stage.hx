@@ -1,32 +1,61 @@
 package
+;
 ; play.stage
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import util.SortUtil;
+;
+;
 ;
 ; import data.IRegistryEntry;
 ;
+;
+;
 ; import data.stage.StageData;
+;
+;
 ;
 ; import data.stage.StageRegistry;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import play.character.Character;
 ;
+;
+;
 ; import play.stage.BGSprite;
+;
+;
 ;
 ; import scripting.IScriptedClass.IPlayStateScriptedClass;
 ;
+;
+;
 ; import scripting.IScriptedClass.IStageScriptedClass;
+;
+;
 ;
 ; import scripting.events.ScriptEvent;
 ;
+;
+;
 ; import scripting.events.ScriptEventDispatcher;
+;
+;
 ;
 ; /** * A group of props designed as a background for any characters to be.
 */ class Stage extends FlxSpriteGroup implements IPlayStateScriptedClass implements IStageScriptedClass implements IRegistryEntry<StageData>
@@ -92,7 +121,8 @@ package
 {
 } /** * Adds a character to this stage. * Properly positions them based on the type of character they are. * @param character The character to add. * @param type The type of character it is. * @param position (Optional) Where to position the character. Defaults to the base stage position if none is provided. * @param reposition (Optional) Whether to reposition the character
 using their global offsets, or leave them as is.;
-*/ public function addCharacter(character:Character, ?type:CharacterType, ?position:FlxPoint, ?reposition:Bool = true):Void
+;
+; */ public function addCharacter(character:Character, ?type:CharacterType, ?position:FlxPoint, ?reposition:Bool = true):Void
 ; { if (character == null) return
 ; if (type == null) type = character.characterType
 ; var characterStageData:StageDataCharacter = getCharacterStageData(type)
@@ -160,13 +190,15 @@ using their global offsets, or leave them as is.;
 ; }
 } /** * Removes the given character from this stage, and adds it to the given stage. * @param char The character to move. * @param stage The stage to move the character to. * @param position (Optional) Where to position the character. Defaults to the base stage position if none is provided. * @param reposition (Optional) Whether to reposition the character
 using their global offsets, or leave them as is.;
-*/ public function moveCharacterToStage(char:Character, stage:Stage, ?position:FlxPoint, ?reposition:Bool = true):Void
+;
+; */ public function moveCharacterToStage(char:Character, stage:Stage, ?position:FlxPoint, ?reposition:Bool = true):Void
 ; { this.remove(char, true)
 ; stage.addCharacter(char, char.characterType, position, reposition)
 ; char.alpha = stage.alpha
 ; } /** * Moves every character on this stage to the given stage. * Used usually for if the stage switches. * * @param stage The stage to move all the characters to. * @param position (Optional) Where to position the character. Defaults to the base stage position if none is provided. * @param reposition (Optional) Whether to reposition the character
 using their global offsets, or leave them as is.;
-*/ public function moveCharactersToStage(stage:Stage, ?position:FlxPoint, ?reposition:Bool = true):Void
+;
+; */ public function moveCharactersToStage(stage:Stage, ?position:FlxPoint, ?reposition:Bool = true):Void
 ; { for (char in characters.values())
 { moveCharacterToStage(char, stage, position, reposition)
 ; }

@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; import haxe.Constraints.IMap;
 ;
+;
+;
 ; import thx.Tuple;
+;
+;
 ;
 ; @:forward(length, set, insert, exists, remove, keys, iterator, tuples, toArray, toString, keyAt, keyIndex, valueIndex, removeAt)
 abstract OrderedMap<K, V>(OrderedMapImpl<K, V>) to IMap<K, V>

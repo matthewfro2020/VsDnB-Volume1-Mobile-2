@@ -1,15 +1,26 @@
 package
+;
 ; hxvlc.flixel
 ; #if flixel
 import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.graphics.FlxGraphic;
 ;
+;
+;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import hxvlc.util.Location;
+;
+;
 ;
 ; /** * This
 class extends `FlxSprite` to display video files in HaxeFlixel. * * ```haxe * final video:FlxVideoSprite = new FlxVideoSprite(0, 0)

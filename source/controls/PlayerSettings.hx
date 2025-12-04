@@ -1,8 +1,13 @@
 package
+;
 ; controls
 ; import controls.Controls;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; class PlayerSettings
 { static public var controls(get, null):Controls

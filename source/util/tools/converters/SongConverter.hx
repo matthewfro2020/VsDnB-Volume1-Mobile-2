@@ -1,28 +1,53 @@
 package
+;
 ; util.tools.converters
 ; import data.character.CharacterRegistry;
 ;
+;
+;
 ; import data.song.SongRegistry;
+;
+;
 ;
 ; import backend.Conductor;
 ;
+;
+;
 ; import data.song.LeagacySongData.Song;
+;
+;
 ;
 ; import data.song.LeagacySongData.SwagSong;
 ;
+;
+;
 ; import data.song.SongData.SongChartData;
+;
+;
 ;
 ; import data.song.SongData.SongMetadata;
 ;
+;
+;
 ; import data.song.SongData.SongNoteData;
+;
+;
 ;
 ; import data.song.SongData.SongTimeChange;
 ;
+;
+;
 ; import data.song.SongData.SongSection;
+;
+;
 ;
 ; import util.FileUtil;
 ;
+;
+;
 ; import sys.io.File;
+;
+;
 ;
 ; class SongConverter
 { public static function migrate():Void

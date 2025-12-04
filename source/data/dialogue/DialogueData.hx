@@ -1,6 +1,9 @@
 package
+;
 ; data.dialogue
 ; import json2object.JsonWriter;
+;
+;
 ;
 ; /** * The data that defines the dialogue that happens before a song starts.
 */ class DialogueData

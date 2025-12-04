@@ -1,16 +1,29 @@
 package
+;
 ; play.notes
 ; import data.song.SongData.SongNoteData;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import play.PlayState;
+;
+;
 ;
 ; import play.character.Character;
 ;
+;
+;
 ; import ui.select.playerSelect.PlayerSelect;
+;
+;
 ;
 ; /** * A visual sprite used both in-game, and outside. * * In-game, it's used as a visual for players to hit. * Outside of playing, it's usually used as a visual prop.
 */ @:access(play.PlayState)
@@ -48,7 +61,8 @@ class Note extends FlxSprite
 ; // PROPERTIES
 // /** * The note style that this note is
 using .;
-*/ public var noteStyle(default, set):NoteStyle
+;
+; */ public var noteStyle(default, set):NoteStyle
 ; function set_noteStyle(value:NoteStyle):NoteStyle
 { if (noteStyle != value)
 { var animPlaying:Null<String> = animation?.curAnim?.name ?? null

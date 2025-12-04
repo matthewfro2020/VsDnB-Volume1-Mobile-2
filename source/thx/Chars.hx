@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import haxe.Utf8;
+;
+;
 ;
 ; /** Represents a sequence of Utf8 characters stored as an array of integers.
 *

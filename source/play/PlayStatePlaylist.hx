@@ -1,6 +1,9 @@
 package
+;
 ; play
 ; import play.song.Song;
+;
+;
 ;
 ; class PlayStatePlaylist
 { /** * Whether the player is currently in StoryMode, or not.

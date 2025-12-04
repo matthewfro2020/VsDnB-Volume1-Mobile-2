@@ -1,4 +1,5 @@
 package
+;
 ; cpp
 ; @:include('vector')
 @:native('std::vector')

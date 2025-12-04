@@ -1,20 +1,37 @@
 package
+;
 ; play.save
 ; import util.PlatformUtil;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.util.FlxSave;
 ;
+;
+;
 ; import flixel.util.FlxSignal.FlxTypedSignal;
+;
+;
 ;
 ; import scripting.IScriptedClass.IEventDispatcher;
 ;
+;
+;
 ; import scripting.events.ScriptEvent;
+;
+;
 ;
 ; import scripting.events.ScriptEventType;
 ;
+;
+;
 ; import scripting.events.ScriptEventDispatcher;
+;
+;
 ;
 ; /** * A save object that contains the user's preferences from the settings.
 */ class Preferences

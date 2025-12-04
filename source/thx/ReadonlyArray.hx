@@ -1,8 +1,13 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import thx.Functions;
+;
+;
 ;
 ; @:forward(copy, filter, join, map, slice, toString)
 abstract ReadonlyArray<T>(Array<T>) from Array<T>

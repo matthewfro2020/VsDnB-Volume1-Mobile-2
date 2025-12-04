@@ -1,45 +1,84 @@
 package
+;
 ; util.tools
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import flixel.graphics.FlxGraphic;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxShader;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxSoundAsset;
+;
+;
 ;
 ; import openfl.Assets;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; import openfl.media.Sound;
 ;
+;
+;
 ; import openfl.utils.AssetType;
+;
+;
 ;
 ; import openfl.system.System;
 ;
+;
+;
 ; import play.notes.NoteStyle;
+;
+;
 ;
 ; import play.PlayState;
 ;
+;
+;
 ; import play.character.Character;
+;
+;
 ;
 ; import ui.menu.ost.OSTMenuState;
 ;
+;
+;
 ; import ui.select.charSelect.CharacterSelect;
 ;
+;
+;
 ; import ui.select.playerSelect.PlayerSelect;
+;
+;
 ;
 ; #if cpp
 import cpp.vm.Gc;
 ;
+;
+;
 ; #end
 #if sys
 import sys.FileSystem;
+;
+;
 ;
 ; #end
 /** * Utility for providing, and management cache for assets. * Keeps tracks of the previous cached assets from states, cache purging, and more to prevent memory stacking, and more.

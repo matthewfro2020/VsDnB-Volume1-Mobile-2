@@ -1,18 +1,33 @@
 package
+;
 ; json.path
 ; import haxe.ds.Either;
 ;
+;
+;
 ; import json.JSONData;
+;
+;
 ;
 ; import json.util.SliceUtil;
 ;
+;
+;
 ; import json.util.ArrayUtil;
+;
+;
 ;
 ; import json.path.PrimitiveLiteral;
 ;
+;
+;
 ; import json.path.FunctionExpression;
 ;
+;
+;
 ; using StringTools;
+;
+;
 ;
 ; /** * A JSONPath is a query consisting of a root identifier followed by a series of segments (with optional blank space between). * Each segment takes the result of the previous root identifier (or segment) and provides input to the next segment, in the form of a nodelist. * A valid query is executed against a value and produces a node list.
 */ class JSONPath

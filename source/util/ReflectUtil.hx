@@ -1,6 +1,9 @@
 package
+;
 ; util
 ; import Type.ValueType;
+;
+;
 ;
 ; /** * Provides sanitized and blacklisted access to haxe's Reflection functions. * Used for sandboxing in scripts.
 */ class ReflectUtil

@@ -1,6 +1,9 @@
 package
+;
 ; thx.fp
 ; import thx.Ord;
+;
+;
 ;
 ; abstract Set<X>(SetImpl<X>) from SetImpl<X> to SetImpl<X>
 { inline public static function empty<X>():Set<X> return Tip

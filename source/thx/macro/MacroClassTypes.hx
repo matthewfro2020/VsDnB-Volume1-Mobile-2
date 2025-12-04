@@ -1,15 +1,26 @@
 package
+;
 ; thx.macro
 ; #if (neko || macro)
 using thx.Arrays;
 ;
+;
+;
 ; import haxe.macro.Context;
+;
+;
 ;
 ; import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.TypeTools;
 ;
+;
+;
 ; import haxe.macro.Type;
+;
+;
 ;
 ; /** Extension methods to work with `ClassType`s at macro time.
 *

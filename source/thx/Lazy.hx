@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import haxe.macro.Expr;
+;
+;
 ;
 ; @:callable
 abstract Lazy<T>(Void->T) from Void->T to Void->T

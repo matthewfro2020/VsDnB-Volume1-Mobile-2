@@ -1,10 +1,17 @@
 package
+;
 ; thx.fp
 ; import thx.Monoid;
 ;
+;
+;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Functions;
+;
+;
 ;
 ; abstract List<A>(ListImpl<A>) from ListImpl<A> to ListImpl<A>
 { inline static public function empty<A>():List<A> return Nil

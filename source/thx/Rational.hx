@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; abstract Rational(RationalImpl) from RationalImpl to RationalImpl
 { public static var zero(default, never):Rational =

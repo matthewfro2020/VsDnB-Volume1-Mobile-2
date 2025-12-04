@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import haxe.Int32;
 ;
+;
+;
 ; import thx.Arrays;
 ;
+;
+;
 ; using thx.Ints;
+;
+;
 ;
 ; /** Stores a set of randomly-accessible bit values in a compact data structure. All bit values are defaulted to false unless explicitly set to true. Attemptiing to access an index which is < 0 or >= the BitSet length will result in an exception.
 *

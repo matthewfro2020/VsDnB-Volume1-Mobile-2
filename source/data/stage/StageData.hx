@@ -1,6 +1,9 @@
 package
+;
 ; data.stage
 ; import json2object.JsonWriter;
+;
+;
 ;
 ; /** * A data structure that holds the metadata information for a stage.
 */ class StageData

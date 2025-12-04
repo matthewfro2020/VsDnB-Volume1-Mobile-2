@@ -1,28 +1,53 @@
 package
+;
 ; play.ui
 ; import ui.select.playerSelect.PlayerSelect.SelectedPlayerType;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.group.FlxSpriteGroup;
+;
+;
 ;
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import flixel.text.FlxText;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.FlxStringUtil;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import flixel.addons.display.FlxRadialGauge;
+;
+;
 ;
 ; import play.character.Character;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; typedef TimerType =
 { /** * The graphic of this style.

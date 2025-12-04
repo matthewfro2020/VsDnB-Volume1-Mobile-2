@@ -1,44 +1,83 @@
 package
+;
 ; hxvlc.util
 ; import cpp.ConstCharStar;
 ;
+;
+;
 ; import cpp.Pointer;
+;
+;
 ;
 ; import cpp.StdVector;
 ;
+;
+;
 ; import haxe.MainLoop;
+;
+;
 ;
 ; import haxe.io.Path;
 ;
+;
+;
 ; import hxvlc.externs.LibVLC;
+;
+;
 ;
 ; import hxvlc.externs.Types;
 ;
+;
+;
 ; import hxvlc.util.macros.DefineMacro;
+;
+;
 ;
 ; import sys.FileSystem;
 ;
+;
+;
 ; import sys.thread.Mutex;
+;
+;
 ;
 ; #if HXVLC_LOGGING
 import cpp.RawConstPointer;
 ;
+;
+;
 ; import cpp.VarList;
 ;
+;
+;
 ; import haxe.Log;
+;
+;
 ;
 ; #end #if android
 import haxe.Exception;
 ;
+;
+;
 ; import lime.app.Future;
+;
+;
 ;
 ; import lime.system.System;
 ;
+;
+;
 ; import lime.utils.AssetLibrary;
+;
+;
 ;
 ; import lime.utils.Assets;
 ;
+;
+;
 ; import sys.io.File;
+;
+;
 ;
 ; #end
 /** This
@@ -100,6 +139,8 @@ interface / UI args.push_back("--vout=none")
 ; // Disable colored console output (cleaner Xcode log) #end #if !HXVLC_SHARE_DIRECTORY args.push_back("--no-lua")
 ; // Disable Lua scripting engine if not
 using shared directory #end args.push_back("--no-interact");
+;
+;
 ;
 ; // Disable interaction prompts args.push_back("--no-keyboard-events")
 ; // Disable keyboard input args.push_back("--no-mouse-events")

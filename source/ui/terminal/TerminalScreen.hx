@@ -1,16 +1,29 @@
 package
+;
 ; ui.terminal
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import openfl.utils.ByteArray;
+;
+;
 ;
 ; import openfl.display.BitmapData;
 ;
+;
+;
 ; import openfl.geom.Rectangle;
+;
+;
 ;
 ; abstract
 class TerminalDisplay

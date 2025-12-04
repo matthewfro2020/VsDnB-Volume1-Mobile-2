@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; class DateConst
 { public inline static var millisPerSecond:Float = 1000

@@ -1,23 +1,40 @@
 package
+;
 ; backend.debug
 ; import play.save.Preferences;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; import openfl.system.System;
 ;
+;
+;
 ; import openfl.text.TextField;
 ;
+;
+;
 ; import openfl.text.TextFormat;
+;
+;
 ;
 ; #if gl_stats
 import openfl.display._internal.stats.Context3DStats;
 ;
+;
+;
 ; import openfl.display._internal.stats.DrawCallContext;
+;
+;
 ;
 ; #end
 #if flash
 import openfl.Lib;
+;
+;
 ;
 ; #end
 /** The FPS
@@ -30,7 +47,8 @@ class provides an easy-to-use monitor to display the current frame rate of an Op
 class FPSDisplay extends TextField
 { /** The current frame rate, expressed
 using frames-per-second *;
-*/ public var currentFPS(default, null):Int
+;
+; */ public var currentFPS(default, null):Int
 ;
 ; @:noCompletion private var cacheCount:Int
 ; @:noCompletion private var currentTime:Float

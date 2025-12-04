@@ -1,16 +1,29 @@
 package
+;
 ; ui.select
 ; import data.player.PlayerData.PlayerCharacterSelectData;
 ;
+;
+;
 ; import data.animation.Animation;
+;
+;
 ;
 ; import data.animation.Animation.AnimationData;
 ;
+;
+;
 ; import flixel.FlxSprite;
+;
+;
 ;
 ; import flixel.group.FlxSpriteGroup;
 ;
+;
+;
 ; import play.ui.HealthIcon;
+;
+;
 ;
 ; class CharacterPortrait extends FlxSpriteGroup
 { /** * The data used for this portrait.

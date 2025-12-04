@@ -1,6 +1,9 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
+;
+;
 ;
 ; class Bools
 { /** Returns a comparison value (`Int`) from two boolean values.

@@ -1,18 +1,33 @@
 package
+;
 ; hxvlc.externs
 ; import cpp.CastCharStar;
 ;
+;
+;
 ; import cpp.ConstCharStar;
+;
+;
 ;
 ; import cpp.Int64;
 ;
+;
+;
 ; import cpp.RawConstPointer;
+;
+;
 ;
 ; import cpp.RawPointer;
 ;
+;
+;
 ; import cpp.UInt32;
 ;
+;
+;
 ; import hxvlc.externs.Types;
+;
+;
 ;
 ; /** * This
 class provides static methods to interact with the LibVLC library. * It allows for the creation and management of VLC instances, media players, * and media objects, as well as the handling of audio, video, and events.

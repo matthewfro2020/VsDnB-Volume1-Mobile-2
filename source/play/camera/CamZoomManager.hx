@@ -1,6 +1,9 @@
 package
+;
 ; play.camera
 ; import flixel.FlxCamera;
+;
+;
 ;
 ; /** * A data manager for helping customize how a camera zooms.
 */ class CamZoomManager

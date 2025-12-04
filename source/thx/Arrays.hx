@@ -1,33 +1,60 @@
 package
+;
 ; thx
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import haxe.ds.StringMap;
+;
+;
 ;
 ; import thx.Functions.Functions in F;
 ;
+;
+;
 ; import thx.Functions;
+;
+;
 ;
 ; import thx.Validation;
 ;
+;
+;
 ; import thx.Semigroup;
+;
+;
 ;
 ; import thx.Monoid;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; using thx.Eithers;
 ;
+;
+;
 ; using thx.Options;
+;
+;
 ;
 ; #if macro
 import haxe.macro.Expr;
 ;
+;
+;
 ; #end
 import thx.Tuple;
 ;
+;
+;
 ; /** `Arrays` provides additional extension methods on top of the `Array` type. Note that some of the examples imply `
 using thx.Arrays;
+;
+;
 ;
 ; `.
 *
@@ -104,7 +131,8 @@ using thx.Arrays;
 ; #end
 } /** Compares two arrays returning a negative integer, zero or a positive integer. The first comparison is made on the array length. If they match each pair of elements is compared
 using `thx.Dynamics.compare`. *;
-*/ public static function compare<T>(a:ReadonlyArray<T>, b:ReadonlyArray<T>)
+;
+; */ public static function compare<T>(a:ReadonlyArray<T>, b:ReadonlyArray<T>)
 ; { var v:Int
 ; if ((v = Ints.compare(a.length, b.length)) != 0) return v
 ; for (i in 0...a.length)
@@ -198,7 +226,8 @@ using `thx.Dynamics.compare`. *;
 ; return true
 ; } /** It finds an element in the array
 using `predicate` and returns it. The element is also removed from the original array. If no element satisfies `predicate` the array is left unmodified and `null` is returned. *;
-*/ public static function extract<T>(a:Array<T>, predicate:T->Bool):T
+;
+; */ public static function extract<T>(a:Array<T>, predicate:T->Bool):T
 ; { for (i in 0...a.length) if (predicate(a[i])) return a.splice(i, 1)[0]
 ; return null
 ; } /** Filters out all `null` values from an array. *
@@ -274,6 +303,8 @@ using `predicate` and returns it. The element is also removed from the original 
 */ inline public static function firstOption<T>(array:ReadonlyArray<T>):Option<T> return Options.ofValue(array[0])
 ; /** It traverses an array of elements. Each element is split
 using the `callback` function and a 'flattened' array is returned. ```haxe var chars = ['Hello', 'World'].flatMap(function(s) return s.split(''));
+;
+;
 ;
 ; trace(chars)
 ; // ['H','e','l','l','o','W','o','r','l','d'] ``` *

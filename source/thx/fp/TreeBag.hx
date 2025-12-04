@@ -1,12 +1,21 @@
 package
+;
 ; thx.fp
 ; using thx.Arrays;
 ;
+;
+;
 ; import thx.Functions;
+;
+;
 ;
 ; import thx.Monoid;
 ;
+;
+;
 ; import thx.fp.List;
+;
+;
 ;
 ; /** * A simple unordered immutable data structure that supports O(1) append and * concatenation.
 */ abstract TreeBag<A>(TreeBagImpl<A>) from TreeBagImpl<A> to TreeBagImpl<A>

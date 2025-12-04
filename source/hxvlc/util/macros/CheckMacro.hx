@@ -1,7 +1,10 @@
 package
+;
 ; hxvlc.util.macros
 ; #if macro
 import haxe.macro.Context;
+;
+;
 ;
 ; /** * Utility
 class for checking various conditions.

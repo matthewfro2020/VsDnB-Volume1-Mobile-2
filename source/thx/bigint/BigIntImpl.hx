@@ -1,4 +1,5 @@
 package
+;
 ; thx.bigint
 ; interface BigIntImpl
 { var sign(default, null):Bool

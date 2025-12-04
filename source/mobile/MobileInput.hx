@@ -1,10 +1,17 @@
 package
+;
 ; mobile
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.input.touch.FlxTouch;
 ;
+;
+;
 ; import flixel.util.FlxRect;
+;
+;
 ;
 ; class MobileInput
 { public static var left:Bool = false

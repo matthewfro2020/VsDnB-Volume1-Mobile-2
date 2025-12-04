@@ -1,13 +1,20 @@
 package
+;
 ; thx
 ; #if (haxe_ver >= 3.200)
 import haxe.Constraints.IMap;
 ;
+;
+;
 ; #else
 import Map.IMap;
 ;
+;
+;
 ; #end
 using thx.Iterators;
+;
+;
 ;
 ; /** `IMap` wrapper for anonymous objects. It allows to use anonymous objects as sources for IMap without the need of explicitely extracting all of its values. ```haxe var map = new AnonymousMap(
 { a : "A", b : "B"
@@ -21,7 +28,8 @@ using thx.Iterators;
 }
 ; /** Creates an instance of `IMap<String, V>` (`AnonymousMap<V>`) out of an anonymous object. Note that
 using this;
-class any operation that is expected to change the state of the `Map` is going to change the state of the underlying anonymous object. *
+;
+; class any operation that is expected to change the state of the `Map` is going to change the state of the underlying anonymous object. *
 */ public function new(o:
 ; {
 } ) this.o = o

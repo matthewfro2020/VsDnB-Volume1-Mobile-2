@@ -1,6 +1,9 @@
 package
+;
 ; util.macro
 ; import haxe.rtti.Meta;
+;
+;
 ;
 ; /** * A complement to `ClassMacro`. See `ClassMacro` for more information.
 */ @:nullSafety

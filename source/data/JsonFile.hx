@@ -1,4 +1,5 @@
 package
+;
 ; data
 ; /** * A type definition that defines what kind of a JSON file.
 */ typedef JsonFile =

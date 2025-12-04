@@ -1,12 +1,21 @@
 package
+;
 ; thx.fp
 ; import thx.Tuple;
 ;
+;
+;
 ; import thx.Unit;
+;
+;
 ;
 ; import thx.fp.Functions.const;
 ;
+;
+;
 ; using thx.Functions;
+;
+;
 ;
 ; @:callable
 abstract State<S, A>(S->Tuple<S, A>) from S->Tuple<S, A>

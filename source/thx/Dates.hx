@@ -1,9 +1,14 @@
 package
+;
 ; thx
 ; import thx.Either;
 ;
+;
+;
 ; /** `Dates` provides additional extension methods on top of the `Date` type. ```
 using Dates;
+;
+;
 ;
 ; ``` @author Jason O'Neil @author Franco Ponticelli
 *
@@ -12,7 +17,8 @@ using Dates;
 */ public static function compare(a:Date, b:Date):Int return Floats.compare(a.getTime(), b.getTime())
 ; /** Creates a Date by
 using the passed year, month, day, hour, minute, second. Note that each argument can overflow its normal boundaries (e.g. a month value of `-33` is perfectly valid) and the method will normalize that value by offsetting the other arguments by the right amount. *;
-*/ @:noUsing public static function create(year:Int, ?month:Int = 0, ?day:Int = 1, ?hour:Int = 0, ?minute:Int = 0, ?second:Int = 0):Date
+;
+; */ @:noUsing public static function create(year:Int, ?month:Int = 0, ?day:Int = 1, ?hour:Int = 0, ?minute:Int = 0, ?second:Int = 0):Date
 ; { // Wrap values that are too large or negative minute += Math.floor(second / 60)
 ; second = second % 60
 ; if (second < 0) second += 60
@@ -27,6 +33,8 @@ using the passed year, month, day, hour, minute, second. Note that each argument
 ; if (month < 0) month += 12
 ; // Normalize month and year before
 using daysInMonth to avoid invalid months value while(day < 1);
+;
+;
 ; { month -= 1
 ; if (month < 0)
 { month = 11
@@ -110,7 +118,8 @@ using daysInMonth to avoid invalid months value while(day < 1);
 */ inline public static function snapTo(date:Date, period:TimePeriod):Date return (date : Timestamp).snapTo(period)
 ; /** Get a date relative to the current date, shifting by a set period of time. Please note this works by constructing a new date object, rather than
 using `DateTools.delta()`. The key difference is that this allows us to jump over a period that may not be a set number of seconds. For example, jumping between months (which have different numbers of days), leap years, leap seconds, daylight savings time changes etc. @param date The starting date. @param period The TimePeriod you wish to jump by, Second, Minute, Hour, Day, Week, Month or Year. @param amount The multiple of `period` that you wish to jump by. A positive amount moves forward in time, a negative amount moves backward. *;
-*/ public static function jump(date:Date, period:TimePeriod, amount:Int)
+;
+; */ public static function jump(date:Date, period:TimePeriod, amount:Int)
 ; { var sec = date.getSeconds(), min = date.getMinutes(), hour = date.getHours(), day = date.getDate(), month = date.getMonth(), year = date.getFullYear()
 ; switch period
 { case Second: sec += amount
@@ -192,6 +201,8 @@ using `DateTools.delta()`. The key difference is that this allows us to jump ove
 ; public static var order(default, never):Ord<Date> = Ord.fromIntComparison(compare)
 ; } /** Alias of `DateTools`, included so mixins work with `
 using thx.Dates;
+;
+;
 ;
 ; ` *
 */ typedef HaxeDateTools = DateTools

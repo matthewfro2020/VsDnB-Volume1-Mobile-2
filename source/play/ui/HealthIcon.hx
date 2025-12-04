@@ -1,12 +1,21 @@
 package
+;
 ; play.ui
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.math.FlxMath;
+;
+;
 ;
 ; import flixel.math.FlxPoint;
 ;
+;
+;
 ; import openfl.utils.Assets;
+;
+;
 ;
 ; /** * A visual icon used both in-game to display the players, and also a prop to display a player's icon in a menu.
 */ class HealthIcon extends FlxSprite

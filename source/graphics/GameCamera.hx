@@ -1,10 +1,17 @@
 package
+;
 ; graphics
 ; import flixel.FlxCamera;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; /** * An `FlxCamera` extension for helping with user preferences.
 */ class GameCamera extends FlxCamera

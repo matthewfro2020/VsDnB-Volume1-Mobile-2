@@ -1,24 +1,45 @@
 package
+;
 ; audio
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.util.FlxColor;
+;
+;
 ;
 ; import flixel.system.FlxAssets.FlxSoundAsset;
 ;
+;
+;
 ; import flixel.system.ui.FlxSoundTray;
+;
+;
 ;
 ; import openfl.display.BitmapData;
 ;
+;
+;
 ; import openfl.text.TextField;
+;
+;
 ;
 ; import openfl.text.TextFormatAlign;
 ;
+;
+;
 ; import openfl.display.Bitmap;
+;
+;
 ;
 ; import openfl.text.TextFormat;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; /** * An internal object used to change the game's master volume.
 */ class GameSoundTray extends FlxSoundTray

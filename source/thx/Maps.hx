@@ -1,21 +1,36 @@
 package
+;
 ; thx
 ; #if (haxe_ver >= 3.200)
 import haxe.Constraints.IMap;
 ;
+;
+;
 ; #else
 import Map.IMap;
+;
+;
 ;
 ; #end
 import haxe.ds.Option;
 ;
+;
+;
 ; import thx.Tuple;
+;
+;
 ;
 ; using thx.Iterators;
 ;
+;
+;
 ; using thx.Arrays;
 ;
+;
+;
 ; using thx.Options;
+;
+;
 ;
 ; /** Extension methods for Maps
 *
@@ -37,7 +52,8 @@ import haxe.ds.Option;
 */ public static function values<TKey, TValue>(map:IMap<TKey, TValue>):Array<TValue> return map.keys().map(function(key:TKey):TValue return map.get(key))
 ; /** Creates a `Map<K, V>` from an `Array<T>`
 using key extractor `T -> K` and value extractor `T -> V` functions. `K` must be a string. *;
-*/ public static function fromArray<T, K:String, V>(array:ReadonlyArray<T>, toKey:T->K, toVal:T->V):Map<K, V> return Arrays.reduce(array, function(acc:Map<K, V>, curr:T)
+;
+; */ public static function fromArray<T, K:String, V>(array:ReadonlyArray<T>, toKey:T->K, toVal:T->V):Map<K, V> return Arrays.reduce(array, function(acc:Map<K, V>, curr:T)
 ; { acc.set(toKey(curr), toVal(curr))
 ; return acc
 ; } , new Map())

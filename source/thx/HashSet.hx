@@ -1,9 +1,14 @@
 package
+;
 ; thx
 ; import haxe.ds.HashMap;
 ;
+;
+;
 ; /** A set is a list of unique, hashable values. Equality of items is determined
 using a required `function hashCode():Int` on the item instances.;
+;
+;
 ; *
 */ abstract HashSet<T:
 { function hashCode():Int

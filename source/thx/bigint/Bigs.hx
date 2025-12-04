@@ -1,6 +1,9 @@
 package
+;
 ; thx.bigint
 ; using thx.Strings;
+;
+;
 ;
 ; class Bigs
 { inline public static var BASE:Int = 10000000

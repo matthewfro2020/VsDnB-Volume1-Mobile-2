@@ -1,12 +1,21 @@
 package
+;
 ; data.subtitle
 ; import json2object.JsonWriter;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import audio.GameSound;
 ;
+;
+;
 ; import flixel.util.FlxAxes;
+;
+;
 ;
 ; /** * A data structure that defines the properties for a Subtitle.
 */ class SongSubtitleData

@@ -1,17 +1,30 @@
 package
+;
 ; thx.macro
 ; #if (neko || macro)
 import haxe.macro.ComplexTypeTools;
 ;
+;
+;
 ; import haxe.macro.Context;
+;
+;
 ;
 ; import haxe.macro.Expr;
 ;
+;
+;
 ; import haxe.macro.TypeTools;
+;
+;
 ;
 ; import haxe.macro.Type.ClassType;
 ;
+;
+;
 ; import haxe.macro.Type;
+;
+;
 ;
 ; /** Extension methods to work with types at macro time.
 *
@@ -75,8 +88,10 @@ class '
 }
 ; /** Fully-qualify a `ComplexType`. For example, turn `Option<Int>` to `haxe.ds.Option.Option<StdTypes.Int>` when `haxe.ds.Option` is in context view `
 using ` or `;
-import `. If the type cannot be qualified the original `ComplexType` is returned.;
-*/ public static function qualifyComplexType(ct:ComplexType):ComplexType return try
+;
+; import `. If the type cannot be qualified the original `ComplexType` is returned.;
+;
+; */ public static function qualifyComplexType(ct:ComplexType):ComplexType return try
 { TypeTools.toComplexType(Context.typeof(macro(null : $ct)))
 ; } catch (e:Dynamic)
 { ct

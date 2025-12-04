@@ -1,27 +1,50 @@
 package
+;
 ; ui.intro
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.tweens.FlxEase;
+;
+;
 ;
 ; import flixel.tweens.FlxTween;
 ;
+;
+;
 ; import flixel.util.FlxTimer;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.util.typeLimit.NextState;
+;
+;
 ;
 ; import flixel.system.FlxSplash;
 ;
+;
+;
 ; import openfl.Lib;
+;
+;
 ;
 ; #if mobile
 import util.TouchUtil;
+;
+;
 ;
 ; #end
 /** * The screen that shows when first loading the game. * Has an animated intro just like the flixel splash screen.

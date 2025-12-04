@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** `Timer` provides several meaning to delay the execution of code. At the moment it is only implemented for platforms that have a native concept of Timer like Swf and JavaScript or c++/Neko with OpenFL or NME. All of the Timer methods return a function with signature Void -> Void that can be used to cancel the timer. ```haxe
 // set the execution delayed by 200ms var cancel = Timer.delay(doSomethingLater, 200)
@@ -37,7 +38,8 @@ package
 ; #end
 /** `Timer.repeat` continues to invoke `callback` until it is cancelled
 using the returned cancel function. *;
-*/ public static function repeat(callback:Void->Void, delayms:Int):Void->Void
+;
+; */ public static function repeat(callback:Void->Void, delayms:Int):Void->Void
 ; { #if js return clear.bind(js.Syntax.code('setInterval')(callback, delayms))
 ; #elseif flash9 return clear.bind(untyped __global__["flash.utils.setInterval"](callback, delayms))
 ; #elseif flash return clear.bind(untyped _global["setInterval"](callback, delayms))
@@ -53,7 +55,8 @@ using the returned cancel function. *;
 ; #end
 } /** `Timer.delay` invokes `callback` after `delayms` milliseconds. The scheduling can be canelled
 using the returned cancel function. *;
-*/ public static function delay(callback:Void->Void, delayms:Int):Void->Void
+;
+; */ public static function delay(callback:Void->Void, delayms:Int):Void->Void
 ; { #if js return clear.bind(js.Syntax.code('setTimeout')(callback, delayms))
 ; #elseif flash9 return clear.bind(untyped __global__["flash.utils.setTimeout"](callback, delayms))
 ; #elseif flash return clear.bind(untyped _global["setTimeout"](callback, delayms))
@@ -71,7 +74,8 @@ using the returned cancel function. *;
 ; #end
 } /** Invokes `callback` at every frame
 using native implementation where available. A delta time in milliseconds is passed since the latest time callback was invoked. *;
-*/ public static function frame(callback:Float->Void)
+;
+; */ public static function frame(callback:Float->Void)
 ; { #if js var cancelled = false, f = Functions.noop, current = time(), next
 ; f = function()
 { if (cancelled) return
@@ -105,7 +109,8 @@ using native implementation where available. A delta time in milliseconds is pas
 ; #end
 } /** Delays `callback` untile the next frame
 using native implementation where available. *;
-*/ public static function nextFrame(callback:Void->Void)
+;
+; */ public static function nextFrame(callback:Void->Void)
 ; { #if js var id = js.Syntax.code("requestAnimationFrame")(callback)
 ; return function() js.Syntax.code("cancelAnimationFrame")(id)
 ; #elseif openfl var listener = null, cancel = function() openfl.Lib.current.removeEventListener(openfl.events.Event.ENTER_FRAME, listener)

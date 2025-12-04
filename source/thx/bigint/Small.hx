@@ -1,4 +1,5 @@
 package
+;
 ; thx.bigint
 ; class Small implements BigIntImpl
 { public static var zero(default, null) = new Small(0)

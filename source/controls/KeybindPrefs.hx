@@ -1,10 +1,17 @@
 package
+;
 ; controls
 ; import controls.Controls.KeyboardScheme;
 ;
+;
+;
 ; import flixel.util.FlxSave;
 ;
+;
+;
 ; import flixel.input.keyboard.FlxKey;
+;
+;
 ;
 ; class KeybindPrefs
 { public static var keybinds:Map<String, Array<FlxKey>> = new Map<String, Array<FlxKey>>()

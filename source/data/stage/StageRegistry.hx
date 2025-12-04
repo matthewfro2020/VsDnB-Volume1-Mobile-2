@@ -1,12 +1,21 @@
 package
+;
 ; data.stage
 ; import openfl.utils.Assets;
 ;
+;
+;
 ; import json2object.JsonParser;
+;
+;
 ;
 ; import play.stage.ScriptedStage;
 ;
+;
+;
 ; import play.stage.Stage;
+;
+;
 ;
 ; class StageRegistry extends BaseRegistry<Stage, StageData>
 { public static var VERSION:thx.semver.Version = '1.0.0'

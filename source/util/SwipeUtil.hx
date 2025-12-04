@@ -1,7 +1,10 @@
 package
+;
 ; util
 ; #if FLX_POINTER_INPUT
 import flixel.FlxG;
+;
+;
 ;
 ; #end
 /** * Utility

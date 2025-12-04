@@ -1,14 +1,23 @@
 package
+;
 ; thx.fp
 ; import haxe.ds.Option;
 ;
+;
+;
 ; import thx.Ord;
+;
+;
 ;
 ; #if (haxe_ver >= 3.200)
 import haxe.Constraints.IMap;
 ;
+;
+;
 ; #else
 import Map.IMap;
+;
+;
 ;
 ; #end abstract Map<K, V>(MapImpl<K, V>) from MapImpl<K, V> to MapImpl<K, V>
 { inline public static function empty<K, V>():Map<K, V> return Tip

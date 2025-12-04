@@ -1,10 +1,17 @@
 package
+;
 ; thx
 ; import haxe.Json;
 ;
+;
+;
 ; import thx.Error;
 ;
+;
+;
 ; using thx.Arrays;
+;
+;
 ;
 ; class Convert
 { public static function toString(value:Dynamic):String

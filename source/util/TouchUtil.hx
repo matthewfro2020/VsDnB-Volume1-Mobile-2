@@ -1,18 +1,31 @@
 package
+;
 ; util
 ; import flixel.FlxBasic;
 ;
+;
+;
 ; import flixel.FlxCamera;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxObject;
+;
+;
 ;
 ; #if FLX_TOUCH
 import flixel.input.touch.FlxTouch;
 ;
+;
+;
 ; #end
 import flixel.math.FlxPoint;
+;
+;
 ;
 ; /** * Utility
 class for handling touch input within the FlxG context.
@@ -35,6 +48,8 @@ class for handling touch input within the FlxG context.
 ; } /** * Checks if the specified object overlaps with any active touch
 using precise point checks. * * @param object The FlxObject to check for overlap. * @param camera Optional camera for the overlap check. Defaults to all cameras of the object. * * @return `true` if there is a precise overlap with any touch;
 ;
+;
+;
 ; `false` otherwise.
 */ public static function overlapsComplex(object:FlxObject, ?camera:FlxCamera):Bool
 { if (object == null) return false
@@ -49,6 +64,8 @@ using precise point checks. * * @param object The FlxObject to check for overlap
 ; } #end return false
 ; } /** * Checks if the specified object overlaps with a specific point
 using precise point checks. * * @param object The FlxObject to check for overlap. * @param point The FlxPoint to check against the object. * @param inScreenSpace Whether to take scroll factors into account when checking for overlap. * @param camera Optional camera for the overlap check. Defaults to all cameras of the object. * * @return `true` if there is a precise overlap with the specified point;
+;
+;
 ;
 ; `false` otherwise.
 */ public static function overlapsComplexPoint(object:FlxObject, point:FlxPoint, ?inScreenSpace:Bool = false, ?camera:FlxCamera):Bool

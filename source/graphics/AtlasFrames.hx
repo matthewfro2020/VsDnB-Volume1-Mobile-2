@@ -1,22 +1,41 @@
 package
+;
 ; graphics
 ; import haxe.Json;
 ;
+;
+;
 ; import haxe.io.Bytes;
+;
+;
 ;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.graphics.FlxGraphic;
+;
+;
 ;
 ; import flixel.graphics.frames.FlxAtlasFrames;
 ;
+;
+;
 ; import flixel.graphics.frames.FlxFrame;
+;
+;
 ;
 ; import flixel.math.FlxRect;
 ;
+;
+;
 ; import openfl.Assets;
 ;
+;
+;
 ; import openfl.display.BitmapData;
+;
+;
 ;
 ; /** * 100% flxanimate-free atlas loader * Supports: spritemap1.json, spritemap2.json, etc. * * Returns regular FlxAtlasFrames (Psych-compatible)
 */ class AtlasFrames

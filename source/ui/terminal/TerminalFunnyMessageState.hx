@@ -1,28 +1,53 @@
 package
+;
 ; ui.terminal
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxState;
+;
+;
 ;
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.addons.ui.FlxInputText;
+;
+;
 ;
 ; import flixel.util.FlxTimer;
 ;
+;
+;
 ; import graphics.shaders.RuntimeShader;
+;
+;
 ;
 ; import ui.terminal.TerminalScreen.TerminalColor;
 ;
+;
+;
 ; import ui.terminal.TerminalDisplays.TerminalClearer;
+;
+;
 ;
 ; import ui.terminal.TerminalDisplays.TerminalLinePrinter;
 ;
+;
+;
 ; import scripting.IScriptedClass.IEventDispatcher;
+;
+;
 ;
 ; import scripting.events.ScriptEvent;
 ;
+;
+;
 ; import openfl.filters.ShaderFilter;
+;
+;
 ;
 ; class TerminalFunnyMessageState extends FlxState implements IEventDispatcher
 { public var screen:TerminalScreen

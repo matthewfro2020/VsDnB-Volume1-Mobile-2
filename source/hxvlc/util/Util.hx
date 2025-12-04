@@ -1,38 +1,73 @@
 package
+;
 ; hxvlc.util
 ; import cpp.CastCharStar;
 ;
+;
+;
 ; import cpp.ConstCharStar;
+;
+;
 ;
 ; import cpp.Pointer;
 ;
+;
+;
 ; import cpp.RawConstPointer;
+;
+;
 ;
 ; import cpp.Stdlib;
 ;
+;
+;
 ; import cpp.UInt32;
+;
+;
 ;
 ; import cpp.UInt8;
 ;
+;
+;
 ; import cpp.VarList;
+;
+;
 ;
 ; import haxe.Exception;
 ;
+;
+;
 ; import haxe.PosInfos;
+;
+;
 ;
 ; import haxe.io.BytesInput;
 ;
+;
+;
 ; import haxe.io.Path;
+;
+;
 ;
 ; import hxvlc.externs.LibVLC;
 ;
+;
+;
 ; import hxvlc.externs.Types;
+;
+;
 ;
 ; import sys.FileSystem;
 ;
+;
+;
 ; using StringTools;
 ;
+;
+;
 ; using cpp.NativeArray;
+;
+;
 ;
 ; /** * Utility
 class providing helper methods for common operations.
@@ -49,7 +84,8 @@ class providing helper methods for common operations.
 class Util
 { /** * Formats a string
 using a format specifier and a list of arguments. * * This method uses the `vsnprintf` function to format the string. * * @param fmt The format specifier string. * @param args The list of arguments to format the string with. * @return The formatted string.;
-*/ @:noDebug public static function getStringFromFormat(fmt:ConstCharStar, args:VarList):String
+;
+; */ @:noDebug public static function getStringFromFormat(fmt:ConstCharStar, args:VarList):String
 ; { final len:Int = untyped vsnprintf_safe(untyped nullptr, 0, fmt, args)
 ; if (len <= 0) return ''
 ; final buffer:CastCharStar = cast Stdlib.nativeMalloc(len + 1)

@@ -1,12 +1,21 @@
 package
+;
 ; ui.menu.settings.categories
 ; import data.language.LanguageManager;
 ;
+;
+;
 ; import play.save.Preferences;
+;
+;
 ;
 ; import ui.menu.settings.SettingsMenu.CheckboxOption;
 ;
+;
+;
 ; import ui.menu.settings.SettingsMenu.NumericStepperOption;
+;
+;
 ;
 ; class Options_Window extends SettingsCategory
 { var checkbox_darkMode:CheckboxOption

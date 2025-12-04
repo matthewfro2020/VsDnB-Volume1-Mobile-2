@@ -1,9 +1,14 @@
 package
+;
 ; thx
 ; #if macro
 import haxe.macro.Expr;
 ;
+;
+;
 ; import thx.macro.lambda.SlambdaMacro;
+;
+;
 ;
 ; #end
 /** Extension methods for functions with arity 0 (functions that do not take arguments).

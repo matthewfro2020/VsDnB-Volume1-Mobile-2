@@ -1,16 +1,29 @@
 package
+;
 ; ui.select.playerSelect
 ; import data.player.PlayerData;
 ;
+;
+;
 ; import flixel.math.FlxPoint;
+;
+;
 ;
 ; import backend.Conductor;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import ui.select.playerSelect.PlayerSelect.SelectedPlayerType;
+;
+;
 ;
 ; class BackseatSelect extends PlayerSelect
 { var elapsedTime:Float = 0

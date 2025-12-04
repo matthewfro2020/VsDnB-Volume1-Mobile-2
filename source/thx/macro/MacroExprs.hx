@@ -1,9 +1,14 @@
 package
+;
 ; thx.macro
 ; #if (neko || macro)
 import haxe.macro.Expr;
 ;
+;
+;
 ; import thx.Arrays;
+;
+;
 ;
 ; /** Extension methods to work with `Expr`s at macro time.
 *

@@ -1,10 +1,17 @@
 package
+;
 ; ui.menu.freeplay.category
 ; import flixel.util.FlxColor;
 ;
+;
+;
 ; import flixel.system.FlxAssets.FlxGraphicAsset;
 ;
+;
+;
 ; import flixel.util.typeLimit.OneOfTwo;
+;
+;
 ;
 ; typedef CategorySong =
 { var id:String

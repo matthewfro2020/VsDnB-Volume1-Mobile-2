@@ -1,10 +1,12 @@
 package
+;
 ; util
 ; /** * A utility for providing useful functions relating to Strings.
 */ class StringUtil
 { /** * Formats a string in spaced uppercase format. * ex. `Formatted Song` * @param string The string to format. * @param separator The separate the string is
 using . * @return A newly formatted string.;
-*/ public static function format(string:String, separator:String):String
+;
+; */ public static function format(string:String, separator:String):String
 { var split:Array<String> = string.split(separator)
 ; var formattedString:String = ''
 ; for (i in 0...split.length)

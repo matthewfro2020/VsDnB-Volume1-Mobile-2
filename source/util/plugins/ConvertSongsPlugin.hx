@@ -1,14 +1,25 @@
 package
+;
 ; util.plugins
 ; import haxe.io.Path;
 ;
+;
+;
 ; import sys.FileSystem;
+;
+;
 ;
 ; import util.tools.converters.SongConverter;
 ;
+;
+;
 ; import flixel.FlxG;
 ;
+;
+;
 ; import flixel.FlxBasic;
+;
+;
 ;
 ; /** * Plugin that converts a specified, or all songs to the new song format.
 */ class ConvertSongsPlugin extends FlxBasic

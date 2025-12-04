@@ -1,4 +1,5 @@
 package
+;
 ; thx
 ; /** Helper
 class to generate [UUID](http:

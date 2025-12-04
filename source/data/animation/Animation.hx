@@ -1,8 +1,13 @@
 package
+;
 ; data.animation
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import graphics.FlxAtlasSprite;
+;
+;
 ;
 ; typedef AnimationData =
 { var name:String

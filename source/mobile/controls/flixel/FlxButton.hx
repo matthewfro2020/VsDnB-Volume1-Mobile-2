@@ -1,37 +1,68 @@
 package
+;
 ; mobile.controls.flixel
 ; import flixel.FlxCamera;
 ;
+;
+;
 ; import flixel.FlxG;
+;
+;
 ;
 ; import flixel.FlxSprite;
 ;
+;
+;
 ; import flixel.graphics.atlas.FlxAtlas;
+;
+;
 ;
 ; import flixel.graphics.atlas.FlxNode;
 ;
+;
+;
 ; import flixel.graphics.frames.FlxTileFrames;
+;
+;
 ;
 ; import flixel.input.FlxInput;
 ;
+;
+;
 ; import flixel.input.FlxPointer;
+;
+;
 ;
 ; import flixel.input.IFlxInput;
 ;
+;
+;
 ; import flixel.input.touch.FlxTouch;
 ;
+;
+;
 ; import flixel.math.FlxPoint;
+;
+;
 ;
 ; #if (flixel >= "5.3.0")
 import flixel.sound.FlxSound;
 ;
+;
+;
 ; #else
 import flixel.system.FlxSound;
+;
+;
 ;
 ; #end
 import flixel.text.FlxText;
 ;
+;
+;
 ; import flixel.util.FlxDestroyUtil;
+;
+;
 ;
 ; /** * A simple button
 class that calls a function when clicked by the touch.
@@ -174,7 +205,8 @@ class FlxTypedButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 ; } #end
 /** * Stamps button's graphic and label onto specified atlas object and loads graphic from this atlas. * This method assumes that you're
 using whole image for button's graphic and image has no spaces between frames. * And it assumes that label is a single frame sprite. * * @param atlas Atlas to stamp graphic to. * @return Whether the button's graphic and label's graphic were stamped on the atlas successfully.;
-*/ public function stampOnAtlas(atlas:FlxAtlas):Bool
+;
+; */ public function stampOnAtlas(atlas:FlxAtlas):Bool
 ; { var buttonNode:FlxNode = atlas.addNode(graphic.bitmap, graphic.key)
 ; var result:Bool = (buttonNode != null)
 ; if (buttonNode != null)

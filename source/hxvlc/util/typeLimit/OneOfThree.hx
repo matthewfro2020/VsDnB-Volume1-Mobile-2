@@ -1,4 +1,5 @@
 package
+;
 ; hxvlc.util.typeLimit
 ; /** * An abstract type that can represent one of three possible types. * * @see https:
 // github.com/HaxeFlixel/flixel/blob/master/flixel/util/typeLimit/OneOfThree.hx
