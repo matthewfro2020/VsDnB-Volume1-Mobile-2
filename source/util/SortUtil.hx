@@ -19,17 +19,6 @@ class SortUtil
 	}
 
 	/**
-	 * Compares a list of `FlxBasic` by their z index.
-	 * @param a The first `FlxBasic` to compare.
-	 * @param b The second `FlxBasic` to compare.
-	 * @return Int telling if the values being compared should be swapped, or not.
-	 */
-	public static function (order:Int = FlxSort.ASCENDING, a:FlxBasic, b:FlxBasic):Int
-	{
-		return 0;
-	}
-
-	/**
 	 * Sort predicate for sorting strings alphabetically.
 	 * @param a The first string to compare.
 	 * @param b The second string to compare.
