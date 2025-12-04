@@ -48,7 +48,7 @@ class FlxAtlasSprite extends FlxSprite {
 			var first:String = frames.frames[0].name;
 			var prefix:String = extractPrefix(first);
 
-			this.animation.addByPrefix(name, prefix, 24, true);
+			this.animation.addByPrefix(name, prefix, frameRate, loop);
 		}
 	}
 
@@ -56,14 +56,14 @@ class FlxAtlasSprite extends FlxSprite {
 	 * Adds animation by prefix (default FNF style).
 	 */
 	public function addByPrefix(name:String, prefix:String, frameRate:Int = 24, loop:Bool = true) {
-		animation.addByPrefix(name, prefix, frameRate, loop);
+		this.animation.addByPrefix(name, prefix, frameRate, loop);
 	}
 
 	/**
 	 * Adds animation by manual indices.
 	 */
 	public function addByIndices(name:String, prefix:String, indices:Array<Int>, frameRate:Int = 24, loop:Bool = true) {
-		animation.addByIndices(name, prefix, indices, frameRate, loop);
+		this.animation.addByIndices(name, prefix, indices, frameRate, loop);
 	}
 
 	/**
