@@ -51,7 +51,7 @@ class FlxAtlasSprite extends FlxSprite {
 		if (prefix.length == 0)
 			prefix = first; // fallback
 
-		this.animation.addByPrefix("idle", prefix, 24, true);
+		this.animation.addByPrefix(name, prefix, 24, true);
 	}
 
 	/**
