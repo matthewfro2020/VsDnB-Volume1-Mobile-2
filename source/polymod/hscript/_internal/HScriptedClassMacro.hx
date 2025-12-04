@@ -135,11 +135,7 @@ class HScriptedClassMacro
 									fields.push(initField);
 									constructor = buildScriptedClassConstructor(constArgs);
 								default:
-									Context.error('Error: Lazy superclass constructor is not a function (got ${builtValue})', Context.currentPos());
-							}
 						default:
-							Context.error('Error: super constructor is not a function (got ${superClsConstType})', Context.currentPos());
-					}
 				}
 				else
 				{
