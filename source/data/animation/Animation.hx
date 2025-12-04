@@ -41,39 +41,39 @@ class Animation
 	 * @param animation The data used to apply to the sprite.
 	 */
 
-	public static function addToSprite(target:FlxSprite, animation:AnimationData):Void
-	{
-	    animation = validateAnimationData(animation);
+public static function addToSprite(target:FlxSprite, animation:AnimationData):Void
+{
+    animation = validateAnimationData(animation);
 
-	    if (target is FlxAtlasSprite)
-	    {
-	        var sprite:FlxAtlasSprite = cast(target, FlxAtlasSprite);
+    if (target is FlxAtlasSprite)
+    {
+        var sprite:FlxAtlasSprite = cast(target, FlxAtlasSprite);
 
-	        if (animation.indices != null)
- 	        {
-	            sprite.addByIndices(
+        if (animation.indices != null)
+        {
+            sprite.addByIndices(
                 animation.name,
                 animation.prefix,
                 animation.indices,
                 animation.frameRate,
                 animation.loop
- 	            );
- 	        }
- 	        else
- 	        {
-	            sprite.addByPrefix(
+            );
+        }
+        else
+        {
+            sprite.addByPrefix(
                 animation.name,
                 animation.prefix,
                 animation.frameRate,
                 animation.loop
-                );
- 	        }
+            );
         }
-        else
+    }
+    else
+    {
+        if (animation.indices != null)
         {
-            if (animation.indices != null)
-            {
-                target.animation.addByIndices(
+            target.animation.addByIndices(
                 animation.name,
                 animation.prefix,
                 animation.indices,
@@ -83,11 +83,10 @@ class Animation
                 animation.flip[0],
                 animation.flip[1]
             );
-			}
         }
         else
         {
-                target.animation.addByPrefix(
+            target.animation.addByPrefix(
                 animation.name,
                 animation.prefix,
                 animation.frameRate,
@@ -96,7 +95,8 @@ class Animation
                 animation.flip[1]
             );
         }
-	}
+    }
+}
 
 	/**
 	 * Adds an animation data into an FlxSprite.
