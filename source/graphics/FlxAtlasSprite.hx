@@ -42,11 +42,14 @@ class FlxAtlasSprite extends FlxSprite {
 		this.frames = frames;
 		this.animation = new FlxAnimationController(this);
 		// Default animation if any prefix exists
+		// Default animation if any prefix exists
 		if (frames.frames.length > 0) {
-			// Determine a safe prefix from the first frame name
-			var first = frames.frames[0].name; // e.g. "idle0000"
+			var first = frames.frames[0].name;
 			var prefix = getPrefix(first);
+			if (prefix == "")
+				prefix = first; // optional but safer
 
+			// FIX: specify postfix explicitly to avoid overload conflict
 			this.animation.addByPrefix("idle", prefix, 24, true, "");
 		}
 	}
