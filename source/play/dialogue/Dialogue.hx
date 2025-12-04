@@ -310,7 +310,6 @@ class Dialogue extends FlxSpriteGroup implements IDialogueScriptedClass implemen
         background.scale.set(FlxG.width * 2, FlxG.height * 2);
         background.scrollFactor.set();
         background.alpha = 0.0;
-        background.zIndex = 0;
         add(background);
     }
 
@@ -322,7 +321,6 @@ class Dialogue extends FlxSpriteGroup implements IDialogueScriptedClass implemen
 		dialogueBox.animation.addByPrefix('none', 'chatboxnone', 24);
 		dialogueBox.screenCenter(X);
         dialogueBox.alpha = 0.0;
-        dialogueBox.zIndex = 20;
         add(dialogueBox);
         playBoxAnimation('none');
 
@@ -335,7 +333,6 @@ class Dialogue extends FlxSpriteGroup implements IDialogueScriptedClass implemen
 		dialogueText.font = Paths.font('comic.ttf');
 		dialogueText.color = 0xFF000000;
 		dialogueText.antialiasing = true;
-        dialogueText.zIndex = 30;
         dialogueText.completeCallback = onTypingComplete;
 		add(dialogueText);
     }
@@ -527,7 +524,6 @@ class Dialogue extends FlxSpriteGroup implements IDialogueScriptedClass implemen
 
             // Revive the speaker as it was previously killed.
             speaker.revive();
-            speaker.zIndex = 10;
             add(speaker);
             refresh();
 
