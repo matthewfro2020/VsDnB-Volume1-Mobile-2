@@ -24,10 +24,6 @@ class SortUtil
 	 * @param b The second `FlxBasic` to compare.
 	 * @return Int telling if the values being compared should be swapped, or not.
 	 */
-	public static function (order:Int = FlxSort.ASCENDING, a:FlxBasic, b:FlxBasic):Int
-	{
-		return 0;
-	}
 
 	/**
 	 * Sort predicate for sorting strings alphabetically.
