@@ -84,7 +84,7 @@ class FlxAtlasSprite extends FlxSprite {
 	 * Adds animation by manual indices.
 	 */
 	public function addByIndices(name:String, prefix:String, indices:Array<Int>, frameRate:Int = 24, loop:Bool = true) {
-		this.animation.addByIndices(name, prefix, indices, frameRate, loop, "");
+		this.animation.addByIndices(name, prefix, indices, "", frameRate, loop, false, false);
 	}
 
 	/**
