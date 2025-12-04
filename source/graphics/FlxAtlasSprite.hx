@@ -43,15 +43,13 @@ class FlxAtlasSprite extends FlxSprite {
 		this.animation = new FlxAnimationController(this);
 
 		// Default animation if any prefix exists
-		if (frames.frames.length > 0)
-			// Automatically detect first prefix in the atlas
-			var first:String = frames.frames[0].name; // e.g. "idle0000"
-		var prefix = first.replace( / [ ^ A - Za - z_] / g, ""); // strip numbers
+		if (frames.frames.length > 0) {
+			// Example frame name: "idle0000", "walk_left_01", etc.
+			var first:String = frames.frames[0].name;
+			var prefix:String = extractPrefix(first);
 
-		if (prefix.length == 0)
-			prefix = first; // fallback
-
-		this.animation.addByPrefix(name, prefix, 24, true);
+			this.animation.addByPrefix(name, prefix, 24, true);
+		}
 	}
 
 	/**
