@@ -40,7 +40,7 @@ jobs:
           haxelib install thx.semver
           haxelib install lime
           haxelib install openfl
-          haxelib install flixel    # <-- UPDATED (was 4.11) now latest 5.x
+          haxelib install flixel
           haxelib install flixel-ui
           haxelib install flixel-addons
           haxelib install flxanimate
@@ -48,8 +48,6 @@ jobs:
           haxelib git polymod https://github.com/PabloelproxD210/Polymod.git
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib install hmm
-          haxelib run hmm install
 
       - name: Configure Android
         run: |
