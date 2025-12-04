@@ -50,7 +50,7 @@ class FlxAtlasSprite extends FlxSprite {
 				prefix = first; // optional but safer
 
 			// FIX: specify postfix explicitly to avoid overload conflict
-			this.animation.addByPrefix("idle", prefix, 24, true, "");
+			this.animation.addByPrefix("idle", prefix, 24, true);
 		}
 	}
 
