@@ -47,7 +47,7 @@ class FlxAtlasSprite extends FlxSprite {
 			var first = frames.frames[0].name; // e.g. "idle0000"
 			var prefix = getPrefix(first);
 
-			this.animation.addByPrefix("idle", prefix, 24, true);
+			this.animation.addByPrefix("idle", prefix, 24, true, "");
 		}
 	}
 
