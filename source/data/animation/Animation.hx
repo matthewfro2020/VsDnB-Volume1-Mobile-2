@@ -40,47 +40,62 @@ class Animation
 	 * @param target The sprite to apply the data into the animation.
 	 * @param animation The data used to apply to the sprite.
 	 */
+
 	public static function addToSprite(target:FlxSprite, animation:AnimationData):Void
 	{
-		animation = validateAnimationData(animation);
+	    animation = validateAnimationData(animation);
 
-		if (target is FlxAtlasSprite)
-		{
-			var sprite:FlxAtlasSprite = cast(target, FlxAtlasSprite);
+	    if (target is FlxAtlasSprite)
+	    {
+	        var sprite:FlxAtlasSprite = cast(target, FlxAtlasSprite);
 
-if (animation.indices != null)
-{
-    sprite.addByIndices(
-        animation.name,
-        animation.prefix,
-        animation.indices,
-        animation.frameRate,
-        animation.loop
-    );
-}
-else
-{
-    sprite.addByPrefix(
-        animation.name,
-        animation.prefix,
-        animation.frameRate,
-        animation.loop
-    );
-}
-
-		}
-		else
-		{
-			if (animation.indices != null)
-			{
-				target.animation.addByIndices(animation.name, animation.prefix, animation.indices, '', animation.frameRate, animation.loop, animation.flip[0],
-					animation.flip[1]);
+	        if (animation.indices != null)
+ 	        {
+	            sprite.addByIndices(
+                animation.name,
+                animation.prefix,
+                animation.indices,
+                animation.frameRate,
+                animation.loop
+ 	            );
+ 	        }
+ 	        else
+ 	        {
+	            sprite.addByPrefix(
+                animation.name,
+                animation.prefix,
+                animation.frameRate,
+                animation.loop
+                );
+ 	        }
+        }
+        else
+        {
+            if (animation.indices != null)
+            {
+                target.animation.addByIndices(
+                animation.name,
+                animation.prefix,
+                animation.indices,
+                '',
+                animation.frameRate,
+                animation.loop,
+                animation.flip[0],
+                animation.flip[1]
+            );
 			}
-			else
-			{
-				target.animation.addByPrefix(animation.name, animation.prefix, animation.frameRate, animation.loop, animation.flip[0], animation.flip[1]);
-			}
-		}
+        }
+        else
+        {
+                target.animation.addByPrefix(
+                animation.name,
+                animation.prefix,
+                animation.frameRate,
+                animation.loop,
+                animation.flip[0],
+                animation.flip[1]
+            );
+        }
 	}
 
 	/**
