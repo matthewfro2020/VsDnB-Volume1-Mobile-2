@@ -1,6 +1,4 @@
-package thx;
-
-#if ios
+package thx; #if ios
 // Avoid Objective-C `Nil` macro conflict by renaming the class.
 typedef Nil = thx._NilCompat.NilCompat;
 #else
