@@ -79,10 +79,6 @@ jobs:
           haxelib git hscript https://github.com/T5mpler/hscript-dnb
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
 
-          # HMM Dependency Manager
-          haxelib install hmm
-          haxelib run hmm install
-
       # -----------------------------------------------------
       # WINDOWS / LINUX / MACOS BUILDS
       # -----------------------------------------------------
