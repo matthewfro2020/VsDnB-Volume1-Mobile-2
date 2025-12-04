@@ -41,15 +41,33 @@ class FlxAtlasSprite extends FlxSprite {
 
 		this.frames = frames;
 		this.animation = new FlxAnimationController(this);
-
 		// Default animation if any prefix exists
 		if (frames.frames.length > 0) {
-			// Example frame name: "idle0000", "walk_left_01", etc.
-			var first:String = frames.frames[0].name;
-			var prefix:String = extractPrefix(first);
+			// Determine a safe prefix from the first frame name
+			var first = frames.frames[0].name; // e.g. "idle0000"
+			var prefix = getPrefix(first);
 
-			this.animation.addByPrefix(name, prefix, frameRate, loop);
+			this.animation.addByPrefix("idle", prefix, 24, true);
 		}
+	}
+
+	/**
+	 * Extracts the prefix of a frame name by removing trailing numbers.
+	 * Example:
+	 *   "idle0000" -> "idle"
+	 *   "walk_left_01" -> "walk_left_"
+	 *   "attack3" -> "attack"
+	 */
+	function getPrefix(name:String):String {
+		var i = name.length - 1;
+		while (i >= 0) {
+			var c = name.charAt(i);
+			if (c >= "0" && c <= "9")
+				i--;
+			else
+				break;
+		}
+		return name.substr(0, i + 1);
 	}
 
 	/**
