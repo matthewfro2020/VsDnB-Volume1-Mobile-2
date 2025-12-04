@@ -77,7 +77,7 @@ class FlxAtlasSprite extends FlxSprite {
 	 * Adds animation by prefix (default FNF style).
 	 */
 	public function addByPrefix(name:String, prefix:String, frameRate:Int = 24, loop:Bool = true) {
-		this.animation.addByPrefix(name, prefix, frameRate, loop, "");
+		this.animation.addByPrefix(name, prefix, frameRate, loop);
 	}
 
 	/**
