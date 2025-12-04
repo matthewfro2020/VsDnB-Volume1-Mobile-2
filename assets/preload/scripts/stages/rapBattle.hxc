@@ -13,7 +13,6 @@ class RapBattleStage extends Stage
     override function load():Void
     {        
         var bg:BGSprite = new BGSprite('rapBG', -640, -360, Paths.image('backgrounds/rapBattle'));
-        bg.zIndex = 0;
         FlxG.state.add(bg);
     }
 
@@ -24,7 +23,6 @@ class RapBattleStage extends Stage
         blackScreen.updateHitbox();
         blackScreen.scrollFactor.set();
         blackScreen.screenCenter();
-        blackScreen.zIndex = 999;
         add(blackScreen);
         blackScreen.alpha = 0;
     }

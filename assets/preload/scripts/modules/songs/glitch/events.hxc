@@ -37,7 +37,6 @@ class GlitchEvents extends SongModule
         meme = new FlxBackdrop(Paths.image('backgrounds/daveHouse/MEME'), 0x10);
         meme.setPosition(-50, 275);
         meme.scrollFactor.set(0.2, 0);
-        meme.zIndex = 15;
         meme.alpha = 0.0;
         game.currentStage.add(meme);
     }

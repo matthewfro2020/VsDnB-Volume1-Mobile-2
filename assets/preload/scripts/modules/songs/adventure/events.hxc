@@ -70,7 +70,6 @@ class AdventureEvents extends SongModule
         blackBehind.updateHitbox();
         blackBehind.screenCenter();
         blackBehind.alpha = 0.01;
-        blackBehind.zIndex = game.dad.zIndex - 1;
         game.currentStage.add(blackBehind);
 
         vignette = new FlxSprite().loadGraphic(Paths.image('vignette'));

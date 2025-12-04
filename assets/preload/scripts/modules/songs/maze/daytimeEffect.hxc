@@ -19,12 +19,10 @@ class MazeDaytimeEffect extends SongModule
         
         var sunsetBG:BGSprite = new BGSprite('sunsetBG', -600, -200, Paths.image('backgrounds/shared/sky_sunset'), null, 0.6, 0.6);
         sunsetBG.alpha = 0;
-        sunsetBG.zIndex = sky.zIndex + 1;
         game.currentStage.add(sunsetBG);
         
         var nightBG:BGSprite = new BGSprite('nightBG', -600, -200, Paths.image('backgrounds/shared/sky_night'), null, 0.6, 0.6);
         nightBG.alpha = 0;
-        nightBG.zIndex = sunsetBG.zIndex + 2;
         game.currentStage.add(nightBG);
         
         tweenTime = Conductor.instance.measureStartTime(25);

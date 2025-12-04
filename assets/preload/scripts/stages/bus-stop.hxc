@@ -12,19 +12,15 @@ class AdventureBusStopStage extends Stage
         var bg:BGSprite = new BGSprite('bg', -600, -880, Paths.image('backgrounds/shared/sky'), null, 0.5, 0.5);
         bg.scale.set(1.5, 1.5);
         bg.updateHitbox();
-        bg.zIndex = 0;
         add(bg);
         
         var hill:BGSprite = new BGSprite('hill', -340, 152, Paths.image('backgrounds/adventure/busstop/hill3'), null, 0.7, 0.7);
-        hill.zIndex = 1;
         add(hill);
         
         var neighborhood:BGSprite = new BGSprite('neighborhood', -800, -175, Paths.image('backgrounds/adventure/busstop/neighborhood'), null, 0.85, 0.95);
-        neighborhood.zIndex = 2;
         add(neighborhood);
         
         var sidewalk:BGSprite = new BGSprite('sidewalk', -923, 756, Paths.image('backgrounds/adventure/busstop/sidewalk'), null, 1, 1);
-        sidewalk.zIndex = 3;
         add(sidewalk);
 
         marvin = new BGSprite('marvin', 171, 466, 'backgrounds/adventure/busstop/character_marvin', [
@@ -42,7 +38,6 @@ class AdventureBusStopStage extends Stage
                     playMarvinAnimation('turn');
             }
         });
-        marvin.zIndex = 4;
         add(marvin);   
     }
 

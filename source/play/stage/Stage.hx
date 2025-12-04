@@ -212,7 +212,7 @@ class Stage extends FlxSpriteGroup implements IPlayStateScriptedClass implements
      */
     function refresh():Void
     {
-        sort(SortUtil.byZIndex);
+        sort();
     }
 
     /**

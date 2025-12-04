@@ -93,7 +93,6 @@ class BotTrotEvents extends SongModule
         bfGhost.cameras = [game.camHUD];
         bfGhost.setScale(2, 2);
         bfGhost.alpha = 0.3;
-        bfGhost.zIndex = 500;
         game.add(bfGhost);
         
         bfGhost.dance();

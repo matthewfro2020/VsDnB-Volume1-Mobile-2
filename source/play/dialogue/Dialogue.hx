@@ -247,7 +247,7 @@ class Dialogue extends FlxSpriteGroup implements IDialogueScriptedClass implemen
 
     public function refresh():Void
     {
-        sort(SortUtil.byZIndex);
+        sort();
     }
 
     /**

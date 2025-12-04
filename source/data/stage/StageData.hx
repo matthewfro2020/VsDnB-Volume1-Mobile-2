@@ -64,9 +64,6 @@ class StageData
     {
         return switch (type)
         {
-            case 'player': {zIndex: 102, position: [770, 450], scroll: [1, 1], cameraOffsets: [0, 0]}
-            case 'opponent': {zIndex: 101, position: [100, 450], scroll: [1, 1], cameraOffsets: [0, 0]}
-            case 'gf': {zIndex: 100, position: [400, 130], scroll: [1, 1], cameraOffsets: [0, 0]}
             default: null;
         }
     }
@@ -81,7 +78,6 @@ typedef StageDataCharacter =
      * The layer order of the objects.
      */
     @:default(100)
-    var zIndex:Int;
 
     /**
      * The character's position for the stage.

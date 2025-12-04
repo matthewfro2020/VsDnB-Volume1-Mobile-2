@@ -267,6 +267,6 @@ class MusicBeatState extends ScriptEventDispatchState
 
 	public function refresh():Void
 	{
-		sort(SortUtil.byZIndex);
+		sort();
 	}
 }

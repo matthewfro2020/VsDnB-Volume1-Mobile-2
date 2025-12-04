@@ -30,12 +30,10 @@ class InsanityEvents extends SongModule
         redBg.scale.set(1.5, 1.5);
         redBg.updateHitbox();
         redBg.alpha = 0.0001;
-        redBg.zIndex = game.gf.zIndex - 1;
         game.currentStage.add(redBg);
 
         dave3d = Character.create(0, 350, 'dave-angey', CharacterType.OTHER);
         dave3d.alpha = 0.01;
-        dave3d.zIndex = game.dad.zIndex;
         dave3d.reposition();
         game.currentStage.add(dave3d, CharacterType.OTHER, dave3d.getPosition());   
     }

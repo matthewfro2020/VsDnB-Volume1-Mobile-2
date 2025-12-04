@@ -22,19 +22,15 @@ class InsideHouseStage extends Stage
         ];
 
         var hall1:BGSprite = new BGSprite('bg', -485, 200, Paths.image('backgrounds/insideHouse/hall1_bg'), null, 0.9, 0.9);
-        hall1.zIndex = 0;
         add(hall1);
         
         var hall2:BGSprite = new BGSprite('bg', 1730, 170, Paths.image('backgrounds/insideHouse/hall2_bg'), null, 0.9, 0.9);
-        hall2.zIndex = 1;
         add(hall2);
         
         var bg:BGSprite = new BGSprite('bg', -717, -286, Paths.image('backgrounds/insideHouse/inside_house'), null);
-        bg.zIndex = 3;
         add(bg);
         
         var tv = new BGSprite('bg', -130, 206, Paths.image('backgrounds/insideHouse/tv_bg'), null);
-        tv.zIndex = 4;
         add(tv);
 
         // Switch the sprite based on the playable character.
@@ -52,7 +48,6 @@ class InsideHouseStage extends Stage
         ]);
         couch.active = true;
         couch.animation.play('idle');
-        couch.zIndex = 5;
         add(couch);
     }
 

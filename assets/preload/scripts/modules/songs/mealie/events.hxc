@@ -78,12 +78,10 @@ class MealieEvents extends SongModule
         bambiVoicelines.playAnimation('sigh', true);
         bambiVoicelines.pause();
         bambiVoicelines.alpha = 0.001;
-        bambiVoicelines.zIndex = light.zIndex - 1;
         game.currentStage.add(bambiVoicelines);
 
         dave = Character.create(game.dad.x - 350, game.dad.y, 'dave', CharacterType.OPPONENT);
         dave.alpha = 0.0001;
-        dave.zIndex = game.dad.zIndex + 1;
         game.currentStage.addCharacter(dave, CharacterType.OPPONENT, dave.getPosition());
 
         dave.addCharAtlas('characters/dave/dave_mealie', [

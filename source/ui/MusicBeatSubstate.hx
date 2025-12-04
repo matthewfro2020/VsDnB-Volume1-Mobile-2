@@ -208,6 +208,6 @@ class MusicBeatSubstate extends ScriptEventDispatchSubState
 
 	public function refresh():Void
 	{
-		sort(SortUtil.byZIndex);
+		sort();
 	}
 }

@@ -54,7 +54,6 @@ class BackseatEvents extends SongModule
         var stageBg:BGSprite = stage.getProp('bg');
 
         outsideGroup = new FlxTypedSpriteGroup();
-        outsideGroup.zIndex = stageBg.zIndex - 5;
         stage.add(outsideGroup);
 
         floatingGroup = new FlxTypedSpriteGroup();
@@ -93,7 +92,6 @@ class BackseatEvents extends SongModule
         whiteFlash.scale.set(FlxG.width, FlxG.height);
         whiteFlash.updateHitbox();
         whiteFlash.alpha = 0;
-        whiteFlash.zIndex = roomBg.zIndex - 1;
         stage.add(whiteFlash);
     }
 

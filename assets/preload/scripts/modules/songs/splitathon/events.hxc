@@ -730,9 +730,7 @@ class SplitathonEvents extends SongModule
         }
         backgroundChar = Character.create(position.x, position.y, character == 'dave' ? 'dave-splitathon' : 'bambi-splitathon', CharacterType.OTHER);
         if (front) {
-            backgroundChar.zIndex = game.dad.zIndex + 1;
         } else {
-            backgroundChar.zIndex = game.dad.zIndex - 1;
         }
         game.currentStage.addCharacter(backgroundChar, CharacterType.OTHER, position, false);
     }
