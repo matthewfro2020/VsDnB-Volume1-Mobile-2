@@ -187,8 +187,6 @@ class Stage extends FlxSpriteGroup implements IPlayStateScriptedClass implements
             // Set scroll factors.
             character.scrollFactor.x = characterStageData.scroll[0];
             character.scrollFactor.y = characterStageData.scroll[1];
-            
-            character.zIndex = characterStageData.zIndex;
         }
         
         // Override position if given.
